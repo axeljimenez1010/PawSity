@@ -1,5 +1,7 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
+import ec.edu.unl.pawsity.dominio.mascota.MedicalHistory;
+
 public class Veterinario extends Usuario {
 
     public Veterinario() {
@@ -10,18 +12,15 @@ public class Veterinario extends Usuario {
         super(correoElectronico, contrasena);
     }
 
-    // TODO: Reemplazar Object por HistorialMedico cuando se integre el código
-    public void registrarVacuna(Object h) {
+    public void registrarVacuna(MedicalHistory h) {
         System.out.println("Vacuna registrada en el historial médico.");
     }
 
-    // TODO: Reemplazar Object por HistorialMedico
-    public void registrarTratamiento(Object h) {
+    public void registrarTratamiento(MedicalHistory h) {
         System.out.println("Tratamiento añadido al historial.");
     }
 
-    // TODO: Reemplazar Object por HistorialMedico
-    public void registrarObservaciones(Object h) {
+    public void registrarObservaciones(MedicalHistory h) {
         System.out.println("Observaciones médicas anexadas.");
     }
 }

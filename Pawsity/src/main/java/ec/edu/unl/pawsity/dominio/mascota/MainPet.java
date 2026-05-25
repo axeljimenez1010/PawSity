@@ -65,5 +65,4 @@ public class MainPet {
     public MedicalHistory getHistorialMedico() { return historialMedico; }
     public void setHistorialMedico(MedicalHistory historialMedico) { this.historialMedico = historialMedico; }
 
-
 }

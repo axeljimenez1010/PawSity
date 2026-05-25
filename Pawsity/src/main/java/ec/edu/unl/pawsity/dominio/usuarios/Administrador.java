@@ -10,11 +10,11 @@ public class Administrador extends Usuario {
         super(correoElectronico, contrasena);
     }
 
-    public void monitorearAdopciones() {
-        System.out.println("Revisando el estado de todas las adopciones...");
+    public void validarInformacion() {
+        System.out.println("Validando datos registrados en el refugio...");
     }
 
-    public void validarInformacion() {
-        System.out.println("Validando datos del sistema y del refugio.");
+    public void monitorearAdopciones() {
+        System.out.println("Supervisando el estado de las adopciones.");
     }
 }

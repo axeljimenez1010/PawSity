@@ -1,8 +1,6 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
 public abstract class Usuario {
-
-    // El símbolo # en UML significa protected
     protected String correoElectronico;
     protected String contrasena;
 
@@ -14,9 +12,16 @@ public abstract class Usuario {
         this.contrasena = contrasena;
     }
 
-    public boolean autenticar() {
-        System.out.println("Autenticando credenciales en el sistema...");
-        return true;
+    public void iniciarSesion() {
+        System.out.println("Iniciando sesión en el sistema...");
+    }
+
+    public void cerrarSesion() {
+        System.out.println("Sesión cerrada.");
+    }
+
+    public void actualizarDatos() {
+        System.out.println("Actualizando datos del usuario...");
     }
 
     // Getters y Setters

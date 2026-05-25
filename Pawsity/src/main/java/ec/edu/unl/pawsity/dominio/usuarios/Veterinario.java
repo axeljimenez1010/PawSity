@@ -10,16 +10,18 @@ public class Veterinario extends Usuario {
         super(correoElectronico, contrasena);
     }
 
-    // TODO: Reemplazar Object por ExpedienteMedico cuando esté disponible
-    public void registrarVacuna(Object e) {
-        System.out.println("Vacuna registrada en el expediente médico.");
+    // TODO: Reemplazar Object por HistorialMedico cuando se integre el código
+    public void registrarVacuna(Object h) {
+        System.out.println("Vacuna registrada en el historial médico.");
     }
 
-    public void registrarTratamiento(Object e) {
-        System.out.println("Tratamiento añadido al expediente.");
+    // TODO: Reemplazar Object por HistorialMedico
+    public void registrarTratamiento(Object h) {
+        System.out.println("Tratamiento añadido al historial.");
     }
 
-    public void agregarObservacion(Object e) {
-        System.out.println("Observación médica anexada.");
+    // TODO: Reemplazar Object por HistorialMedico
+    public void registrarObservaciones(Object h) {
+        System.out.println("Observaciones médicas anexadas.");
     }
 }

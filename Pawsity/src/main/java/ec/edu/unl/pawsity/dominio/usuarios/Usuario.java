@@ -1,52 +1,28 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
-import java.util.Date;
-
 public abstract class Usuario {
 
-    private int idUsuario;
-    private String nombreCompleto;
-    private String email;
-    private String contrasena;
-    private Date fechaRegistro;
+    // El símbolo # en UML significa protected
+    protected String correoElectronico;
+    protected String contrasena;
 
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombreCompleto, String email, String contrasena, Date fechaRegistro) {
-        this.idUsuario = idUsuario;
-        this.nombreCompleto = nombreCompleto;
-        this.email = email;
+    public Usuario(String correoElectronico, String contrasena) {
+        this.correoElectronico = correoElectronico;
         this.contrasena = contrasena;
-        this.fechaRegistro = fechaRegistro;
     }
 
-    public boolean iniciarSesion(String email, String contrasena) {
-        return this.email != null && this.email.equals(email) &&
-                this.contrasena != null && this.contrasena.equals(contrasena);
-    }
-
-    public void cerrarSesion() {
-        System.out.println("Sesión finalizada para: " + this.nombreCompleto);
-    }
-
-    public void actualizarDatos() {
-        System.out.println("Datos de perfil actualizados en el sistema.");
+    public boolean autenticar() {
+        System.out.println("Autenticando credenciales en el sistema...");
+        return true;
     }
 
     // Getters y Setters
-    public int getIdUsuario() { return idUsuario; }
-    public void setIdUsuario(int idUsuario) { this.idUsuario = idUsuario; }
-
-    public String getNombreCompleto() { return nombreCompleto; }
-    public void setNombreCompleto(String nombreCompleto) { this.nombreCompleto = nombreCompleto; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getCorreoElectronico() { return correoElectronico; }
+    public void setCorreoElectronico(String correoElectronico) { this.correoElectronico = correoElectronico; }
 
     public String getContrasena() { return contrasena; }
     public void setContrasena(String contrasena) { this.contrasena = contrasena; }
-
-    public Date getFechaRegistro() { return fechaRegistro; }
-    public void setFechaRegistro(Date fechaRegistro) { this.fechaRegistro = fechaRegistro; }
 }

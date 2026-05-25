@@ -1,39 +1,25 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
-import java.util.Date;
-
 public class Veterinario extends Usuario {
-
-    private String numeroCredencial;
-    private String especialidad;
 
     public Veterinario() {
         super();
     }
 
-    public Veterinario(int idUsuario, String nombreCompleto, String email, String contrasena, Date fechaRegistro,
-                       String numeroCredencial, String especialidad) {
-        super(idUsuario, nombreCompleto, email, contrasena, fechaRegistro);
-        this.numeroCredencial = numeroCredencial;
-        this.especialidad = especialidad;
+    public Veterinario(String correoElectronico, String contrasena) {
+        super(correoElectronico, contrasena);
     }
 
-    public void registrarMascota(Object datosMascota) {
-        System.out.println("Ficha de ingreso médico creada.");
+    // TODO: Reemplazar Object por ExpedienteMedico cuando esté disponible
+    public void registrarVacuna(Object e) {
+        System.out.println("Vacuna registrada en el expediente médico.");
     }
 
-    public void actualizarExpediente(int idExpediente) {
-        System.out.println("Historial clínico modificado para el expediente: " + idExpediente);
+    public void registrarTratamiento(Object e) {
+        System.out.println("Tratamiento añadido al expediente.");
     }
 
-    public void registrarTratamiento(int idMascota, Object datosTratamiento) {
-        System.out.println("Nuevo tratamiento asignado a la mascota ID: " + idMascota);
+    public void agregarObservacion(Object e) {
+        System.out.println("Observación médica anexada.");
     }
-
-    // Getters y Setters
-    public String getNumeroCredencial() { return numeroCredencial; }
-    public void setNumeroCredencial(String numeroCredencial) { this.numeroCredencial = numeroCredencial; }
-
-    public String getEspecialidad() { return especialidad; }
-    public void setEspecialidad(String especialidad) { this.especialidad = especialidad; }
 }

@@ -1,5 +1,7 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
+import ec.edu.unl.pawsity.dominio.gestionrefugio.Refugio;
+
 public class Administrador extends Usuario {
 
     public Administrador() {
@@ -10,11 +12,11 @@ public class Administrador extends Usuario {
         super(correoElectronico, contrasena);
     }
 
-    public void validarInformacion() {
+    public void validarInformacion(Refugio refugio) {
         System.out.println("Validando datos registrados en el refugio...");
     }
 
-    public void monitorearAdopciones() {
+    public void monitorearAdopciones(Refugio refugio) {
         System.out.println("Supervisando el estado de las adopciones.");
     }
 }

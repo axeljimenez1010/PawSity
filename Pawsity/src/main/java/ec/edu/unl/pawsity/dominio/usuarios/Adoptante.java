@@ -1,5 +1,6 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
+import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
 import ec.edu.unl.pawsity.dominio.mascota.MainPet;
 
 public class Adoptante extends Usuario {
@@ -24,7 +25,7 @@ public class Adoptante extends Usuario {
         System.out.println("Ejecutando búsqueda de mascotas disponibles...");
     }
 
-    public void enviarSolicitud(MainPet m) {
+    public void enviarSolicitud(SolicitudDeAdopcion solicitud) {
         System.out.println("Enviando solicitud de adopción...");
     }
 

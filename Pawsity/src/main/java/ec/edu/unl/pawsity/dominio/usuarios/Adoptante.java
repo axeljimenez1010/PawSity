@@ -1,30 +1,26 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
-import ec.edu.unl.pawsity.dominio.mascota.MainPet;
+import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
 
 public class Adoptante extends Usuario {
     private String telefono;
     private String direccion;
-    private String nombres;
-    private String apellidos;
 
     public Adoptante() {
         super();
     }
 
-    public Adoptante(String correoElectronico, String contrasena, String telefono, String direccion, String nombres, String apellidos) {
-        super(correoElectronico, contrasena);
+    public Adoptante(String correoElectronico, String contrasena, String nombres, String apellidos, String telefono, String direccion) {
+        super(correoElectronico, contrasena, nombres, apellidos);
         this.telefono = telefono;
         this.direccion = direccion;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
     }
 
     public void buscarMascota() {
         System.out.println("Ejecutando búsqueda de mascotas disponibles...");
     }
 
-    public void enviarSolicitud(MainPet m) {
+    public void enviarSolicitud(SolicitudDeAdopcion solicitud) {
         System.out.println("Enviando solicitud de adopción...");
     }
 
@@ -34,10 +30,4 @@ public class Adoptante extends Usuario {
 
     public String getDireccion() { return direccion; }
     public void setDireccion(String direccion) { this.direccion = direccion; }
-
-    public String getNombres() { return nombres; }
-    public void setNombres(String nombres) { this.nombres = nombres; }
-
-    public String getApellidos() { return apellidos; }
-    public void setApellidos(String apellidos) { this.apellidos = apellidos; }
 }

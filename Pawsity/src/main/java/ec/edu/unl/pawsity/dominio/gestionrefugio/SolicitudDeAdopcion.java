@@ -17,7 +17,6 @@ public class SolicitudDeAdopcion {
         this.estadoFinal = estadoFinal;
     }
 
-    // Operación definida en el diagrama UML
     public void cancelar() {
         this.estado = EstadoSolicitud.RECHAZADA;
         this.estadoFinal = "Cancelada por el usuario";

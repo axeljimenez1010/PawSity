@@ -36,7 +36,6 @@ public class Pet {
         this.historialMedico = new MedicalHistory();
     }
 
-    // Metodos de negocio
     public void estadoPrioridad() {
         // TODO: Implementar lógica de cálculo de prioridad basada en fechaIngreso
     }

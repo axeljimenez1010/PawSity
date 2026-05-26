@@ -13,7 +13,6 @@ public class MedicalHistory {
     private String observacion;
     private List<Veterinario> veterinariosAsignados;
 
-    // Constructor
     public MedicalHistory() {
         // La fecha de creacion se asigna automaticamente al momento de instanciar
         this.fechaCreacion = LocalDate.now();

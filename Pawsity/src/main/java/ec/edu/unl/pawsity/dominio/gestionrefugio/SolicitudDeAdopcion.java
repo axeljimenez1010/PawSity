@@ -1,6 +1,6 @@
 package ec.edu.unl.pawsity.dominio.gestionrefugio;
 
-import ec.edu.unl.pawsity.dominio.mascota.MainPet;
+import ec.edu.unl.pawsity.dominio.mascota.Pet;
 import ec.edu.unl.pawsity.dominio.usuarios.Adoptante;
 import java.util.Date;
 
@@ -12,10 +12,10 @@ public class SolicitudDeAdopcion {
     private String estadoFinal;
 
     private Adoptante adoptante;
-    private MainPet mascota;
+    private Pet mascota;
 
 
-    public SolicitudDeAdopcion(Date fechaSolicitud, Adoptante adoptante, MainPet mascota) {
+    public SolicitudDeAdopcion(Date fechaSolicitud, Adoptante adoptante, Pet mascota) {
         this.fechaSolicitud = fechaSolicitud;
         this.adoptante = adoptante;
         this.mascota = mascota;
@@ -36,7 +36,7 @@ public class SolicitudDeAdopcion {
     public Date getFechaAdopcion() { return fechaAdopcion; }
     public String getEstadoFinal() { return estadoFinal; }
     public Adoptante getAdoptante() { return adoptante; }
-    public MainPet getMascota() { return mascota; }
+    public Pet getMascota() { return mascota; }
 
     // Comportamiento del dominio: Para aprobar la solicitud
     public void aprobar(Date fechaAdopcion, String comentarioFinal) {

@@ -48,5 +48,4 @@ public class MedicalHistory {
     public void setObservacion(String observacion) { this.observacion = observacion; }
 
     public List<Veterinario> getVeterinariosAsignados() { return veterinariosAsignados; }
-
 }

@@ -1,7 +1,6 @@
 package ec.edu.unl.pawsity.dominio.gestionrefugio;
 
 import ec.edu.unl.pawsity.dominio.mascota.Pet;
-import ec.edu.unl.pawsity.dominio.mascota.Pet;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +14,7 @@ public class Refugio {
     private String telefono;
     private String correo;
 
-    // Relación: Un refugio contiene múltiples mascotas (agregación en el UML)
+    // Relación: Un refugio contiene múltiples mascotas 
     private final List<Pet> mascotas;
 
     public Refugio(String nombre, String direccion, String horarios, String telefono, String correo) {

@@ -11,6 +11,7 @@ public class Adoptante extends Usuario {
     }
 
     public Adoptante(String correoElectronico, String contrasena, String nombres, String apellidos, String telefono, String direccion) {
+        // Llamada al constructor del padre Usuario
         super(correoElectronico, contrasena, nombres, apellidos);
         this.telefono = telefono;
         this.direccion = direccion;

@@ -1,5 +1,7 @@
 package ec.edu.unl.pawsity.dominio.gestionrefugio;
 
+import ec.edu.unl.pawsity.dominio.mascota.MainPet;
+import ec.edu.unl.pawsity.dominio.usuarios.Adoptante;
 import java.util.Date;
 
 public class SolicitudDeAdopcion {
@@ -9,51 +11,37 @@ public class SolicitudDeAdopcion {
     private Date fechaAdopcion;
     private String estadoFinal;
 
-    // Constructor
-    public SolicitudDeAdopcion(Date fechaSolicitud, EstadoSolicitud estado, Date fechaAdopcion, String estadoFinal) {
+    private Adoptante adoptante;
+    private MainPet mascota;
+
+
+    public SolicitudDeAdopcion(Date fechaSolicitud, Adoptante adoptante, MainPet mascota) {
         this.fechaSolicitud = fechaSolicitud;
-        this.estado = estado;
-        this.fechaAdopcion = fechaAdopcion;
-        this.estadoFinal = estadoFinal;
+        this.adoptante = adoptante;
+        this.mascota = mascota;
+        this.estado = EstadoSolicitud.PENDIENTE;
     }
 
-    // Operación definida en el diagrama UML
     public void cancelar() {
+        if (this.estado == EstadoSolicitud.APROBADO) {
+            throw new IllegalStateException("No se puede cancelar una solicitud que ya ha sido aprobada.");
+        }
         this.estado = EstadoSolicitud.RECHAZADA;
-        this.estadoFinal = "Cancelada por el usuario";
-        System.out.println("La solicitud ha sido cancelada exitosamente.");
+        this.estadoFinal = "Cancelada por el adoptante/sistema";
     }
 
     // Getters y Setters
-    public Date getFechaSolicitud() {
-        return fechaSolicitud;
-    }
+    public Date getFechaSolicitud() { return fechaSolicitud; }
+    public EstadoSolicitud getEstado() { return estado; }
+    public Date getFechaAdopcion() { return fechaAdopcion; }
+    public String getEstadoFinal() { return estadoFinal; }
+    public Adoptante getAdoptante() { return adoptante; }
+    public MainPet getMascota() { return mascota; }
 
-    public void setFechaSolicitud(Date fechaSolicitud) {
-        this.fechaSolicitud = fechaSolicitud;
-    }
-
-    public EstadoSolicitud getEstado() {
-        return estado;
-    }
-
-    public void setEstado(EstadoSolicitud estado) {
-        this.estado = estado;
-    }
-
-    public Date getFechaAdopcion() {
-        return fechaAdopcion;
-    }
-
-    public void setFechaAdopcion(Date fechaAdopcion) {
+    // Comportamiento del dominio: Para aprobar la solicitud
+    public void aprobar(Date fechaAdopcion, String comentarioFinal) {
+        this.estado = EstadoSolicitud.APROBADO;
         this.fechaAdopcion = fechaAdopcion;
-    }
-
-    public String getEstadoFinal() {
-        return estadoFinal;
-    }
-
-    public void setEstadoFinal(String estadoFinal) {
-        this.estadoFinal = estadoFinal;
+        this.estadoFinal = comentarioFinal;
     }
 }

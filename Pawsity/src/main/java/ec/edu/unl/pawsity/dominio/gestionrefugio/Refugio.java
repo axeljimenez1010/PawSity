@@ -1,5 +1,10 @@
 package ec.edu.unl.pawsity.dominio.gestionrefugio;
 
+import ec.edu.unl.pawsity.dominio.mascota.MainPet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Refugio {
 
     private String nombre;
@@ -8,53 +13,33 @@ public class Refugio {
     private String telefono;
     private String correo;
 
-    // Constructor para inicializar el Refugio
+    // Relación: Un refugio contiene múltiples mascotas (agregación en el UML)
+    private final List<MainPet> mascotas;
+
     public Refugio(String nombre, String direccion, String horarios, String telefono, String correo) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.horarios = horarios;
         this.telefono = telefono;
         this.correo = correo;
+        this.mascotas = new ArrayList<>();
     }
 
-    // Getters y Setters
-    public String getNombre() {
-        return nombre;
+    public List<MainPet> buscarMascota() {
+        return Collections.unmodifiableList(this.mascotas);
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    // Comportamiento para gestionar la relación con las mascotas
+    public void registrarMascota(MainPet mascota) {
+        if (mascota != null) {
+            this.mascotas.add(mascota);
+        }
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getHorarios() {
-        return horarios;
-    }
-
-    public void setHorarios(String horarios) {
-        this.horarios = horarios;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
+    // Getters
+    public String getNombre() { return nombre; }
+    public String getDireccion() { return direccion; }
+    public String getHorarios() { return horarios; }
+    public String getTelefono() { return telefono; }
+    public String getCorreo() { return correo; }
 }

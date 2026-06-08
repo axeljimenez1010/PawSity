@@ -2,7 +2,6 @@ package ec.edu.unl.pawsity.dominio.mascota;
 import java.time.LocalDate;
 
 public class Mascota {
-    // Requisito Unidad 2-04: Static
     private static int totalMascotasRescatadas = 0;
 
     private String nombre;
@@ -13,8 +12,6 @@ public class Mascota {
     private String color;
     private EstadoMascota estado;
     private LocalDate fechaIngreso;
-
-    // Composición: El historial nace con la mascota
     private HistorialMedico historialMedico;
 
     public Mascota(String nombre, String especie, double edad, String tamano, String sexo, String color, EstadoMascota estado) {
@@ -27,11 +24,9 @@ public class Mascota {
         this.estado = estado;
         this.fechaIngreso = LocalDate.now();
         this.historialMedico = new HistorialMedico();
-
         totalMascotasRescatadas++;
     }
 
-    // Método Estático
     public static int getTotalMascotasRescatadas() {
         return totalMascotasRescatadas;
     }
@@ -44,4 +39,5 @@ public class Mascota {
     public String getEspecie() { return especie; }
     public EstadoMascota getEstado() { return estado; }
     public void setEstado(EstadoMascota estado) { this.estado = estado; }
+    public HistorialMedico getHistorialMedico() { return historialMedico; }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public class Refugio {
     private String nombre;
     private int limiteMascotas;
-    private List<Mascota> listaMascotas; // Agregación
+    private List<Mascota> listaMascotas;
 
     public Refugio(String nombre, int limiteMascotas) {
         this.nombre = nombre;
@@ -17,10 +17,12 @@ public class Refugio {
 
     public void registrarMascota(Mascota mascota) throws CapacidadRefugioExcedidaException {
         if (listaMascotas.size() >= limiteMascotas) {
-            throw new CapacidadRefugioExcedidaException("El refugio superó su límite de " + limiteMascotas + " mascotas.");
+            throw new CapacidadRefugioExcedidaException("El refugio " + nombre + " superó su límite de " + limiteMascotas + " mascotas.");
         }
         listaMascotas.add(mascota);
     }
 
-    public List<Mascota> buscarMascota() { return listaMascotas; }
+    public List<Mascota> buscarMascota() {
+        return listaMascotas;
+    }
 }

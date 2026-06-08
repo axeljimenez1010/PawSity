@@ -14,6 +14,15 @@ public class HistorialMedico {
         this.consultasMedicas = new ArrayList<>();
     }
 
-    public void agregarVacuna(Vacuna nuevaVacuna) { this.vacunas.add(nuevaVacuna); }
-    public void registrarConsulta(ConsultaMedica nuevaConsulta) { this.consultasMedicas.add(nuevaConsulta); }
+    public void agregarVacuna(Vacuna nuevaVacuna) {
+        this.vacunas.add(nuevaVacuna);
+    }
+
+    public void registrarConsulta(ConsultaMedica nuevaConsulta) {
+        this.consultasMedicas.add(nuevaConsulta);
+    }
+
+    public List<Vacuna> getVacunas() {
+        return vacunas;
+    }
 }

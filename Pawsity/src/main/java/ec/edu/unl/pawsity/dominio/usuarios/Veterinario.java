@@ -1,29 +1,29 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
-import ec.edu.unl.pawsity.dominio.mascota.MedicalHistory;
+import ec.edu.unl.pawsity.dominio.mascota.HistorialMedico;
+import ec.edu.unl.pawsity.dominio.mascota.Vacuna;
+import ec.edu.unl.pawsity.dominio.mascota.Mascota;
 
 public class Veterinario extends Usuario {
+    private String especialidad;
+    private String numeroLicencia;
 
-    public Veterinario() {
-        super();
+    public Veterinario(String correo, String contrasena, String nombres, String apellidos, String especialidad, String numeroLicencia) {
+        super(correo, contrasena, nombres, apellidos);
+        this.especialidad = especialidad;
+        this.numeroLicencia = numeroLicencia;
     }
 
-    public Veterinario(String correoElectronico, String contrasena, String nombres, String apellidos) {
-        super(correoElectronico, contrasena, nombres, apellidos);
+    public void registrarVacuna(HistorialMedico historial, Vacuna nuevaVacuna) {
+        historial.agregarVacuna(nuevaVacuna);
     }
 
-    public void registrarVacuna(MedicalHistory historial, String ultimaVacuna) {
-        historial.setUltimaVacuna(ultimaVacuna);
-        System.out.println("Vacuna registrada: " + ultimaVacuna);
+    public void actualizarExpediente(Mascota mascota, String diagnostico) {
+        System.out.println("Expediente médico actualizado para: " + mascota.getNombre());
     }
 
-    public void registrarTratamiento(MedicalHistory historial, String tratamientoActual) {
-        historial.setTratamientoActual(tratamientoActual);
-        System.out.println("Tratamiento registrado: " + tratamientoActual);
-    }
-
-    public void registrarObservaciones(MedicalHistory historial, String observacion) {
-        historial.setObservacion(observacion);
-        System.out.println("Observación registrada: " + observacion);
+    @Override
+    public void redireccionarPanel() {
+        System.out.println(">> Abriendo Sistema Clínico de VETERINARIO...");
     }
 }

@@ -1,34 +1,31 @@
 package ec.edu.unl.pawsity.dominio.usuarios;
 
-import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
+import ec.edu.unl.pawsity.dominio.mascota.Mascota;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Adoptante extends Usuario {
     private String telefono;
     private String direccion;
+    private String ocupacion;
 
-    public Adoptante() {
-        super();
-    }
-
-    public Adoptante(String correoElectronico, String contrasena, String nombres, String apellidos, String telefono, String direccion) {
-        // Llamada al constructor del padre Usuario
-        super(correoElectronico, contrasena, nombres, apellidos);
+    public Adoptante(String correo, String contrasena, String nombres, String apellidos, String telefono, String direccion, String ocupacion) {
+        super(correo, contrasena, nombres, apellidos);
         this.telefono = telefono;
         this.direccion = direccion;
+        this.ocupacion = ocupacion;
     }
 
-    public void buscarMascota() {
-        System.out.println("Ejecutando búsqueda de mascotas disponibles...");
+    public void enviarSolicitud(Mascota mascotaDeseada) {
+        System.out.println("Solicitud enviada para adoptar a: " + mascotaDeseada.getNombre());
     }
 
-    public void enviarSolicitud(SolicitudDeAdopcion solicitud) {
-        System.out.println("Enviando solicitud de adopción...");
+    public List<Mascota> buscarMascota(String especie, String tamano, double edad) {
+        return new ArrayList<>();
     }
 
-    // Getters y Setters
-    public String getTelefono() { return telefono; }
-    public void setTelefono(String telefono) { this.telefono = telefono; }
-
-    public String getDireccion() { return direccion; }
-    public void setDireccion(String direccion) { this.direccion = direccion; }
+    @Override
+    public void redireccionarPanel() {
+        System.out.println(">> Abriendo Catálogo de Adopciones para ADOPTANTE...");
+    }
 }

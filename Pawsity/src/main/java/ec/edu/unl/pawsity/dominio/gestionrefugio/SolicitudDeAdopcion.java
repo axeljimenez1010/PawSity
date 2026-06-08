@@ -22,7 +22,7 @@ public class SolicitudDeAdopcion {
         this.estado = EstadoSolicitud.APROBADO;
         this.mascota.setEstado(EstadoMascota.ADOPTADO);
         this.fechaAdopcion = LocalDate.now();
-        System.out.println(">> ¡Contrato generado! La mascota ha sido adoptada oficialmente.");
+        System.out.println("El trámite ha finalizado. La mascota ha sido adoptada oficialmente.");
     }
 
     public Mascota getMascota() { return mascota; }

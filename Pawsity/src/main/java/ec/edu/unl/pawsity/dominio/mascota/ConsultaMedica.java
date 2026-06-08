@@ -19,7 +19,6 @@ public class ConsultaMedica {
     }
 
     public void agregarMedicamento(String medicamento) {
-
         this.medicamentosAplicados.add(medicamento);
     }
 }

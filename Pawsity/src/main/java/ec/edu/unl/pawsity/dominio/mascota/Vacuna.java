@@ -13,6 +13,6 @@ public class Vacuna {
     }
 
     public void obtenerDetalles() {
-        System.out.println("Vacuna: " + nombre + " | Aplicada: " + fechaAplicacion + " | Próxima: " + fechaProximaDosis);
+        System.out.println("  - Vacuna: " + nombre + " | Fecha de aplicación: " + fechaAplicacion + " | Próxima dosis: " + fechaProximaDosis);
     }
 }

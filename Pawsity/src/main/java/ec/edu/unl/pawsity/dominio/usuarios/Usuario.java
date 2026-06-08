@@ -22,7 +22,6 @@ public abstract class Usuario {
         return this.correoElectronico.equals(correoIngresado) && this.contrasena.equals(passIngresado);
     }
 
-    // Método polimórfico interactivo
     public abstract void redireccionarPanel(Scanner sc, Refugio refugio, List<SolicitudDeAdopcion> solicitudes);
 
     public String getNombres() { return nombres; }

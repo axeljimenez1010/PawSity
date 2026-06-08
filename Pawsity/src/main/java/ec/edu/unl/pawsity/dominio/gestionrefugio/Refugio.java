@@ -17,7 +17,7 @@ public class Refugio {
 
     public void registrarMascota(Mascota mascota) throws CapacidadRefugioExcedidaException {
         if (listaMascotas.size() >= limiteMascotas) {
-            throw new CapacidadRefugioExcedidaException("El refugio " + nombre + " superó su límite de " + limiteMascotas + " mascotas.");
+            throw new CapacidadRefugioExcedidaException("No es posible registrar más ingresos. El refugio " + nombre + " ha alcanzado su límite de " + limiteMascotas + " mascotas.");
         }
         listaMascotas.add(mascota);
     }

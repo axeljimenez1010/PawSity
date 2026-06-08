@@ -22,7 +22,7 @@ public class Adoptante extends Usuario {
     }
 
     public void enviarSolicitud(Mascota mascotaDeseada, List<SolicitudDeAdopcion> bandejaGlobal) {
-        System.out.println(">> Solicitud enviada para adoptar a: " + mascotaDeseada.getNombre());
+        System.out.println("Su solicitud para adoptar a " + mascotaDeseada.getNombre() + " ha sido enviada con éxito.");
         mascotaDeseada.setEstado(EstadoMascota.EN_PROCESO);
         bandejaGlobal.add(new SolicitudDeAdopcion(this, mascotaDeseada));
     }
@@ -41,11 +41,11 @@ public class Adoptante extends Usuario {
     public void redireccionarPanel(Scanner sc, Refugio refugio, List<SolicitudDeAdopcion> solicitudes) {
         int opcion = 0;
         do {
-            System.out.println("\n=== PORTAL DE ADOPTANTE: " + this.nombres + " ===");
-            System.out.println("1. Explorar todas las mascotas disponibles");
+            System.out.println("\n--- Catálogo de Adopciones: " + this.nombres + " ---");
+            System.out.println("1. Ver lista de todas las mascotas disponibles");
             System.out.println("2. Buscar mascota por especie");
-            System.out.println("3. Cerrar Sesión");
-            System.out.print("Seleccione: ");
+            System.out.println("3. Cerrar sesión");
+            System.out.print("Seleccione una opción: ");
 
             try { opcion = Integer.parseInt(sc.nextLine()); }
             catch (NumberFormatException e) { continue; }
@@ -58,25 +58,26 @@ public class Adoptante extends Usuario {
                         if(m.getEstado() == EstadoMascota.DISPONIBLE) catalogo.add(m);
                     }
                 } else {
-                    System.out.print("Ingrese la especie (Ej. Canino, Felino): ");
+                    System.out.print("Ingrese la especie que desea buscar (Ej. Canino, Felino): ");
                     catalogo = this.buscarMascota(sc.nextLine(), refugio);
                 }
 
                 if(catalogo.isEmpty()) {
-                    System.out.println("No se encontraron mascotas disponibles con ese criterio.");
+                    System.out.println("Lo sentimos, no hay mascotas con esas características disponibles en este momento.");
                     continue;
                 }
 
+                System.out.println("\nMascotas disponibles para adopción:");
                 for (int i = 0; i < catalogo.size(); i++) {
                     System.out.println((i + 1) + ". " + catalogo.get(i).getNombre() + " (" + catalogo.get(i).getEspecie() + ")");
                 }
 
-                System.out.print("\n¿Desea solicitar la adopción de alguna? Ingrese el número (0 para cancelar): ");
+                System.out.print("\nIngrese el número de la mascota que desea adoptar (o presione 0 para cancelar): ");
                 int seleccion = Integer.parseInt(sc.nextLine());
                 if (seleccion > 0 && seleccion <= catalogo.size()) {
                     Mascota elegida = catalogo.get(seleccion - 1);
                     this.enviarSolicitud(elegida, solicitudes);
-                    System.out.println("⏳ Su solicitud está ahora en espera de aprobación por un Administrador.");
+                    System.out.println("La solicitud se encuentra en revisión por parte de la administración.");
                 }
             }
         } while (opcion != 3);

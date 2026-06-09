@@ -1,4 +1,5 @@
 package ec.edu.unl.pawsity.dominio.mascota;
+
 import ec.edu.unl.pawsity.dominio.usuarios.Veterinario;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,5 +21,9 @@ public class ConsultaMedica {
 
     public void agregarMedicamento(String medicamento) {
         this.medicamentosAplicados.add(medicamento);
+    }
+
+    public String detallesConsulta() {
+        return "Fecha: " + fechaDiagnostico + veterinarioEncargado.getNombres() + " | Diagnóstico: " + diagnostico;
     }
 }

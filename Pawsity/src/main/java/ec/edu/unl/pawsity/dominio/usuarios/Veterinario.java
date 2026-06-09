@@ -71,10 +71,29 @@ public class Veterinario extends Usuario {
                     String vac = sc.nextLine();
                     Vacuna v = new Vacuna(vac, LocalDate.now(), LocalDate.now().plusMonths(12));
                     this.registrarVacuna(paciente.getHistorialMedico(), v);
+
                 } else if (accion.equals("C")) {
-                    System.out.println("Historial médico de " + paciente.getNombre() + ":");
-                    System.out.println("  - Consultas registradas: " + paciente.getHistorialMedico().consultasMedicas.size());
-                    System.out.println("  - Vacunas aplicadas: " + paciente.getHistorialMedico().getVacunas().size());
+                    System.out.println("\n=== Historial Médico de " + paciente.getNombre() + " ===");
+
+                    System.out.println("--- Consultas Registradas ---");
+                    List<ConsultaMedica> consultas = paciente.getHistorialMedico().consultasMedicas;
+                    if (consultas.isEmpty()) {
+                        System.out.println("  No hay diagnósticos previos.");
+                    } else {
+                        for (ConsultaMedica consulta : consultas) {
+                            System.out.println("  - " + consulta.detallesConsulta());
+                        }
+                    }
+
+                    System.out.println("--- Vacunas Aplicadas ---");
+                    List<Vacuna> vacunas = paciente.getHistorialMedico().getVacunas();
+                    if (vacunas.isEmpty()) {
+                        System.out.println("  No hay vacunas registradas.");
+                    } else {
+                        for (Vacuna vacuna : vacunas) {
+                            vacuna.obtenerDetalles();
+                        }
+                    }
                 }
             }
         } while (opcion != 2);

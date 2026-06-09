@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Refugio refugio = new Refugio("PawSity", 2);
+        Refugio refugio = new Refugio("PawSity", 5);
 
         List<SolicitudDeAdopcion> sistemaDeSolicitudes = new ArrayList<>();
 
@@ -42,7 +42,26 @@ public class Main {
 
             if (opcionLogin >= 1 && opcionLogin <= 3) {
                 Usuario usuarioActivo = baseDeDatosUsuarios[opcionLogin - 1];
-                usuarioActivo.redireccionarPanel(scanner, refugio, sistemaDeSolicitudes);
+
+                try {
+                    System.out.println("\n--- INICIO DE SESIÓN ---");
+                    System.out.print("Ingrese su correo: ");
+                    String correoIngresado = scanner.nextLine();
+
+                    System.out.print("Ingrese su contraseña: ");
+                    String passIngresado = scanner.nextLine();
+
+                    if (!usuarioActivo.iniciarSesion(correoIngresado, passIngresado)) {
+                        throw new NullPointerException("Acceso denegado: El correo electro12nico o la contraseña son incorrectos.");
+                    }
+
+                    System.out.println("\nLogin exitoso - Bienvenido(a), " + usuarioActivo.getNombres() + ".");
+                    usuarioActivo.redireccionarPanel(scanner, refugio, sistemaDeSolicitudes);
+
+                } catch (NullPointerException e) {
+                    System.out.println("\n[ERROR DE AUTENTICACION] -> " + e.getMessage());
+                }
+                // --------------------------------------------------
             }
 
         } while (opcionLogin != 4);

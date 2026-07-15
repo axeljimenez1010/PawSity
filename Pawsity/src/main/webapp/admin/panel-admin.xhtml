@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard Administrativo - PawSity Central</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00685f",
+                        "secondary-container": "#fea619",
+                        "background": "#f5faf8"
+                    }
+                }
+            }
+        }
+    </script>
+</h:head>
+
+<h:body styleClass="bg-background min-h-screen font-['Inter'] p-6 selection:bg-[#00685f] selection:text-white">
+    <p:growl id="mensajes" showDetail="true" life="4000"/>
+
+    <main class="max-w-6xl mx-auto space-y-8">
+        <header class="flex justify-between items-center bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div>
+                <h1 class="text-2xl font-bold text-[#00685f] flex items-center gap-2">
+                    <span class="material-symbols-outlined text-3xl">pets</span>
+                    PawSity Central - Gestión de Refugio
+                </h1>
+                <p class="text-sm text-gray-500 mt-0.5">Panel de Administración | Usuario: <strong class="text-gray-700">#{loginBean.usuarioLogueado.nombres}</strong></p>
+            </div>
+            <h:form>
+                <p:commandButton value="Cerrar Sesión" action="#{loginBean.logout()}"
+                                 styleClass="bg-red-50 text-red-600 px-4 py-2 rounded-lg font-medium border border-red-200 hover:bg-red-100 hover:border-red-300 transition-all cursor-pointer shadow-sm"/>
+            </h:form>
+        </header>
+
+        <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div class="border-b border-gray-100 pb-3 mb-5">
+                <h2 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[#00685f]">add_circle</span>
+                    Registrar Nueva Mascota en el Catálogo
+                </h2>
+                <p class="text-xs text-gray-500 mt-0.5">Ingresa los parámetros clínicos y físicos de la mascota rescatada para publicarla en el sistema.</p>
+            </div>
+
+            <h:form id="formIngreso" styleClass="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Nombre de la Mascota</label>
+                    <p:inputText value="#{adminBean.nombre}" required="true" requiredMessage="El nombre es obligatorio"
+                                 styleClass="border rounded-lg p-2.5 text-sm w-full outline-none focus:border-[#00685f] focus:ring-1 focus:ring-[#00685f] transition-all"
+                                 placeholder="Ej. Firulais"/>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Especie</label>
+                    <p:selectOneMenu value="#{adminBean.especie}" styleClass="border rounded-lg p-1.5 text-sm w-full outline-none focus:border-[#00685f]">
+                        <f:selectItem itemLabel="Canino" itemValue="Canino"/>
+                        <f:selectItem itemLabel="Felino" itemValue="Felino"/>
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Edad Estimada (Años)</label>
+                    <p:inputText value="#{adminBean.edad}" required="true" requiredMessage="La edad es obligatoria"
+                                 styleClass="border rounded-lg p-2.5 text-sm w-full outline-none focus:border-[#00685f] focus:ring-1 focus:ring-[#00685f] transition-all"
+                                 placeholder="Ej. 2.5"/>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Tamaño</label>
+                    <p:selectOneMenu value="#{adminBean.tamano}" styleClass="border rounded-lg p-1.5 text-sm w-full outline-none focus:border-[#00685f]">
+                        <f:selectItem itemLabel="Pequeño" itemValue="Pequeño"/>
+                        <f:selectItem itemLabel="Mediano" itemValue="Mediano"/>
+                        <f:selectItem itemLabel="Grande" itemValue="Grande"/>
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Sexo</label>
+                    <p:selectOneMenu value="#{adminBean.sexo}" styleClass="border rounded-lg p-1.5 text-sm w-full outline-none focus:border-[#00685f]">
+                        <f:selectItem itemLabel="Macho" itemValue="Macho"/>
+                        <f:selectItem itemLabel="Hembra" itemValue="Hembra"/>
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-xs font-semibold text-gray-700 uppercase tracking-wider">Color / Pelaje</label>
+                    <p:inputText value="#{adminBean.color}" required="true" requiredMessage="El color es obligatorio"
+                                 styleClass="border rounded-lg p-2.5 text-sm w-full outline-none focus:border-[#00685f] focus:ring-1 focus:ring-[#00685f] transition-all"
+                                 placeholder="Ej. Blanco y Canela"/>
+                </div>
+
+                <div class="md:col-span-3 flex justify-end mt-3 border-t border-gray-100 pt-4">
+                    <p:commandButton value="+ Ingresar al Catálogo" action="#{adminBean.registrarMascota()}"
+                                     update="formIngreso :mensajes"
+                                     styleClass="bg-[#00685f] text-white px-6 py-3 rounded-lg font-semibold shadow-sm hover:bg-[#005049] active:scale-[0.99] transition-all cursor-pointer"/>
+                </div>
+            </h:form>
+        </section>
+
+        <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div class="border-b border-gray-100 pb-3 mb-5 flex justify-between items-center">
+                <div>
+                    <h2 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#fea619]">pending_actions</span>
+                        Solicitudes de Adopción por Revisar
+                    </h2>
+                    <p class="text-xs text-gray-500 mt-0.5">Aprueba o rechaza las peticiones enviadas por los adoptantes desde el catálogo público.</p>
+                </div>
+            </div>
+
+            <h:form id="formSolicitudes">
+                <h:panelGroup rendered="#{empty adminBean.solicitudes}" layout="block" styleClass="text-center py-14 text-gray-400 border-2 border-dashed rounded-xl bg-gray-50/60">
+                    <span class="material-symbols-outlined text-5xl block mb-2 text-gray-300">inbox</span>
+                    <p class="font-semibold text-gray-600 text-base">No hay solicitudes de adopción pendientes</p>
+                    <p class="text-xs text-gray-400 mt-1">Todas las peticiones han sido revisadas y procesadas por el equipo administrativo.</p>
+                </h:panelGroup>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <ui:repeat value="#{adminBean.solicitudes}" var="sol">
+                        <article class="p-5 rounded-xl border border-gray-200 bg-gray-50/80 flex flex-col justify-between shadow-sm hover:shadow transition-shadow relative overflow-hidden">
+                            <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#fea619]"></div>
+
+                            <div class="mb-5 pl-2">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400 block">Solicitante</span>
+                                        <h3 class="font-bold text-gray-800 text-lg">#{sol.adoptante.nombres}</h3>
+                                    </div>
+                                    <span class="bg-yellow-100 text-yellow-800 border border-yellow-200 text-xs px-2.5 py-1 rounded-full font-semibold flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-600 animate-pulse"></span>
+                                        Pendiente
+                                    </span>
+                                </div>
+
+                                <p class="text-sm text-gray-600 mt-3 bg-white p-3 rounded-lg border border-gray-200/80 shadow-2xs">
+                                    Mascota solicitada: <strong class="text-[#00685f] text-base">#{sol.mascota.nombre}</strong> <span class="text-xs text-gray-500 font-medium">(#{sol.mascota.especie})</span>
+                                </p>
+
+                                <div class="mt-3 text-xs text-gray-600 space-y-1.5 bg-white p-3 rounded-lg border border-gray-200/80">
+                                    <p class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[16px] text-gray-400">mail</span>
+                                        <strong>Correo:</strong> #{sol.adoptante.correoElectronico}
+                                    </p>
+                                    <p class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[16px] text-gray-400">phone_iphone</span>
+                                        <strong>Teléfono:</strong> #{sol.adoptante.telefono}
+                                    </p>
+                                    <p class="flex items-center gap-1.5">
+                                        <span class="material-symbols-outlined text-[16px] text-gray-400">location_on</span>
+                                        <strong>Dirección:</strong> #{sol.adoptante.direccion}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-3 border-t border-gray-200/80 pt-3.5 pl-2">
+                                <p:commandButton value="✓ Aprobar" action="#{adminBean.gestionar(sol, true)}"
+                                                 update="formSolicitudes :mensajes"
+                                                 styleClass="flex-1 bg-[#16a34a] text-white py-2 rounded-lg text-sm font-semibold hover:bg-green-700 active:scale-[0.98] transition-all cursor-pointer shadow-2xs"/>
+                                <p:commandButton value="✕ Rechazar" action="#{adminBean.gestionar(sol, false)}"
+                                                 update="formSolicitudes :mensajes"
+                                                 styleClass="flex-1 bg-red-600 text-white py-2 rounded-lg text-sm font-semibold hover:bg-red-700 active:scale-[0.98] transition-all cursor-pointer shadow-2xs"/>
+                            </div>
+                        </article>
+                    </ui:repeat>
+                </div>
+            </h:form>
+        </section>
+    </main>
+</h:body>
+</html>

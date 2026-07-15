@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Catálogo de Adopciones - PawSity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00685f",
+                        "secondary-container": "#fea619",
+                        "background": "#f5faf8"
+                    }
+                }
+            }
+        }
+    </script>
+</h:head>
+
+<h:body styleClass="bg-background min-h-screen font-['Inter'] p-6">
+    <p:growl id="mensajes" showDetail="true" life="4000"/>
+
+    <main class="max-w-6xl mx-auto space-y-6">
+        <header class="flex justify-between items-center bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div>
+                <h1 class="text-2xl font-bold text-[#00685f]">🐾 PawSity - Catálogo de Adopciones</h1>
+                <p class="text-sm text-gray-500">Encuentra a tu nuevo mejor amigo</p>
+            </div>
+            <h:form>
+                <p:commandButton value="Cerrar Sesión" action="#{loginBean.logout()}"
+                                 styleClass="bg-red-50 text-red-600 px-4 py-2 rounded-lg font-medium border border-red-200 hover:bg-red-100 transition-colors cursor-pointer"/>
+            </h:form>
+        </header>
+
+        <h:form id="formFiltro" styleClass="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+            <div class="flex items-center gap-4">
+                <label class="font-semibold text-gray-700 text-sm">Filtrar por Especie:</label>
+                <p:selectOneMenu value="#{adoptanteBean.filtroEspecie}" styleClass="border rounded-lg px-3 py-1 text-sm outline-none">
+                    <f:selectItem itemLabel="Todos" itemValue="todos"/>
+                    <f:selectItem itemLabel="Caninos" itemValue="Canino"/>
+                    <f:selectItem itemLabel="Felinos" itemValue="Felino"/>
+                    <p:ajax event="change" listener="#{adoptanteBean.filtrar()}" update=":formGrid:gridMascotas"/>
+                </p:selectOneMenu>
+            </div>
+        </h:form>
+
+        <h:form id="formGrid">
+            <h:panelGroup id="gridMascotas" layout="block" styleClass="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <h:panelGroup rendered="#{empty adoptanteBean.catalogoFiltrado}" layout="block" styleClass="col-span-3 text-center py-12 text-gray-400">
+                    No se encontraron mascotas disponibles en esta categoría.
+                </h:panelGroup>
+
+                <ui:repeat value="#{adoptanteBean.catalogoFiltrado}" var="mascota">
+                    <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col h-full border border-gray-200">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h2 class="text-2xl font-bold text-gray-800">#{mascota.nombre}</h2>
+                                <span class="bg-[#00685f]/10 text-[#00685f] px-3 py-1 rounded-full text-xs font-semibold">#{mascota.especie}</span>
+                            </div>
+                            <ul class="space-y-2 mb-6 text-gray-600 text-sm flex-grow mt-2">
+                                <li>📅 <strong>Edad:</strong> #{mascota.edad} años</li>
+                                <li>⚥ <strong>Sexo:</strong> #{mascota.sexo}</li>
+                                <li>🎨 <strong>Color:</strong> #{mascota.color}</li>
+                            </ul>
+                            <p:commandButton value="Solicitar Adopción" action="#{adoptanteBean.solicitar(mascota)}"
+                                             update=":formGrid:gridMascotas :mensajes"
+                                             styleClass="w-full bg-[#fea619] text-[#684000] font-bold py-3 rounded-lg hover:bg-[#ffb95f] transition-colors cursor-pointer shadow-sm"/>
+                        </div>
+                    </article>
+                </ui:repeat>
+            </h:panelGroup>
+        </h:form>
+    </main>
+</h:body>
+</html>

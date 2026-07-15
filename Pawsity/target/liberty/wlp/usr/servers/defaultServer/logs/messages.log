@@ -1,0 +1,1300 @@
+********************************************************************************
+product = Open Liberty 26.0.0.7 (wlp-1.0.115.cl260720260702-0043)
+wlp.install.dir = C:/Users/USER/OneDrive/Desktop/Universidad/Ciclo2/POO/U2/Pawsity/target/liberty/wlp/
+java.home = C:\Program Files\Java\jdk-21
+java.version = 21.0.9
+java.runtime = Java(TM) SE Runtime Environment (21.0.9+7-LTS-338)
+os = Windows 11 (10.0; amd64) (es_EC)
+process = 21004@LP-RIV
+Classpath = C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\bin\tools\ws-server.jar
+Java Library path = C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-21\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\Users\USER\AppData\Local\Programs\Python\Python314\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python314\;C:\Users\USER\AppData\Local\Programs\Python\Launcher\;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2026.1\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;.
+********************************************************************************
+[14/7/26, 19:34:21:746 ECT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: El servidor defaultServer se ha lanzado.
+[14/7/26, 19:34:22:915 ECT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: El kernel se ha iniciado después de 1,403 segundos
+[14/7/26, 19:34:22:963 ECT] 00000044 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: La actualización de características se ha iniciado.
+[14/7/26, 19:34:24:388 ECT] 00000038 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: El servicio de seguridad se está iniciando...
+[14/7/26, 19:34:24:623 ECT] 0000003a com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Supervisando aplicaciones de dropins.
+[14/7/26, 19:34:25:119 ECT] 00000039 com.ibm.ws.cache.ServerCache                                 I DYNA1001I: La instancia de memoria caché dinámica de WebSphere con nombre baseCache se ha inicializado correctamente.
+[14/7/26, 19:34:25:127 ECT] 00000039 com.ibm.ws.cache.ServerCache                                 I DYNA1071I: Se está utilizando el proveedor de memoria caché default.
+[14/7/26, 19:34:25:130 ECT] 00000039 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: La memoria caché dinámica (memoria caché de objeto) se ha inicializado correctamente.
+[14/7/26, 19:34:25:393 ECT] 00000039 org.jboss.weld.Version                                       I WELD-000900: 5.1.1 (SP2)
+[14/7/26, 19:34:25:664 ECT] 00000040 com.ibm.ws.ssl.config.WSKeyStore                             A CWPKI0820A: El almacén de claves predeterminado se ha creado con la variable de entorno 'keystore_password'.
+[14/7/26, 19:34:25:677 ECT] 00000040 com.ibm.ws.ssl.config.WSKeyStore                             I CWPKI0802I: Creando el certificado SSL. Esto puede tardar unos segundos.
+[14/7/26, 19:34:25:734 ECT] 0000004a com.ibm.ws.security.token.ltpa.LTPAKeyInfoManager            I CWWKS4103I: Creando las claves LTPA. Esto puede tardar unos segundos.
+[14/7/26, 19:34:25:846 ECT] 00000038 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: Se ha activado el plugin de autenticación colectivo con el nombre de clase NullCollectiveAuthenticationPlugin. 
+[14/7/26, 19:34:26:025 ECT] 0000004a com.ibm.ws.security.token.ltpa.LTPAKeyInfoManager            A CWWKS4104A: Las claves LTPA se han creado en 0,291 segundos. Archivo de claves LTPA: C:/Users/USER/OneDrive/Desktop/Universidad/Ciclo2/POO/U2/Pawsity/target/liberty/wlp/usr/servers/defaultServer/resources/security/ltpa.keys
+[14/7/26, 19:34:26:032 ECT] 0000004a com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: La configuración de LTPA estará lista después de 0,298 segundos.
+[14/7/26, 19:34:26:345 ECT] 00000038 com.ibm.ws.security.jaspi.AuthConfigFactoryWrapper           I CWWKS1655I: Se está utilizando la clase AuthConfigFactory com.ibm.ws.security.jaspi.ProviderRegistry de JASPIC (Java Authentication SPI for Containers) predeterminada porque la propiedad de seguridad Java authconfigprovider.factory no está establecida. 
+[14/7/26, 19:34:26:700 ECT] 00000040 com.ibm.ws.ssl.config.WSKeyStore                             A CWPKI0803A: El certificado SSL se ha creado en 1,022 segundos. Archivo de claves SSL: C:/Users/USER/OneDrive/Desktop/Universidad/Ciclo2/POO/U2/Pawsity/target/liberty/wlp/usr/servers/defaultServer/resources/security/key.p12
+[14/7/26, 19:34:26:700 ECT] 00000040 com.ibm.ws.ssl.config.WSKeyStore                             I Successfully loaded default keystore: C:/Users/USER/OneDrive/Desktop/Universidad/Ciclo2/POO/U2/Pawsity/target/liberty/wlp/usr/servers/defaultServer/resources/security/key.p12 of type: PKCS12
+[14/7/26, 19:34:26:826 ECT] 00000046 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando la aplicación Pawsity.
+[14/7/26, 19:34:26:828 ECT] 00000046 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: La aplicación Pawsity está utilizando la definición de aplicación dinámica en la ubicación C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\apps\Pawsity.war.xml.
+[14/7/26, 19:34:29:095 ECT] 00000046 org.jboss.weld.Event                                         I WELD-000411: Observer method [BackedAnnotatedMethod] org.apache.myfaces.config.annotation.CdiAnnotationProviderExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+[14/7/26, 19:34:29:150 ECT] 00000046 org.hibernate.validator.internal.util.Version                I HV000001: Hibernate Validator 7.0.4.Final
+[14/7/26, 19:34:30:096 ECT] 00000046 com.ibm.ws.session.WASSessionCore                            I SESN8501I: El gestor de sesiones no ha encontrado una ubicación de almacenamiento persistente; los objetos HttpSession se almacenarán en la memoria del servidor de aplicaciones local.
+[14/7/26, 19:34:30:124 ECT] 00000046 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Cargando módulo web: Pawsity.
+[14/7/26, 19:34:30:128 ECT] 00000046 com.ibm.ws.webcontainer                                      I SRVE0250I: El módulo web Pawsity se ha enlazado con default_host.
+[14/7/26, 19:34:30:130 ECT] 00000046 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicación web disponible (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:34:30:189 ECT] 00000049 com.ibm.ws.session.WASSessionCore                            I SESN0176I: Se creará un nuevo contexto de sesión para la clave de aplicación default_host/Pawsity
+[14/7/26, 19:34:30:215 ECT] 00000049 com.ibm.ws.util                                              I SESN0172I: El gestor de sesiones está utilizando la implementación de SecureRandom Java por omisión para la generación del ID de sesión.
+[14/7/26, 19:34:30:397 ECT] 00000049 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: La memoria caché dinámica (memoria caché de objeto) se ha inicializado correctamente.
+[14/7/26, 19:34:30:486 ECT] 00000047 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:34:31:293 ECT] 00000049 org.apache.myfaces.webapp.MyFacesContainerInitializer        I Using io.openliberty.faces40.internal.ee.WASMyFacesContainerInitializer
+[14/7/26, 19:34:31:301 ECT] 00000049 org.apache.myfaces.webapp.MyFacesContainerInitializer        I Added FacesServlet with mappings=[/faces/*, *.jsf, *.faces, *.xhtml]
+[14/7/26, 19:34:31:301 ECT] 00000049 enliberty.faces40.internal.ee.WASMyFacesContainerInitializer I Added StartupServletContextListener to the servlet context
+[14/7/26, 19:34:31:470 ECT] 00000049 org.apache.myfaces.config.DefaultFacesConfigurationProvider  I Found jakarta.faces.application.ApplicationFactory factory implementation: io.openliberty.faces40.internal.config.WASApplicationFactoryImpl
+[14/7/26, 19:34:31:748 ECT] 00000049 org.apache.myfaces.util.ExternalSpecifications               I MyFaces Core CDI support enabled
+[14/7/26, 19:34:31:767 ECT] 00000049 org.apache.myfaces.util.ExternalSpecifications               I MyFaces Core Bean Validation support enabled
+[14/7/26, 19:34:31:901 ECT] 00000049 org.apache.myfaces.application.ApplicationImpl               I Couldn't discover the current project stage, using Production
+[14/7/26, 19:34:31:924 ECT] 00000049 org.primefaces.webapp.PostConstructApplicationEventListener  I Running on PrimeFaces 15.0.0
+[14/7/26, 19:34:31:933 ECT] 00000049 org.apache.myfaces.view.facelets.ViewPoolProcessor           I org.apache.myfaces.CACHE_EL_EXPRESSIONS web config parameter is set to "noCache". To enable view pooling this param must be set to "alwaysRecompile". View Pooling disabled.
+[14/7/26, 19:34:31:940 ECT] 00000049 org.apache.myfaces.webapp.FacesInitializerImpl               I MyFaces Core has started, it took [617] ms.
+[14/7/26, 19:34:31:946 ECT] 00000049 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: La aplicación Pawsity se ha iniciado en 5,119 segundos.
+[14/7/26, 19:34:31:977 ECT] 00000044 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: El canal TCP defaultHttpEndpoint se ha iniciado y ahora está a la escucha de solicitudes en el host *  (IPv6) puerto 9080.
+[14/7/26, 19:34:31:982 ECT] 00000044 com.ibm.ws.tcpchannel.internal.TCPPort                       I CWWKO0219I: El canal TCP defaultHttpEndpoint-ssl se ha iniciado y ahora está a la escucha de solicitudes en el host *  (IPv6) puerto 9443.
+[14/7/26, 19:34:32:014 ECT] 00000044 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: El servidor ha instalado las características siguientes: [appAuthentication-3.0, appSecurity-5.0, beanValidation-3.0, cdi-4.0, concurrent-3.0, distributedMap-1.0, enterpriseBeansLite-4.0, expressionLanguage-5.0, faces-4.0, jdbc-4.2, jndi-1.0, jsonb-3.0, jsonp-2.1, managedBeans-2.0, pages-3.1, persistence-3.1, persistenceContainer-3.1, restfulWS-3.1, restfulWSClient-3.1, servlet-6.0, ssl-1.0, transportSecurity-1.0, webProfile-10.0, websocket-2.1].
+[14/7/26, 19:34:32:015 ECT] 00000044 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: La actualización de características se ha completado en 9,102 segundos.
+[14/7/26, 19:34:32:015 ECT] 00000044 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: El servidor defaultServer está preparado para ejecutar un planeta más inteligente. El servidor defaultServer se ha iniciado en 10,504 segundos.
+[14/7/26, 19:34:40:565 ECT] 00000044 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [Pawsity] [/Pawsity] [FacesServlet]: Inicialización satisfactoria.
+[14/7/26, 19:34:40:634 ECT] 00000044 org.apache.myfaces.util.ExternalSpecifications               I MyFaces Core Servlet 6.0 support enabled
+[14/7/26, 19:34:40:714 ECT] 00000044 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Mensaje de servlet - [Pawsity]:.No state saving method defined, assuming default server state saving
+[14/7/26, 19:34:40:723 ECT] 00000044 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.faces.application.ViewExpiredException occurred while processing RESTORE_VIEW [Location=]
+[14/7/26, 19:34:41:832 ECT] 0000009f org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.faces.application.ViewExpiredException occurred while processing RESTORE_VIEW [Location=]
+[14/7/26, 19:34:44:682 ECT] 00000095 org.apache.myfaces.el.ELResolverBuilder                      I Chain of EL resolvers: [org.apache.myfaces.el.resolver.implicitobject.ImplicitObjectResolver@539b44c6, org.jboss.weld.module.web.el.WeldELResolver@7a02e83e, org.apache.myfaces.el.resolver.CompositeComponentELResolver@29f6f873, org.apache.myfaces.el.resolver.FlashELResolver@5948b888, org.apache.myfaces.el.resolver.ResourceResolver@50fc7a13, jakarta.el.ResourceBundleELResolver@3dd22b2a, org.apache.myfaces.el.resolver.ResourceBundleResolver@23f97983, org.apache.myfaces.el.resolver.ImportConstantsELResolver@3f69098c, org.apache.el.stream.StreamELResolverImpl@cf6c090, jakarta.el.StaticFieldELResolver@20d1215f, jakarta.el.MapELResolver@480c71a7, jakarta.el.ListELResolver@3f5e2443, jakarta.el.ArrayELResolver@5968178, jakarta.el.BeanELResolver@2ce4934c]
+[14/7/26, 19:34:53:176 ECT] 00000088 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:34:53:341 ECT] 00000088 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 19:35:25:602 ECT] 0000009a SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:35:25:602 ECT] 0000009a SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 19:35:42:122 ECT] 000000ca SystemOut                                                    O El catálogo ha sido actualizado. Se ha registrado a: wfsaf
+[14/7/26, 19:35:52:392 ECT] 000000f6 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:35:52:392 ECT] 000000f6 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Carlos'
+[14/7/26, 19:36:11:687 ECT] 000000ca SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:36:11:687 ECT] 000000ca SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 19:36:21:613 ECT] 000000a2 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:36:21:614 ECT] 000000a2 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 19:36:21:696 ECT] 00000166 org.apache.myfaces.context.ExceptionHandlerImpl              E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [correoElectronico] en el tipo [ec.edu.unl.pawsity.dominio.usuarios.Adoptante]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:36:21:703 ECT] 00000166 com.ibm.ws.webcontainer.srt                                  W SRVE8115W: AVISO: No se puede establecer el estado. Ya se ha confirmado la respuesta.
+[14/7/26, 19:36:21:863 ECT] 00000166 com.ibm.ws.webcontainer.util.ApplicationErrorUtils           E SRVE0777E: Excepción lanzada por la clase de aplicación 'jakarta.faces.webapp.FacesServlet.service:255'
+jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [correoElectronico] en el tipo [ec.edu.unl.pawsity.dominio.usuarios.Adoptante]
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.myfaces.view.facelets.el.ContextAwarePropertyNotFoundException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [correoElectronico] en el tipo [ec.edu.unl.pawsity.dominio.usuarios.Adoptante]
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:104)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	... 30 more
+Caused by: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [correoElectronico] en el tipo [ec.edu.unl.pawsity.dominio.usuarios.Adoptante]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	... 48 more
+
+[14/7/26, 19:36:23:075 ECT] 00000166 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [correoElectronico] en el tipo [ec.edu.unl.pawsity.dominio.usuarios.Adoptante] com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter 82" en ffdc_26.07.14_19.36.21.0.log
+[14/7/26, 19:36:23:265 ECT] 00000166 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [correoElectronico] en el tipo [ec.edu.unl.pawsity.dominio.usuarios.Adoptante] com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter 144" en ffdc_26.07.14_19.36.23.0.log
+[14/7/26, 19:36:23:268 ECT] 00000166 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [correoElectronico] en el tipo [ec.edu.unl.pawsity.dominio.usuarios.Adoptante] com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1064" en ffdc_26.07.14_19.36.23.1.log
+[14/7/26, 19:36:23:368 ECT] 00000166 com.ibm.ws.webcontainer.srt                                  W SRVE8115W: AVISO: No se puede establecer el estado. Ya se ha confirmado la respuesta.
+[14/7/26, 19:36:23:400 ECT] 00000166 com.ibm.ws.webcontainer.srt                                  W SRVE8094W: AVISO: No se puede establecer la cabecera. Ya se confirmado la respuesta.  Seguimiento de la pila de intento errante para establecer la: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2311)
+        at [internal classes].(Unknown Source)
+
+[14/7/26, 19:40:20:323 ECT] 00000380 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicación web eliminada (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:40:20:323 ECT] 00000380 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [Pawsity] [/Pawsity] [FacesServlet]: Destrucción satisfactoria.
+[14/7/26, 19:40:20:337 ECT] 00000380 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: La aplicación Pawsity se ha detenido correctamente.
+[14/7/26, 19:40:20:353 ECT] 00000380 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando la aplicación Pawsity.
+[14/7/26, 19:40:20:353 ECT] 00000380 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: La aplicación Pawsity está utilizando la definición de aplicación dinámica en la ubicación C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\apps\Pawsity.war.xml.
+[14/7/26, 19:40:20:450 ECT] 00000381 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:40:21:687 ECT] 00000380 org.jboss.weld.Event                                         I WELD-000411: Observer method [BackedAnnotatedMethod] org.apache.myfaces.config.annotation.CdiAnnotationProviderExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+[14/7/26, 19:40:22:283 ECT] 00000380 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Cargando módulo web: Pawsity.
+[14/7/26, 19:40:22:283 ECT] 00000380 com.ibm.ws.webcontainer                                      I SRVE0250I: El módulo web Pawsity se ha enlazado con default_host.
+[14/7/26, 19:40:22:283 ECT] 00000380 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicación web disponible (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:40:22:284 ECT] 0000035e com.ibm.ws.session.WASSessionCore                            I SESN0176I: Se creará un nuevo contexto de sesión para la clave de aplicación default_host/Pawsity
+[14/7/26, 19:40:22:284 ECT] 0000035e com.ibm.ws.util                                              I SESN0172I: El gestor de sesiones está utilizando la implementación de SecureRandom Java por omisión para la generación del ID de sesión.
+[14/7/26, 19:40:22:455 ECT] 00000380 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:40:25:439 ECT] 0000035e org.apache.myfaces.webapp.MyFacesContainerInitializer        I Using io.openliberty.faces40.internal.ee.WASMyFacesContainerInitializer
+[14/7/26, 19:40:25:441 ECT] 0000035e org.apache.myfaces.webapp.MyFacesContainerInitializer        I Added FacesServlet with mappings=[/faces/*, *.jsf, *.faces, *.xhtml]
+[14/7/26, 19:40:25:441 ECT] 0000035e enliberty.faces40.internal.ee.WASMyFacesContainerInitializer I Added StartupServletContextListener to the servlet context
+[14/7/26, 19:40:25:471 ECT] 0000035e org.apache.myfaces.config.DefaultFacesConfigurationProvider  I Found jakarta.faces.application.ApplicationFactory factory implementation: io.openliberty.faces40.internal.config.WASApplicationFactoryImpl
+[14/7/26, 19:40:25:809 ECT] 0000035e org.apache.myfaces.application.ApplicationImpl               I Couldn't discover the current project stage, using Production
+[14/7/26, 19:40:25:818 ECT] 0000035e org.primefaces.webapp.PostConstructApplicationEventListener  I Running on PrimeFaces 15.0.0
+[14/7/26, 19:40:25:820 ECT] 0000035e org.apache.myfaces.view.facelets.ViewPoolProcessor           I org.apache.myfaces.CACHE_EL_EXPRESSIONS web config parameter is set to "noCache". To enable view pooling this param must be set to "alwaysRecompile". View Pooling disabled.
+[14/7/26, 19:40:25:821 ECT] 0000035e org.apache.myfaces.webapp.FacesInitializerImpl               I MyFaces Core has started, it took [376] ms.
+[14/7/26, 19:40:25:822 ECT] 0000035e com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: La aplicación Pawsity se ha actualizado en 5,469 segundos.
+[14/7/26, 19:40:36:639 ECT] 000000f6 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicación web eliminada (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:40:36:649 ECT] 000000f6 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: La aplicación Pawsity se ha detenido correctamente.
+[14/7/26, 19:40:36:656 ECT] 000000f6 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando la aplicación Pawsity.
+[14/7/26, 19:40:36:656 ECT] 000000f6 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: La aplicación Pawsity está utilizando la definición de aplicación dinámica en la ubicación C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\apps\Pawsity.war.xml.
+[14/7/26, 19:40:36:701 ECT] 00000093 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:40:37:235 ECT] 000000f6 org.jboss.weld.Event                                         I WELD-000411: Observer method [BackedAnnotatedMethod] org.apache.myfaces.config.annotation.CdiAnnotationProviderExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+[14/7/26, 19:40:37:364 ECT] 000000f6 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Cargando módulo web: Pawsity.
+[14/7/26, 19:40:37:364 ECT] 000000f6 com.ibm.ws.webcontainer                                      I SRVE0250I: El módulo web Pawsity se ha enlazado con default_host.
+[14/7/26, 19:40:37:365 ECT] 000000f6 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicación web disponible (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:40:37:366 ECT] 00000093 com.ibm.ws.session.WASSessionCore                            I SESN0176I: Se creará un nuevo contexto de sesión para la clave de aplicación default_host/Pawsity
+[14/7/26, 19:40:37:367 ECT] 00000093 com.ibm.ws.util                                              I SESN0172I: El gestor de sesiones está utilizando la implementación de SecureRandom Java por omisión para la generación del ID de sesión.
+[14/7/26, 19:40:37:398 ECT] 000000f6 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:40:37:869 ECT] 00000093 org.apache.myfaces.webapp.MyFacesContainerInitializer        I Using io.openliberty.faces40.internal.ee.WASMyFacesContainerInitializer
+[14/7/26, 19:40:37:870 ECT] 00000093 org.apache.myfaces.webapp.MyFacesContainerInitializer        I Added FacesServlet with mappings=[/faces/*, *.jsf, *.faces, *.xhtml]
+[14/7/26, 19:40:37:870 ECT] 00000093 enliberty.faces40.internal.ee.WASMyFacesContainerInitializer I Added StartupServletContextListener to the servlet context
+[14/7/26, 19:40:37:881 ECT] 00000093 org.apache.myfaces.config.DefaultFacesConfigurationProvider  I Found jakarta.faces.application.ApplicationFactory factory implementation: io.openliberty.faces40.internal.config.WASApplicationFactoryImpl
+[14/7/26, 19:40:37:960 ECT] 00000093 org.apache.myfaces.application.ApplicationImpl               I Couldn't discover the current project stage, using Production
+[14/7/26, 19:40:37:963 ECT] 00000093 org.primefaces.webapp.PostConstructApplicationEventListener  I Running on PrimeFaces 15.0.0
+[14/7/26, 19:40:37:964 ECT] 00000093 org.apache.myfaces.view.facelets.ViewPoolProcessor           I org.apache.myfaces.CACHE_EL_EXPRESSIONS web config parameter is set to "noCache". To enable view pooling this param must be set to "alwaysRecompile". View Pooling disabled.
+[14/7/26, 19:40:37:964 ECT] 00000093 org.apache.myfaces.webapp.FacesInitializerImpl               I MyFaces Core has started, it took [91] ms.
+[14/7/26, 19:40:37:966 ECT] 00000093 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: La aplicación Pawsity se ha actualizado en 1,309 segundos.
+[14/7/26, 19:40:43:343 ECT] 000003a0 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [Pawsity] [/Pawsity] [FacesServlet]: Inicialización satisfactoria.
+[14/7/26, 19:40:43:482 ECT] 000003a0 org.apache.myfaces.el.ELResolverBuilder                      I Chain of EL resolvers: [org.apache.myfaces.el.resolver.implicitobject.ImplicitObjectResolver@78073f90, org.jboss.weld.module.web.el.WeldELResolver@28660e22, org.apache.myfaces.el.resolver.CompositeComponentELResolver@e6838bd, org.apache.myfaces.el.resolver.FlashELResolver@178cee39, org.apache.myfaces.el.resolver.ResourceResolver@56b6a8e7, jakarta.el.ResourceBundleELResolver@4eb9bb0d, org.apache.myfaces.el.resolver.ResourceBundleResolver@15bdfb7, org.apache.myfaces.el.resolver.ImportConstantsELResolver@71d61483, org.apache.el.stream.StreamELResolverImpl@12446bce, jakarta.el.StaticFieldELResolver@1126cb58, jakarta.el.MapELResolver@4edf18ac, jakarta.el.ListELResolver@fec7ff8, jakarta.el.ArrayELResolver@3e476fd0, jakarta.el.BeanELResolver@199c1f4b]
+[14/7/26, 19:40:43:493 ECT] 000003a0 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Mensaje de servlet - [Pawsity]:.No state saving method defined, assuming default server state saving
+[14/7/26, 19:40:55:676 ECT] 000003e9 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:40:55:677 ECT] 000003e9 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Carlos'
+[14/7/26, 19:41:02:517 ECT] 000003c7 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:41:02:518 ECT] 000003c7 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 19:41:12:645 ECT] 000000f1 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:41:12:645 ECT] 000000f1 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 19:41:20:278 ECT] 000002fd SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:41:20:278 ECT] 000002fd SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Carlos'
+[14/7/26, 19:41:26:533 ECT] 000001bd SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:41:26:533 ECT] 000001bd SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 19:41:28:722 ECT] 0000024e SystemOut                                                    O El trámite ha finalizado. La mascota ha sido adoptada oficialmente.
+[14/7/26, 19:44:59:590 ECT] 00000172 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:44:59:591 ECT] 00000172 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 19:45:51:683 ECT] 0000065e SystemOut                                                    O El catálogo ha sido actualizado. Se ha registrado a: Boyaca
+[14/7/26, 19:46:04:292 ECT] 000002e5 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:46:04:294 ECT] 000002e5 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Carlos'
+[14/7/26, 19:46:28:557 ECT] 00000099 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:46:28:558 ECT] 00000099 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 19:46:40:852 ECT] 000005e2 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:46:40:853 ECT] 000005e2 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 19:46:55:312 ECT] 00000599 SystemOut                                                    O El trámite ha finalizado. La mascota ha sido adoptada oficialmente.
+[14/7/26, 19:47:03:742 ECT] 000005dc SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:47:03:743 ECT] 000005dc SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 19:47:15:255 ECT] 000004ae SystemOut                                                    O El expediente médico de Luna ha sido actualizado.
+[14/7/26, 19:47:15:291 ECT] 000004ae org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.processRenderComponent(PartialViewContextImpl.java:768)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.visit(PartialViewContextImpl.java:729)
+	at org.apache.myfaces.component.visit.PartialVisitContext.invokeVisitCallback(PartialVisitContext.java:226)
+	at jakarta.faces.component.UIForm.visitTree(UIForm.java:312)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartialRendering(PartialViewContextImpl.java:477)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartial(PartialViewContextImpl.java:396)
+	at org.primefaces.context.PrimePartialViewContext.processPartial(PrimePartialViewContext.java:61)
+	at jakarta.faces.component.UIViewRoot.encodeChildren(UIViewRoot.java:575)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:47:15:304 ECT] 000004ae rg.apache.myfaces.context.servlet.ServletExternalContextImpl E Cannot set content type. Response already committed
+[14/7/26, 19:47:15:305 ECT] 000004ae com.ibm.ws.webcontainer.srt                                  W SRVE8094W: AVISO: No se puede establecer la cabecera. Ya se confirmado la respuesta.  Seguimiento de la pila de intento errante para establecer la: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2311)
+        at [internal classes].(Unknown Source)
+
+[14/7/26, 19:47:35:504 ECT] 0000074b SystemOut                                                    O Vacuna registrada correctamente en el sistema.
+[14/7/26, 19:47:35:512 ECT] 0000074b org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.processRenderComponent(PartialViewContextImpl.java:768)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.visit(PartialViewContextImpl.java:729)
+	at org.apache.myfaces.component.visit.PartialVisitContext.invokeVisitCallback(PartialVisitContext.java:226)
+	at jakarta.faces.component.UIForm.visitTree(UIForm.java:312)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartialRendering(PartialViewContextImpl.java:477)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartial(PartialViewContextImpl.java:396)
+	at org.primefaces.context.PrimePartialViewContext.processPartial(PrimePartialViewContext.java:61)
+	at jakarta.faces.component.UIViewRoot.encodeChildren(UIViewRoot.java:575)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:47:35:517 ECT] 0000074b rg.apache.myfaces.context.servlet.ServletExternalContextImpl E Cannot set content type. Response already committed
+[14/7/26, 19:48:39:835 ECT] 00000574 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.processRenderComponent(PartialViewContextImpl.java:768)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.visit(PartialViewContextImpl.java:729)
+	at org.apache.myfaces.component.visit.PartialVisitContext.invokeVisitCallback(PartialVisitContext.java:226)
+	at jakarta.faces.component.UIForm.visitTree(UIForm.java:312)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartialRendering(PartialViewContextImpl.java:477)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartial(PartialViewContextImpl.java:396)
+	at org.primefaces.context.PrimePartialViewContext.processPartial(PrimePartialViewContext.java:61)
+	at jakarta.faces.component.UIViewRoot.encodeChildren(UIViewRoot.java:575)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:48:39:838 ECT] 00000574 rg.apache.myfaces.context.servlet.ServletExternalContextImpl E Cannot set content type. Response already committed
+[14/7/26, 19:48:46:089 ECT] 0000075b org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.processRenderComponent(PartialViewContextImpl.java:768)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.visit(PartialViewContextImpl.java:729)
+	at org.apache.myfaces.component.visit.PartialVisitContext.invokeVisitCallback(PartialVisitContext.java:226)
+	at jakarta.faces.component.UIForm.visitTree(UIForm.java:312)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartialRendering(PartialViewContextImpl.java:477)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartial(PartialViewContextImpl.java:396)
+	at org.primefaces.context.PrimePartialViewContext.processPartial(PrimePartialViewContext.java:61)
+	at jakarta.faces.component.UIViewRoot.encodeChildren(UIViewRoot.java:575)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:48:46:092 ECT] 0000075b rg.apache.myfaces.context.servlet.ServletExternalContextImpl E Cannot set content type. Response already committed
+[14/7/26, 19:48:50:625 ECT] 000007fe org.apache.myfaces.context.ExceptionHandlerImpl              E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:48:50:629 ECT] 000007fe com.ibm.ws.webcontainer.srt                                  W SRVE8115W: AVISO: No se puede establecer el estado. Ya se ha confirmado la respuesta.
+[14/7/26, 19:48:50:631 ECT] 000007fe com.ibm.ws.webcontainer.util.ApplicationErrorUtils           E SRVE0777E: Excepción lanzada por la clase de aplicación 'jakarta.faces.webapp.FacesServlet.service:255'
+jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.myfaces.view.facelets.el.ContextAwarePropertyNotFoundException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:104)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextComposite.writeText(ELText.java:137)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	... 30 more
+Caused by: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	... 52 more
+
+[14/7/26, 19:48:50:966 ECT] 000007fe com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica] com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter 82" en ffdc_26.07.14_19.48.50.0.log
+[14/7/26, 19:48:51:057 ECT] 000007fe com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica] com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter 144" en ffdc_26.07.14_19.48.50.1.log
+[14/7/26, 19:48:51:072 ECT] 000007fe com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [fechaDiagnostico] en el tipo [ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica] com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1064" en ffdc_26.07.14_19.48.51.0.log
+[14/7/26, 19:48:51:074 ECT] 000007fe com.ibm.ws.webcontainer.srt                                  W SRVE8115W: AVISO: No se puede establecer el estado. Ya se ha confirmado la respuesta.
+[14/7/26, 19:51:11:627 ECT] 00000868 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicación web eliminada (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:51:11:628 ECT] 00000868 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [Pawsity] [/Pawsity] [FacesServlet]: Destrucción satisfactoria.
+[14/7/26, 19:51:11:636 ECT] 00000868 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: La aplicación Pawsity se ha detenido correctamente.
+[14/7/26, 19:51:11:642 ECT] 00000868 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando la aplicación Pawsity.
+[14/7/26, 19:51:11:644 ECT] 00000868 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: La aplicación Pawsity está utilizando la definición de aplicación dinámica en la ubicación C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\apps\Pawsity.war.xml.
+[14/7/26, 19:51:11:753 ECT] 000005e2 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:51:13:002 ECT] 00000868 org.jboss.weld.Event                                         I WELD-000411: Observer method [BackedAnnotatedMethod] org.apache.myfaces.config.annotation.CdiAnnotationProviderExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+[14/7/26, 19:51:14:899 ECT] 00000868 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Cargando módulo web: Pawsity.
+[14/7/26, 19:51:14:901 ECT] 00000868 com.ibm.ws.webcontainer                                      I SRVE0250I: El módulo web Pawsity se ha enlazado con default_host.
+[14/7/26, 19:51:14:901 ECT] 00000868 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicación web disponible (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:51:14:902 ECT] 0000075d com.ibm.ws.session.WASSessionCore                            I SESN0176I: Se creará un nuevo contexto de sesión para la clave de aplicación default_host/Pawsity
+[14/7/26, 19:51:14:903 ECT] 0000075d com.ibm.ws.util                                              I SESN0172I: El gestor de sesiones está utilizando la implementación de SecureRandom Java por omisión para la generación del ID de sesión.
+[14/7/26, 19:51:15:444 ECT] 00000868 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:51:17:394 ECT] 0000075d org.apache.myfaces.webapp.MyFacesContainerInitializer        I Using io.openliberty.faces40.internal.ee.WASMyFacesContainerInitializer
+[14/7/26, 19:51:17:395 ECT] 0000075d org.apache.myfaces.webapp.MyFacesContainerInitializer        I Added FacesServlet with mappings=[/faces/*, *.jsf, *.faces, *.xhtml]
+[14/7/26, 19:51:17:395 ECT] 0000075d enliberty.faces40.internal.ee.WASMyFacesContainerInitializer I Added StartupServletContextListener to the servlet context
+[14/7/26, 19:51:17:407 ECT] 0000075d org.apache.myfaces.config.DefaultFacesConfigurationProvider  I Found jakarta.faces.application.ApplicationFactory factory implementation: io.openliberty.faces40.internal.config.WASApplicationFactoryImpl
+[14/7/26, 19:51:17:503 ECT] 0000075d org.apache.myfaces.application.ApplicationImpl               I Couldn't discover the current project stage, using Production
+[14/7/26, 19:51:17:506 ECT] 0000075d org.primefaces.webapp.PostConstructApplicationEventListener  I Running on PrimeFaces 15.0.0
+[14/7/26, 19:51:17:507 ECT] 0000075d org.apache.myfaces.view.facelets.ViewPoolProcessor           I org.apache.myfaces.CACHE_EL_EXPRESSIONS web config parameter is set to "noCache". To enable view pooling this param must be set to "alwaysRecompile". View Pooling disabled.
+[14/7/26, 19:51:17:508 ECT] 0000075d org.apache.myfaces.webapp.FacesInitializerImpl               I MyFaces Core has started, it took [111] ms.
+[14/7/26, 19:51:17:511 ECT] 0000075d com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: La aplicación Pawsity se ha actualizado en 5,868 segundos.
+[14/7/26, 19:52:00:319 ECT] 0000095e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicación web eliminada (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:52:00:330 ECT] 0000095e com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: La aplicación Pawsity se ha detenido correctamente.
+[14/7/26, 19:52:00:338 ECT] 0000095e com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando la aplicación Pawsity.
+[14/7/26, 19:52:00:340 ECT] 0000095e bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: La aplicación Pawsity está utilizando la definición de aplicación dinámica en la ubicación C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\apps\Pawsity.war.xml.
+[14/7/26, 19:52:00:362 ECT] 0000097b com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:52:00:957 ECT] 0000095e org.jboss.weld.Event                                         I WELD-000411: Observer method [BackedAnnotatedMethod] org.apache.myfaces.config.annotation.CdiAnnotationProviderExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+[14/7/26, 19:52:01:116 ECT] 0000095e com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Cargando módulo web: Pawsity.
+[14/7/26, 19:52:01:117 ECT] 0000095e com.ibm.ws.webcontainer                                      I SRVE0250I: El módulo web Pawsity se ha enlazado con default_host.
+[14/7/26, 19:52:01:117 ECT] 0000095e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicación web disponible (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:52:01:119 ECT] 0000097b com.ibm.ws.session.WASSessionCore                            I SESN0176I: Se creará un nuevo contexto de sesión para la clave de aplicación default_host/Pawsity
+[14/7/26, 19:52:01:120 ECT] 0000097b com.ibm.ws.util                                              I SESN0172I: El gestor de sesiones está utilizando la implementación de SecureRandom Java por omisión para la generación del ID de sesión.
+[14/7/26, 19:52:01:158 ECT] 0000075d com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:52:01:622 ECT] 0000097b org.apache.myfaces.webapp.MyFacesContainerInitializer        I Using io.openliberty.faces40.internal.ee.WASMyFacesContainerInitializer
+[14/7/26, 19:52:01:622 ECT] 0000097b org.apache.myfaces.webapp.MyFacesContainerInitializer        I Added FacesServlet with mappings=[/faces/*, *.jsf, *.faces, *.xhtml]
+[14/7/26, 19:52:01:623 ECT] 0000097b enliberty.faces40.internal.ee.WASMyFacesContainerInitializer I Added StartupServletContextListener to the servlet context
+[14/7/26, 19:52:01:631 ECT] 0000097b org.apache.myfaces.config.DefaultFacesConfigurationProvider  I Found jakarta.faces.application.ApplicationFactory factory implementation: io.openliberty.faces40.internal.config.WASApplicationFactoryImpl
+[14/7/26, 19:52:01:784 ECT] 0000097b org.apache.myfaces.application.ApplicationImpl               I Couldn't discover the current project stage, using Production
+[14/7/26, 19:52:01:787 ECT] 0000097b org.primefaces.webapp.PostConstructApplicationEventListener  I Running on PrimeFaces 15.0.0
+[14/7/26, 19:52:01:787 ECT] 0000097b org.apache.myfaces.view.facelets.ViewPoolProcessor           I org.apache.myfaces.CACHE_EL_EXPRESSIONS web config parameter is set to "noCache". To enable view pooling this param must be set to "alwaysRecompile". View Pooling disabled.
+[14/7/26, 19:52:01:788 ECT] 0000097b org.apache.myfaces.webapp.FacesInitializerImpl               I MyFaces Core has started, it took [164] ms.
+[14/7/26, 19:52:01:789 ECT] 0000097b com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: La aplicación Pawsity se ha actualizado en 1,450 segundos.
+[14/7/26, 19:52:07:599 ECT] 000009d5 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [Pawsity] [/Pawsity] [FacesServlet]: Inicialización satisfactoria.
+[14/7/26, 19:52:07:720 ECT] 000009d5 org.apache.myfaces.el.ELResolverBuilder                      I Chain of EL resolvers: [org.apache.myfaces.el.resolver.implicitobject.ImplicitObjectResolver@693467d1, org.jboss.weld.module.web.el.WeldELResolver@32ed3d2d, org.apache.myfaces.el.resolver.CompositeComponentELResolver@7d6ed0fb, org.apache.myfaces.el.resolver.FlashELResolver@46fc8ee1, org.apache.myfaces.el.resolver.ResourceResolver@c3c7300, jakarta.el.ResourceBundleELResolver@57e323ff, org.apache.myfaces.el.resolver.ResourceBundleResolver@5c81d8f0, org.apache.myfaces.el.resolver.ImportConstantsELResolver@7e28de07, org.apache.el.stream.StreamELResolverImpl@116306b1, jakarta.el.StaticFieldELResolver@5f5133b9, jakarta.el.MapELResolver@d4526fb, jakarta.el.ListELResolver@35a519b2, jakarta.el.ArrayELResolver@3c7ac739, jakarta.el.BeanELResolver@6a60e7f4]
+[14/7/26, 19:52:07:731 ECT] 000009d5 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Mensaje de servlet - [Pawsity]:.No state saving method defined, assuming default server state saving
+[14/7/26, 19:52:23:712 ECT] 00000966 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E java.lang.NullPointerException occurred while processing INVOKE_APPLICATION [Location=clientId="formExpediente:j_id_s"]
+java.lang.NullPointerException: Cannot invoke "ec.edu.unl.pawsity.dominio.usuarios.Veterinario.actualizarExpediente(ec.edu.unl.pawsity.dominio.mascota.Mascota, String)" because "vet" is null
+	at ec.edu.unl.pawsity.controladores.VetBean.registrarConsulta(VetBean.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.el.parser.AstValue.invoke(AstValue.java:239)
+	at org.apache.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:228)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagMethodExpression.invoke(ContextAwareTagMethodExpression.java:96)
+	at org.apache.myfaces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:67)
+	at jakarta.faces.component.UICommand.broadcast(UICommand.java:65)
+	at jakarta.faces.component.UIViewRoot._broadcastAll(UIViewRoot.java:1243)
+	at jakarta.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:424)
+	at jakarta.faces.component.UIViewRoot._process(UIViewRoot.java:1714)
+	at jakarta.faces.component.UIViewRoot.processApplication(UIViewRoot.java:925)
+	at org.apache.myfaces.lifecycle.InvokeApplicationExecutor.execute(InvokeApplicationExecutor.java:43)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.executePhase(LifecycleImpl.java:172)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:125)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:223)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:52:26:861 ECT] 000008ce org.apache.myfaces.context.AjaxExceptionHandlerImpl          E java.lang.NullPointerException occurred while processing INVOKE_APPLICATION [Location=clientId="formExpediente:j_id_s"]
+java.lang.NullPointerException: Cannot invoke "ec.edu.unl.pawsity.dominio.usuarios.Veterinario.actualizarExpediente(ec.edu.unl.pawsity.dominio.mascota.Mascota, String)" because "vet" is null
+	at ec.edu.unl.pawsity.controladores.VetBean.registrarConsulta(VetBean.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.el.parser.AstValue.invoke(AstValue.java:239)
+	at org.apache.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:228)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagMethodExpression.invoke(ContextAwareTagMethodExpression.java:96)
+	at org.apache.myfaces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:67)
+	at jakarta.faces.component.UICommand.broadcast(UICommand.java:65)
+	at jakarta.faces.component.UIViewRoot._broadcastAll(UIViewRoot.java:1243)
+	at jakarta.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:424)
+	at jakarta.faces.component.UIViewRoot._process(UIViewRoot.java:1714)
+	at jakarta.faces.component.UIViewRoot.processApplication(UIViewRoot.java:925)
+	at org.apache.myfaces.lifecycle.InvokeApplicationExecutor.execute(InvokeApplicationExecutor.java:43)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.executePhase(LifecycleImpl.java:172)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:125)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:223)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:52:28:489 ECT] 00000a0f org.apache.myfaces.context.AjaxExceptionHandlerImpl          E java.lang.NullPointerException occurred while processing INVOKE_APPLICATION [Location=clientId="formExpediente:j_id_w"]
+java.lang.NullPointerException: Cannot invoke "ec.edu.unl.pawsity.dominio.usuarios.Veterinario.registrarVacuna(ec.edu.unl.pawsity.dominio.mascota.HistorialMedico, ec.edu.unl.pawsity.dominio.mascota.Vacuna)" because "vet" is null
+	at ec.edu.unl.pawsity.controladores.VetBean.registrarVacuna(VetBean.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.el.parser.AstValue.invoke(AstValue.java:239)
+	at org.apache.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:228)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagMethodExpression.invoke(ContextAwareTagMethodExpression.java:96)
+	at org.apache.myfaces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:67)
+	at jakarta.faces.component.UICommand.broadcast(UICommand.java:65)
+	at jakarta.faces.component.UIViewRoot._broadcastAll(UIViewRoot.java:1243)
+	at jakarta.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:424)
+	at jakarta.faces.component.UIViewRoot._process(UIViewRoot.java:1714)
+	at jakarta.faces.component.UIViewRoot.processApplication(UIViewRoot.java:925)
+	at org.apache.myfaces.lifecycle.InvokeApplicationExecutor.execute(InvokeApplicationExecutor.java:43)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.executePhase(LifecycleImpl.java:172)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:125)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:223)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:52:55:360 ECT] 00000a48 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E java.lang.NullPointerException occurred while processing INVOKE_APPLICATION [Location=clientId="formExpediente:j_id_s"]
+java.lang.NullPointerException: Cannot invoke "ec.edu.unl.pawsity.dominio.usuarios.Veterinario.actualizarExpediente(ec.edu.unl.pawsity.dominio.mascota.Mascota, String)" because "vet" is null
+	at ec.edu.unl.pawsity.controladores.VetBean.registrarConsulta(VetBean.java:36)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.el.parser.AstValue.invoke(AstValue.java:239)
+	at org.apache.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:228)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagMethodExpression.invoke(ContextAwareTagMethodExpression.java:96)
+	at org.apache.myfaces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:67)
+	at jakarta.faces.component.UICommand.broadcast(UICommand.java:65)
+	at jakarta.faces.component.UIViewRoot._broadcastAll(UIViewRoot.java:1243)
+	at jakarta.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:424)
+	at jakarta.faces.component.UIViewRoot._process(UIViewRoot.java:1714)
+	at jakarta.faces.component.UIViewRoot.processApplication(UIViewRoot.java:925)
+	at org.apache.myfaces.lifecycle.InvokeApplicationExecutor.execute(InvokeApplicationExecutor.java:43)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.executePhase(LifecycleImpl.java:172)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:125)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:223)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:52:56:836 ECT] 00000a26 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E java.lang.NullPointerException occurred while processing INVOKE_APPLICATION [Location=clientId="formExpediente:j_id_w"]
+java.lang.NullPointerException: Cannot invoke "ec.edu.unl.pawsity.dominio.usuarios.Veterinario.registrarVacuna(ec.edu.unl.pawsity.dominio.mascota.HistorialMedico, ec.edu.unl.pawsity.dominio.mascota.Vacuna)" because "vet" is null
+	at ec.edu.unl.pawsity.controladores.VetBean.registrarVacuna(VetBean.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.apache.el.parser.AstValue.invoke(AstValue.java:239)
+	at org.apache.el.MethodExpressionImpl.invoke(MethodExpressionImpl.java:228)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagMethodExpression.invoke(ContextAwareTagMethodExpression.java:96)
+	at org.apache.myfaces.application.ActionListenerImpl.processAction(ActionListenerImpl.java:67)
+	at jakarta.faces.component.UICommand.broadcast(UICommand.java:65)
+	at jakarta.faces.component.UIViewRoot._broadcastAll(UIViewRoot.java:1243)
+	at jakarta.faces.component.UIViewRoot.broadcastEvents(UIViewRoot.java:424)
+	at jakarta.faces.component.UIViewRoot._process(UIViewRoot.java:1714)
+	at jakarta.faces.component.UIViewRoot.processApplication(UIViewRoot.java:925)
+	at org.apache.myfaces.lifecycle.InvokeApplicationExecutor.execute(InvokeApplicationExecutor.java:43)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.executePhase(LifecycleImpl.java:172)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.execute(LifecycleImpl.java:125)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:223)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:54:49:258 ECT] 000007b1 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:54:49:259 ECT] 000007b1 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 19:55:12:622 ECT] 00000868 SystemOut                                                    O El expediente médico de Luna ha sido actualizado.
+[14/7/26, 19:55:13:883 ECT] 000002c0 SystemOut                                                    O Vacuna registrada correctamente en el sistema.
+[14/7/26, 19:55:13:896 ECT] 000002c0 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.processRenderComponent(PartialViewContextImpl.java:768)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl$PhaseAwareVisitCallback.visit(PartialViewContextImpl.java:729)
+	at org.apache.myfaces.component.visit.PartialVisitContext.invokeVisitCallback(PartialVisitContext.java:226)
+	at jakarta.faces.component.UIForm.visitTree(UIForm.java:312)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at jakarta.faces.component.UIComponent.visitTree(UIComponent.java:908)
+	at jakarta.faces.component.UIComponentBase.visitTree(UIComponentBase.java:1120)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartialRendering(PartialViewContextImpl.java:477)
+	at org.apache.myfaces.context.servlet.PartialViewContextImpl.processPartial(PartialViewContextImpl.java:396)
+	at org.primefaces.context.PrimePartialViewContext.processPartial(PrimePartialViewContext.java:61)
+	at jakarta.faces.component.UIViewRoot.encodeChildren(UIViewRoot.java:575)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:55:13:898 ECT] 000002c0 rg.apache.myfaces.context.servlet.ServletExternalContextImpl E Cannot set content type. Response already committed
+[14/7/26, 19:55:13:898 ECT] 000002c0 com.ibm.ws.webcontainer.srt                                  W SRVE8094W: AVISO: No se puede establecer la cabecera. Ya se confirmado la respuesta.  Seguimiento de la pila de intento errante para establecer la: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2311)
+        at [internal classes].(Unknown Source)
+
+[14/7/26, 19:55:27:160 ECT] 0000075d org.apache.myfaces.context.ExceptionHandlerImpl              E jakarta.el.PropertyNotFoundException occurred while processing RENDER_RESPONSE [Location=]
+jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[14/7/26, 19:55:27:163 ECT] 0000075d com.ibm.ws.webcontainer.srt                                  W SRVE8115W: AVISO: No se puede establecer el estado. Ya se ha confirmado la respuesta.
+[14/7/26, 19:55:27:164 ECT] 0000075d com.ibm.ws.webcontainer.util.ApplicationErrorUtils           E SRVE0777E: Excepción lanzada por la clase de aplicación 'jakarta.faces.webapp.FacesServlet.service:255'
+jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna]
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1262)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:751)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:448)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:197)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:100)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:58)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:203)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:1069)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1260)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1078)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:77)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:87)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:978)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:293)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1634)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:781)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:741)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:574)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:505)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:365)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:72)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:513)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:583)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:967)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1056)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:344)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.apache.myfaces.view.facelets.el.ContextAwarePropertyNotFoundException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna]
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:104)
+	at org.apache.myfaces.view.facelets.el.ELText$ELTextVariable.writeText(ELText.java:238)
+	at org.apache.myfaces.view.facelets.compiler.TextInstruction.write(TextInstruction.java:45)
+	at org.apache.myfaces.view.facelets.compiler.UIInstructions.encodeBegin(UIInstructions.java:46)
+	at org.apache.myfaces.view.facelets.compiler.UILeaf.encodeAll(UILeaf.java:362)
+	at org.apache.myfaces.view.facelets.component.RepeatRenderer.encodeChildren(RepeatRenderer.java:78)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.process(UIRepeat.java:1056)
+	at org.apache.myfaces.view.facelets.component.UIRepeat.encodeChildren(UIRepeat.java:1698)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:510)
+	at org.apache.myfaces.renderkit.RendererUtils.renderChildren(RendererUtils.java:536)
+	at org.apache.myfaces.renderkit.html.base.HtmlGroupRendererBase.encodeEnd(HtmlGroupRendererBase.java:154)
+	at jakarta.faces.component.UIComponentBase.encodeEnd(UIComponentBase.java:634)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:523)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at jakarta.faces.component.UIComponentBase.encodeAll(UIComponentBase.java:519)
+	at org.apache.myfaces.view.facelets.FaceletViewDeclarationLanguage.renderView(FaceletViewDeclarationLanguage.java:1783)
+	at org.apache.myfaces.application.ViewHandlerImpl.renderView(ViewHandlerImpl.java:316)
+	at jakarta.faces.application.ViewHandlerWrapper.renderView(ViewHandlerWrapper.java:74)
+	at org.apache.myfaces.lifecycle.RenderResponseExecutor.execute(RenderResponseExecutor.java:122)
+	at org.apache.myfaces.lifecycle.LifecycleImpl.render(LifecycleImpl.java:241)
+	at jakarta.faces.webapp.FacesServlet.service(FacesServlet.java:225)
+	... 30 more
+Caused by: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna]
+	at jakarta.el.BeanELResolver$BeanProperties.get(BeanELResolver.java:261)
+	at jakarta.el.BeanELResolver.property(BeanELResolver.java:330)
+	at jakarta.el.BeanELResolver.getValue(BeanELResolver.java:99)
+	at jakarta.el.CompositeELResolver.getValue(CompositeELResolver.java:109)
+	at org.apache.el.parser.AstValue.getValue(AstValue.java:161)
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:150)
+	at org.apache.myfaces.view.facelets.el.ContextAwareTagValueExpression.getValue(ContextAwareTagValueExpression.java:100)
+	... 51 more
+
+[14/7/26, 19:55:27:327 ECT] 0000075d com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna] com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter 82" en ffdc_26.07.14_19.55.27.0.log
+[14/7/26, 19:55:27:387 ECT] 0000075d com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna] com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter 144" en ffdc_26.07.14_19.55.27.1.log
+[14/7/26, 19:55:27:401 ECT] 0000075d com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: Se ha creado una incidencia FFDC: "jakarta.servlet.ServletException: jakarta.el.PropertyNotFoundException: No se ha encontrado la propiedad [nombre] en el tipo [ec.edu.unl.pawsity.dominio.mascota.Vacuna] com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1064" en ffdc_26.07.14_19.55.27.2.log
+[14/7/26, 19:55:27:406 ECT] 0000075d com.ibm.ws.webcontainer.srt                                  W SRVE8115W: AVISO: No se puede establecer el estado. Ya se ha confirmado la respuesta.
+[14/7/26, 19:57:52:779 ECT] 00000b75 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicación web eliminada (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:57:52:779 ECT] 00000b75 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [Pawsity] [/Pawsity] [FacesServlet]: Destrucción satisfactoria.
+[14/7/26, 19:57:52:787 ECT] 00000b75 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: La aplicación Pawsity se ha detenido correctamente.
+[14/7/26, 19:57:52:793 ECT] 00000b75 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando la aplicación Pawsity.
+[14/7/26, 19:57:52:793 ECT] 00000b75 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: La aplicación Pawsity está utilizando la definición de aplicación dinámica en la ubicación C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\apps\Pawsity.war.xml.
+[14/7/26, 19:57:52:813 ECT] 00000c49 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:57:53:413 ECT] 00000b75 org.jboss.weld.Event                                         I WELD-000411: Observer method [BackedAnnotatedMethod] org.apache.myfaces.config.annotation.CdiAnnotationProviderExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+[14/7/26, 19:57:53:627 ECT] 00000b75 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Cargando módulo web: Pawsity.
+[14/7/26, 19:57:53:628 ECT] 00000b75 com.ibm.ws.webcontainer                                      I SRVE0250I: El módulo web Pawsity se ha enlazado con default_host.
+[14/7/26, 19:57:53:628 ECT] 00000b75 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicación web disponible (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 19:57:53:629 ECT] 00000929 com.ibm.ws.session.WASSessionCore                            I SESN0176I: Se creará un nuevo contexto de sesión para la clave de aplicación default_host/Pawsity
+[14/7/26, 19:57:53:631 ECT] 00000929 com.ibm.ws.util                                              I SESN0172I: El gestor de sesiones está utilizando la implementación de SecureRandom Java por omisión para la generación del ID de sesión.
+[14/7/26, 19:57:53:681 ECT] 00000cb3 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 19:57:54:115 ECT] 00000929 org.apache.myfaces.webapp.MyFacesContainerInitializer        I Using io.openliberty.faces40.internal.ee.WASMyFacesContainerInitializer
+[14/7/26, 19:57:54:116 ECT] 00000929 org.apache.myfaces.webapp.MyFacesContainerInitializer        I Added FacesServlet with mappings=[/faces/*, *.jsf, *.faces, *.xhtml]
+[14/7/26, 19:57:54:116 ECT] 00000929 enliberty.faces40.internal.ee.WASMyFacesContainerInitializer I Added StartupServletContextListener to the servlet context
+[14/7/26, 19:57:54:124 ECT] 00000929 org.apache.myfaces.config.DefaultFacesConfigurationProvider  I Found jakarta.faces.application.ApplicationFactory factory implementation: io.openliberty.faces40.internal.config.WASApplicationFactoryImpl
+[14/7/26, 19:57:54:206 ECT] 00000929 org.apache.myfaces.application.ApplicationImpl               I Couldn't discover the current project stage, using Production
+[14/7/26, 19:57:54:212 ECT] 00000929 org.primefaces.webapp.PostConstructApplicationEventListener  I Running on PrimeFaces 15.0.0
+[14/7/26, 19:57:54:213 ECT] 00000929 org.apache.myfaces.view.facelets.ViewPoolProcessor           I org.apache.myfaces.CACHE_EL_EXPRESSIONS web config parameter is set to "noCache". To enable view pooling this param must be set to "alwaysRecompile". View Pooling disabled.
+[14/7/26, 19:57:54:214 ECT] 00000929 org.apache.myfaces.webapp.FacesInitializerImpl               I MyFaces Core has started, it took [96] ms.
+[14/7/26, 19:57:54:216 ECT] 00000929 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: La aplicación Pawsity se ha actualizado en 1,423 segundos.
+[14/7/26, 19:57:59:096 ECT] 000007b1 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [Pawsity] [/Pawsity] [FacesServlet]: Inicialización satisfactoria.
+[14/7/26, 19:57:59:225 ECT] 000007b1 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Mensaje de servlet - [Pawsity]:.No state saving method defined, assuming default server state saving
+[14/7/26, 19:57:59:227 ECT] 000007b1 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.faces.application.ViewExpiredException occurred while processing RESTORE_VIEW [Location=]
+[14/7/26, 19:58:00:786 ECT] 00000b7a org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.faces.application.ViewExpiredException occurred while processing RESTORE_VIEW [Location=]
+[14/7/26, 19:58:01:698 ECT] 00000917 org.apache.myfaces.el.ELResolverBuilder                      I Chain of EL resolvers: [org.apache.myfaces.el.resolver.implicitobject.ImplicitObjectResolver@1b0205dc, org.jboss.weld.module.web.el.WeldELResolver@7361151e, org.apache.myfaces.el.resolver.CompositeComponentELResolver@42389720, org.apache.myfaces.el.resolver.FlashELResolver@417f955e, org.apache.myfaces.el.resolver.ResourceResolver@4a584448, jakarta.el.ResourceBundleELResolver@31ea71f8, org.apache.myfaces.el.resolver.ResourceBundleResolver@376d7172, org.apache.myfaces.el.resolver.ImportConstantsELResolver@a85d7a4, org.apache.el.stream.StreamELResolverImpl@2f7b8b8, jakarta.el.StaticFieldELResolver@60707caf, jakarta.el.MapELResolver@3c4a7732, jakarta.el.ListELResolver@18d6afe8, jakarta.el.ArrayELResolver@27dbe632, jakarta.el.BeanELResolver@44ad7362]
+[14/7/26, 19:58:10:092 ECT] 00000caa SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:58:10:092 ECT] 00000caa SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 19:58:15:627 ECT] 00000c14 SystemOut                                                    O El expediente médico de Luna ha sido actualizado.
+[14/7/26, 19:58:28:598 ECT] 00000d1a SystemOut                                                    O Vacuna registrada correctamente en el sistema.
+[14/7/26, 19:58:43:842 ECT] 00000cba SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:58:43:843 ECT] 00000cba SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 19:58:52:532 ECT] 00000574 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 19:58:52:533 ECT] 00000574 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Carlos'
+[14/7/26, 20:01:20:452 ECT] 00000e79 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 20:01:20:453 ECT] 00000e79 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 20:01:54:157 ECT] 00000e36 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 20:01:54:157 ECT] 00000e36 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 20:02:48:708 ECT] 00000f08 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicación web eliminada (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 20:02:48:708 ECT] 00000f08 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [Pawsity] [/Pawsity] [FacesServlet]: Destrucción satisfactoria.
+[14/7/26, 20:02:48:715 ECT] 00000f08 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: La aplicación Pawsity se ha detenido correctamente.
+[14/7/26, 20:02:48:719 ECT] 00000f08 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Iniciando la aplicación Pawsity.
+[14/7/26, 20:02:48:719 ECT] 00000f08 bm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl I CWWKZ0134I: La aplicación Pawsity está utilizando la definición de aplicación dinámica en la ubicación C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\apps\Pawsity.war.xml.
+[14/7/26, 20:02:48:737 ECT] 00000eb4 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 20:02:49:261 ECT] 00000f08 org.jboss.weld.Event                                         I WELD-000411: Observer method [BackedAnnotatedMethod] org.apache.myfaces.config.annotation.CdiAnnotationProviderExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+[14/7/26, 20:02:49:343 ECT] 00000f08 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Cargando módulo web: Pawsity.
+[14/7/26, 20:02:49:345 ECT] 00000f08 com.ibm.ws.webcontainer                                      I SRVE0250I: El módulo web Pawsity se ha enlazado con default_host.
+[14/7/26, 20:02:49:345 ECT] 00000f08 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Aplicación web disponible (default_host): http://lp-riv.mshome.net:9080/Pawsity/
+[14/7/26, 20:02:49:345 ECT] 00000f7b com.ibm.ws.session.WASSessionCore                            I SESN0176I: Se creará un nuevo contexto de sesión para la clave de aplicación default_host/Pawsity
+[14/7/26, 20:02:49:346 ECT] 00000f7b com.ibm.ws.util                                              I SESN0172I: El gestor de sesiones está utilizando la implementación de SecureRandom Java por omisión para la generación del ID de sesión.
+[14/7/26, 20:02:49:361 ECT] 00000f80 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: Se ha generado automáticamente un archivo de configuración para un plug-in de servidor web para este servidor en C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\logs\state\plugin-cfg.xml.
+[14/7/26, 20:02:49:767 ECT] 00000f7b org.apache.myfaces.webapp.MyFacesContainerInitializer        I Using io.openliberty.faces40.internal.ee.WASMyFacesContainerInitializer
+[14/7/26, 20:02:49:768 ECT] 00000f7b org.apache.myfaces.webapp.MyFacesContainerInitializer        I Added FacesServlet with mappings=[/faces/*, *.jsf, *.faces, *.xhtml]
+[14/7/26, 20:02:49:768 ECT] 00000f7b enliberty.faces40.internal.ee.WASMyFacesContainerInitializer I Added StartupServletContextListener to the servlet context
+[14/7/26, 20:02:49:776 ECT] 00000f7b org.apache.myfaces.config.DefaultFacesConfigurationProvider  I Found jakarta.faces.application.ApplicationFactory factory implementation: io.openliberty.faces40.internal.config.WASApplicationFactoryImpl
+[14/7/26, 20:02:49:902 ECT] 00000f7b org.apache.myfaces.application.ApplicationImpl               I Couldn't discover the current project stage, using Production
+[14/7/26, 20:02:49:906 ECT] 00000f7b org.primefaces.webapp.PostConstructApplicationEventListener  I Running on PrimeFaces 15.0.0
+[14/7/26, 20:02:49:907 ECT] 00000f7b org.apache.myfaces.view.facelets.ViewPoolProcessor           I org.apache.myfaces.CACHE_EL_EXPRESSIONS web config parameter is set to "noCache". To enable view pooling this param must be set to "alwaysRecompile". View Pooling disabled.
+[14/7/26, 20:02:49:908 ECT] 00000f7b org.apache.myfaces.webapp.FacesInitializerImpl               I MyFaces Core has started, it took [138] ms.
+[14/7/26, 20:02:49:909 ECT] 00000f7b com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0003I: La aplicación Pawsity se ha actualizado en 1,189 segundos.
+[14/7/26, 20:03:03:822 ECT] 00000917 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [Pawsity] [/Pawsity] [FacesServlet]: Inicialización satisfactoria.
+[14/7/26, 20:03:03:964 ECT] 00000917 com.ibm.ws.webcontainer.webapp                               I SRVE0292I: Mensaje de servlet - [Pawsity]:.No state saving method defined, assuming default server state saving
+[14/7/26, 20:03:03:970 ECT] 00000917 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.faces.application.ViewExpiredException occurred while processing RESTORE_VIEW [Location=]
+[14/7/26, 20:03:05:786 ECT] 00000f66 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.faces.application.ViewExpiredException occurred while processing RESTORE_VIEW [Location=]
+[14/7/26, 20:03:06:809 ECT] 00000d50 org.apache.myfaces.context.AjaxExceptionHandlerImpl          E jakarta.faces.application.ViewExpiredException occurred while processing RESTORE_VIEW [Location=]
+[14/7/26, 20:03:08:174 ECT] 00000fa4 org.apache.myfaces.el.ELResolverBuilder                      I Chain of EL resolvers: [org.apache.myfaces.el.resolver.implicitobject.ImplicitObjectResolver@239aaaae, org.jboss.weld.module.web.el.WeldELResolver@669830b9, org.apache.myfaces.el.resolver.CompositeComponentELResolver@59cb7185, org.apache.myfaces.el.resolver.FlashELResolver@57343114, org.apache.myfaces.el.resolver.ResourceResolver@218d2e86, jakarta.el.ResourceBundleELResolver@6b7cff6, org.apache.myfaces.el.resolver.ResourceBundleResolver@472d1fc, org.apache.myfaces.el.resolver.ImportConstantsELResolver@7238ecf7, org.apache.el.stream.StreamELResolverImpl@3a890528, jakarta.el.StaticFieldELResolver@2f9b5f0, jakarta.el.MapELResolver@10166962, jakarta.el.ListELResolver@25fc70c3, jakarta.el.ArrayELResolver@572e9111, jakarta.el.BeanELResolver@1837f831]
+[14/7/26, 20:03:15:778 ECT] 00000c17 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 20:03:15:779 ECT] 00000c17 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Laura'
+[14/7/26, 20:03:20:317 ECT] 00000917 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 20:03:20:317 ECT] 00000917 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Mario'
+[14/7/26, 20:03:28:323 ECT] 00000fd5 SystemOut                                                    O DEBUG: Usuario autenticado correctamente.
+[14/7/26, 20:03:28:325 ECT] 00000fd5 SystemOut                                                    O DEBUG: Nombre recuperado del usuario: 'Carlos'
+[14/7/26, 20:05:40:529 ECT] 00000027 com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Conclusión del servidor solicitada el martes, 14 de julio de 2026 a las 20:05. El servidor defaultServer se está cerrando.
+[14/7/26, 20:05:40:535 ECT] 000010f0 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Esperando un máximo de 30 segundos para que el servidor se desactive temporalmente.
+[14/7/26, 20:05:40:539 ECT] 00000fc0 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: El canal TCP defaultHttpEndpoint ha detenido la escucha de solicitudes en el host *  (IPv6) puerto 9080.
+[14/7/26, 20:05:40:541 ECT] 00001035 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: El canal TCP defaultHttpEndpoint-ssl ha detenido la escucha de solicitudes en el host *  (IPv6) puerto 9443.
+[14/7/26, 20:05:40:541 ECT] 00001035 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Aplicación web eliminada (default_host): https://lp-riv.mshome.net:9443/Pawsity/
+[14/7/26, 20:05:40:643 ECT] 000010f0 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: La desactivación temporal del servidor ha finalizado.
+[14/7/26, 20:05:40:669 ECT] 00000ed0 com.ibm.ws.webcontainer.servlet                              I SRVE0253I: [Pawsity] [/Pawsity] [FacesServlet]: Destrucción satisfactoria.
+[14/7/26, 20:05:40:686 ECT] 00000ed0 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: La aplicación Pawsity se ha detenido correctamente.
+[14/7/26, 20:05:40:829 ECT] 000010f0 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I: Se ha desactivado el plugin de autenticación colectiva con el nombre de clase NullCollectiveAuthenticationPlugin. 
+[14/7/26, 20:05:40:831 ECT] 000010f0 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: El servicio de seguridad se ha detenido.
+[14/7/26, 20:05:41:119 ECT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: El servidor defaultServer se ha detenido después de 31 minutos, 19,607 segundos.

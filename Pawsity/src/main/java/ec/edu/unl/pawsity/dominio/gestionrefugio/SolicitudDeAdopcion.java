@@ -28,3 +28,4 @@ public class SolicitudDeAdopcion {
     public Mascota getMascota() { return mascota; }
     public Adoptante getAdoptante() { return adoptante; }
 }
+

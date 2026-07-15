@@ -76,7 +76,7 @@ public class Veterinario extends Usuario {
                     System.out.println("\n=== Historial Médico de " + paciente.getNombre() + " ===");
 
                     System.out.println("--- Consultas Registradas ---");
-                    List<ConsultaMedica> consultas = paciente.getHistorialMedico().consultasMedicas;
+                    List<ConsultaMedica> consultas = paciente.getHistorialMedico().getConsultasMedicas();
                     if (consultas.isEmpty()) {
                         System.out.println("  No hay diagnósticos previos.");
                     } else {

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liberty-plugin-config>
+    <installDirectory>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp</installDirectory>
+    <assemblyArtifact>
+        <groupId>io.openliberty</groupId>
+        <artifactId>openliberty-kernel</artifactId>
+        <version>26.0.0.7</version>
+        <type>zip</type>
+    </assemblyArtifact>
+    <assemblyArchive>C:\Users\USER\.m2\repository\io\openliberty\openliberty-kernel\26.0.0.7\openliberty-kernel-26.0.0.7.zip</assemblyArchive>
+    <assemblyInstallDirectory>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty</assemblyInstallDirectory>
+    <refresh>false</refresh>
+    <serverDirectory>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer</serverDirectory>
+    <userDirectory>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr</userDirectory>
+    <serverOutputDirectory>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer</serverOutputDirectory>
+    <serverName>defaultServer</serverName>
+    <projectType>war</projectType>
+    <projectCompileDependency>org.primefaces:primefaces:15.0.0</projectCompileDependency>
+    <configDirectory>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\src\main\liberty\config</configDirectory>
+    <configFile>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\src\main\liberty\config\server.xml</configFile>
+    <appsDirectory>apps</appsDirectory>
+    <looseApplication>true</looseApplication>
+    <stripVersion>false</stripVersion>
+    <installAppPackages>project</installAppPackages>
+    <applicationFilename>Pawsity.war.xml</applicationFilename>
+    <installAppsConfigDropins>C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\liberty\wlp\usr\servers\defaultServer\configDropins\defaults\install_apps_configuration_1491924271.xml</installAppsConfigDropins>
+</liberty-plugin-config>

@@ -24,6 +24,13 @@ public abstract class Usuario {
 
     public abstract void redireccionarPanel(Scanner sc, Refugio refugio, List<SolicitudDeAdopcion> solicitudes);
 
-    public String getNombres() { return nombres; }
+    // Getters obligatorios para la interfaz web (JSF)
+    public String getNombres() {
+        return nombres;
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
 }
 

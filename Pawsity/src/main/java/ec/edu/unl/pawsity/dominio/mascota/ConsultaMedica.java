@@ -24,6 +24,49 @@ public class ConsultaMedica {
     }
 
     public String detallesConsulta() {
-        return "Fecha: " + fechaDiagnostico + veterinarioEncargado.getNombres() + " | Diagnóstico: " + diagnostico;
+        return "Fecha: " + fechaDiagnostico + " - Dr(a): " + veterinarioEncargado.getNombres() + " | Diagnóstico: " + diagnostico;
+    }
+
+    // --- Getters y Setters obligatorios para que JSF y PrimeFaces lean los datos ---
+
+    public LocalDate getFechaDiagnostico() {
+        return fechaDiagnostico;
+    }
+
+    public void setFechaDiagnostico(LocalDate fechaDiagnostico) {
+        this.fechaDiagnostico = fechaDiagnostico;
+    }
+
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    public List<String> getMedicamentosAplicados() {
+        return medicamentosAplicados;
+    }
+
+    public void setMedicamentosAplicados(List<String> medicamentosAplicados) {
+        this.medicamentosAplicados = medicamentosAplicados;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
+    public Veterinario getVeterinarioEncargado() {
+        return veterinarioEncargado;
+    }
+
+    public void setVeterinarioEncargado(Veterinario veterinarioEncargado) {
+        this.veterinarioEncargado = veterinarioEncargado;
     }
 }
+

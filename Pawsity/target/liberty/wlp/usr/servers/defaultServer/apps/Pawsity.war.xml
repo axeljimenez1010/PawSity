@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <dir sourceOnDisk="C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\src\main\webapp" targetInArchive="/"/>
+    <dir sourceOnDisk="C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\classes" targetInArchive="/WEB-INF/classes"/>
+    <file sourceOnDisk="C:\Users\USER\.m2\repository\org\primefaces\primefaces\15.0.0\primefaces-15.0.0-jakarta.jar" targetInArchive="/WEB-INF/lib/primefaces-15.0.0-jakarta.jar"/>
+    <file sourceOnDisk="C:\Users\USER\OneDrive\Desktop\Universidad\Ciclo2\POO\U2\Pawsity\target\tmp\META-INF\MANIFEST.MF" targetInArchive="/META-INF/MANIFEST.MF"/>
+</archive>

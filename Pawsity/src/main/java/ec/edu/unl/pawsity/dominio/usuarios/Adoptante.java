@@ -82,4 +82,17 @@ public class Adoptante extends Usuario {
             }
         } while (opcion != 3);
     }
+
+    // Getters obligatorios para que JSF lea los datos del adoptante en las tarjetas del panel admin
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public String getOcupacion() {
+        return ocupacion;
+    }
 }

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Catálogo de Adopciones - PawSity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00685f",
+                        "secondary-container": "#fea619",
+                        "background": "#f5faf8"
+                    }
+                }
+            }
+        }
+    </script>
+</h:head>
+
+<h:body styleClass="bg-background min-h-screen font-['Inter'] p-6">
+    <p:growl id="mensajes" showDetail="true" life="4000"/>
+
+    <main class="max-w-6xl mx-auto space-y-6">
+        <header class="flex justify-between items-center bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div>
+                <h1 class="text-2xl font-bold text-[#00685f]">🐾 PawSity - Catálogo de Adopciones</h1>
+                <p class="text-sm text-gray-500">Encuentra a tu nuevo mejor amigo &#183; Las mascotas con más tiempo esperando destacan más</p>
+            </div>
+            <h:form>
+                <p:commandButton value="Cerrar Sesión" action="#{loginBean.logout()}"
+                                 styleClass="bg-red-50 text-red-600 px-4 py-2 rounded-lg font-medium border border-red-200 hover:bg-red-100 transition-colors cursor-pointer"/>
+            </h:form>
+        </header>
+
+        <h:form id="formFiltro" styleClass="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3 items-end">
+                <div class="flex flex-col gap-1 col-span-1">
+                    <label class="font-semibold text-gray-700 text-xs">Especie</label>
+                    <p:selectOneMenu value="#{adoptanteBean.filtroEspecie}" styleClass="border rounded-lg px-3 py-1.5 text-sm outline-none w-full">
+                        <f:selectItem itemLabel="Todas" itemValue="todos"/>
+                        <f:selectItem itemLabel="Canino" itemValue="Canino"/>
+                        <f:selectItem itemLabel="Felino" itemValue="Felino"/>
+                        <f:selectItem itemLabel="Ave" itemValue="Ave"/>
+                        <f:selectItem itemLabel="Conejo" itemValue="Conejo"/>
+                        <f:selectItem itemLabel="Roedor" itemValue="Roedor"/>
+                        <f:selectItem itemLabel="Reptil" itemValue="Reptil"/>
+                        <f:selectItem itemLabel="Otro" itemValue="Otro"/>
+                        <p:ajax event="change" listener="#{adoptanteBean.filtrar()}" update=":formGrid:gridMascotas"/>
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="flex flex-col gap-1 col-span-1">
+                    <label class="font-semibold text-gray-700 text-xs">Tamaño</label>
+                    <p:selectOneMenu value="#{adoptanteBean.filtroTamano}" styleClass="border rounded-lg px-3 py-1.5 text-sm outline-none w-full">
+                        <f:selectItem itemLabel="Todos" itemValue="todos"/>
+                        <f:selectItem itemLabel="Pequeño" itemValue="Pequeño"/>
+                        <f:selectItem itemLabel="Mediano" itemValue="Mediano"/>
+                        <f:selectItem itemLabel="Grande" itemValue="Grande"/>
+                        <p:ajax event="change" listener="#{adoptanteBean.filtrar()}" update=":formGrid:gridMascotas"/>
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="flex flex-col gap-1 col-span-1">
+                    <label class="font-semibold text-gray-700 text-xs">Sexo</label>
+                    <p:selectOneMenu value="#{adoptanteBean.filtroSexo}" styleClass="border rounded-lg px-3 py-1.5 text-sm outline-none w-full">
+                        <f:selectItem itemLabel="Todos" itemValue="todos"/>
+                        <f:selectItem itemLabel="Macho" itemValue="Macho"/>
+                        <f:selectItem itemLabel="Hembra" itemValue="Hembra"/>
+                        <p:ajax event="change" listener="#{adoptanteBean.filtrar()}" update=":formGrid:gridMascotas"/>
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="flex flex-col gap-1 col-span-1">
+                    <label class="font-semibold text-gray-700 text-xs">Color</label>
+                    <p:inputText value="#{adoptanteBean.filtroColor}" placeholder="Ej. Negro"
+                                 styleClass="border rounded-lg px-3 py-1.5 text-sm outline-none w-full">
+                        <p:ajax event="keyup" delay="500" listener="#{adoptanteBean.filtrar()}" update=":formGrid:gridMascotas"/>
+                    </p:inputText>
+                </div>
+
+                <div class="col-span-1">
+                    <p:commandButton value="Limpiar filtros" action="#{adoptanteBean.resetFiltros()}"
+                                     update="formFiltro :formGrid:gridMascotas"
+                                     styleClass="w-full bg-gray-100 text-gray-600 px-3 py-1.5 rounded-lg text-sm font-medium border border-gray-200 hover:bg-gray-200 transition-colors cursor-pointer"/>
+                </div>
+            </div>
+        </h:form>
+
+        <h:form id="formGrid">
+            <h:panelGroup id="gridMascotas" layout="block"
+                          styleClass="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 grid-flow-dense auto-rows-[170px] sm:auto-rows-[190px] lg:auto-rows-[210px] gap-4">
+                <h:panelGroup rendered="#{empty adoptanteBean.catalogoFiltrado}" layout="block" styleClass="col-span-full text-center py-12 text-gray-400">
+                    No se encontraron mascotas disponibles con esos filtros.
+                </h:panelGroup>
+
+                <ui:repeat value="#{adoptanteBean.catalogoFiltrado}" var="mascota" varStatus="loop">
+                    <article class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-200
+                                   #{loop.index == 0 ? 'col-span-2 row-span-2' : 'col-span-2 row-span-1'}">
+
+                        <!-- Imagen estática de fondo -->
+                        <div class="absolute inset-0 z-0 block">
+                            <img src="#{mascota.imagenUrl.startsWith('http') ? mascota.imagenUrl : request.contextPath.concat('/').concat(mascota.imagenUrl)}" alt="#{mascota.nombre}"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+                        </div>
+
+                        <span class="absolute top-3 right-3 bg-[#fea619] text-[#684000] text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm pointer-events-none"
+                              style="#{loop.index == 0 ? '' : 'display:none'}">
+                            ⭐ La que más espera
+                        </span>
+
+                        <div class="relative z-10 h-full flex flex-col justify-end p-4 pointer-events-none">
+                            <span class="self-start bg-white/90 backdrop-blur text-[#00685f] px-3 py-1 rounded-full text-xs font-semibold mb-2 shadow-sm pointer-events-auto">
+                                #{mascota.especie}
+                            </span>
+                            <h2 class="text-white font-bold drop-shadow-sm leading-tight #{loop.index == 0 ? 'text-3xl' : 'text-lg'} pointer-events-auto">
+                                #{mascota.nombre}
+                            </h2>
+                            <p class="text-white/90 text-xs sm:text-sm drop-shadow-sm pointer-events-auto">
+                                #{mascota.edad} años &#183; #{mascota.sexo} &#183; #{mascota.color}
+                            </p>
+                            <p class="text-white/75 text-[11px] mb-3 drop-shadow-sm pointer-events-auto">
+                                🕓 Esperando desde hace #{mascota.diasEnRefugio} día(s)
+                            </p>
+
+                            <div class="flex gap-2 pointer-events-auto">
+                                <p:commandButton value="📋" title="Ver antecedentes médicos" action="#{adoptanteBean.verHistorial(mascota)}"
+                                                 update=":formHistorial:contenidoHistorial" oncomplete="PF('wvHistorial').show()"
+                                                 styleClass="bg-white/90 text-[#00685f] font-bold py-2 px-3 rounded-lg hover:bg-white transition-colors cursor-pointer shadow-sm text-xs sm:text-sm"/>
+
+                                <p:commandButton value="Solicitar Adopción" action="#{adoptanteBean.abrirFormulario(mascota)}"
+                                                 update=":formSolicitud:contenidoSolicitud" oncomplete="PF('wvFormulario').show()"
+                                                 styleClass="flex-grow bg-[#fea619] text-[#684000] font-bold py-2 rounded-lg hover:bg-[#ffb95f] transition-colors cursor-pointer shadow-sm text-xs sm:text-sm"/>
+                            </div>
+                        </div>
+                    </article>
+                </ui:repeat>
+            </h:panelGroup>
+        </h:form>
+
+        <!-- Diálogo: antecedentes médicos -->
+        <p:dialog header="Antecedentes Médicos" widgetVar="wvHistorial" id="dlgHistorial" modal="true" responsive="true" width="850" styleClass="rounded-xl" appendTo="@(body)">
+            <h:form id="formHistorial">
+                <h:panelGroup id="contenidoHistorial">
+                    <h:panelGroup rendered="#{not empty adoptanteBean.mascotaHistorial}" layout="block" styleClass="space-y-5 p-1">
+
+                        <!-- Ficha superior mejorada con imagen más grande -->
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-gray-50/80 p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <img src="#{adoptanteBean.mascotaHistorial.imagenUrl.startsWith('http') ? adoptanteBean.mascotaHistorial.imagenUrl : request.contextPath.concat('/').concat(adoptanteBean.mascotaHistorial.imagenUrl)}" alt="#{adoptanteBean.mascotaHistorial.nombre}"
+                                 class="w-72 h-72 sm:w-96 sm:h-96 rounded-xl object-cover shadow-md border border-gray-200/50 shrink-0"/>
+
+                            <div class="flex-1 w-full text-center sm:text-left mt-2 sm:mt-0">
+                                <p class="font-extrabold text-4xl text-gray-800">#{adoptanteBean.mascotaHistorial.nombre}</p>
+
+                                <!-- Grid de datos -->
+                                <div class="grid grid-cols-2 gap-x-3 gap-y-3 mt-5 text-sm text-gray-600">
+                                    <p class="flex items-center gap-2">
+                                        <span class="text-xl">🐾</span>
+                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.especie}</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <span class="text-xl">⏳</span>
+                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.edad} años</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <span class="text-xl">⚥</span>
+                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.sexo}</span>
+                                    </p>
+                                    <p class="flex items-center gap-2">
+                                        <span class="text-xl">📏</span>
+                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.tamano}</span>
+                                    </p>
+                                    <p class="col-span-2 flex items-center gap-2 mt-2">
+                                        <span class="text-xl">🎨</span>
+                                        <span class="text-gray-500">Color:</span> <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.color}</span>
+                                    </p>
+                                </div>
+
+                                <div class="mt-6 pt-4 border-t border-gray-200 text-sm bg-white p-3 rounded-lg inline-block border shadow-sm w-full">
+                                    <p class="text-gray-500">En el refugio desde: <span class="font-bold text-[#00685f] text-base">#{adoptanteBean.mascotaHistorial.fechaIngresoFormateada}</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lista de vacunas -->
+                        <div class="mt-4">
+                            <h4 class="text-sm font-bold text-gray-500 uppercase mb-3 tracking-wide">Registro de Vacunas y Desparasitación</h4>
+                            <h:panelGroup rendered="#{empty adoptanteBean.mascotaHistorial.historialMedico.vacunas}" layout="block"
+                                          styleClass="text-base text-gray-400 italic py-6 text-center bg-gray-50 rounded-xl border border-dashed border-gray-300">
+                                Aún no tiene registros de vacunas o desparasitación en el sistema.
+                            </h:panelGroup>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[200px] overflow-y-auto pr-1">
+                                <ui:repeat value="#{adoptanteBean.mascotaHistorial.historialMedico.vacunas}" var="v">
+                                    <div class="bg-green-50/60 border border-green-200/80 p-3 rounded-lg text-sm flex items-center gap-3">
+                                        <span class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">✓</span>
+                                        <div>
+                                            <p class="font-bold text-gray-800 leading-tight">#{v.nombre}</p>
+                                            <p class="text-xs text-gray-500 mt-1">Aplicada: #{v.fechaAplicacion}<br/>Próxima: #{v.fechaProximaAplicacion}</p>
+                                        </div>
+                                    </div>
+                                </ui:repeat>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+        <!-- Diálogo: formulario de adopción -->
+        <p:dialog header="Formulario de Adopción" widgetVar="wvFormulario" id="dlgFormulario" modal="true" responsive="true" width="850" styleClass="rounded-xl" appendTo="@(body)">
+            <h:form id="formSolicitud">
+                <h:panelGroup id="contenidoSolicitud">
+                    <h:panelGroup rendered="#{not empty adoptanteBean.mascotaSeleccionada}" layout="block" styleClass="space-y-5 p-1">
+
+                        <!-- Ficha superior mejorada (Formulario) -->
+                        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-gray-50/80 p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <img src="#{adoptanteBean.mascotaSeleccionada.imagenUrl.startsWith('http') ? adoptanteBean.mascotaSeleccionada.imagenUrl : request.contextPath.concat('/').concat(adoptanteBean.mascotaSeleccionada.imagenUrl)}" alt="#{adoptanteBean.mascotaSeleccionada.nombre}"
+                                 class="w-72 h-72 sm:w-96 sm:h-96 rounded-xl object-cover shadow-md border border-gray-200/50 shrink-0"/>
+
+                            <div class="flex-1 w-full text-center sm:text-left mt-2 sm:mt-0">
+                                <p class="text-base font-medium text-gray-500 mb-1">Solicitud para adoptar a</p>
+                                <p class="font-extrabold text-4xl text-[#00685f] leading-none mb-4">#{adoptanteBean.mascotaSeleccionada.nombre}</p>
+
+                                <div class="grid grid-cols-2 gap-x-3 gap-y-2 text-sm text-gray-600 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
+                                    <p><span class="font-bold text-gray-400">Especie:</span> <span class="font-semibold text-gray-800 text-base block mt-0.5">#{adoptanteBean.mascotaSeleccionada.especie}</span></p>
+                                    <p><span class="font-bold text-gray-400">Edad:</span> <span class="font-semibold text-gray-800 text-base block mt-0.5">#{adoptanteBean.mascotaSeleccionada.edad} años</span></p>
+                                    <p><span class="font-bold text-gray-400">Sexo:</span> <span class="font-semibold text-gray-800 text-base block mt-0.5">#{adoptanteBean.mascotaSeleccionada.sexo}</span></p>
+                                    <p><span class="font-bold text-gray-400">Tamaño:</span> <span class="font-semibold text-gray-800 text-base block mt-0.5">#{adoptanteBean.mascotaSeleccionada.tamano}</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campos del formulario -->
+                        <div class="space-y-4 pt-2">
+                            <div class="flex flex-col gap-1.5">
+                                <label class="text-sm font-semibold text-gray-700">Tipo de vivienda</label>
+                                <p:selectOneMenu value="#{adoptanteBean.tipoVivienda}" styleClass="w-full border rounded-lg p-2.5 text-sm shadow-sm outline-none">
+                                    <f:selectItem itemLabel="Selecciona una opción" itemValue="#{null}" noSelectionOption="true"/>
+                                    <f:selectItem itemLabel="Casa propia" itemValue="Casa propia"/>
+                                    <f:selectItem itemLabel="Casa arrendada" itemValue="Casa arrendada"/>
+                                    <f:selectItem itemLabel="Departamento" itemValue="Departamento"/>
+                                </p:selectOneMenu>
+                            </div>
+
+                            <div class="flex items-center gap-3 bg-gray-50 p-3.5 rounded-lg border border-gray-100">
+                                <p:selectBooleanCheckbox value="#{adoptanteBean.tieneOtrasMascotas}"/>
+                                <label class="text-sm font-medium text-gray-700">¿Tienes otras mascotas actualmente en casa?</label>
+                            </div>
+
+                            <div class="flex flex-col gap-1.5">
+                                <label class="text-sm font-semibold text-gray-700">¿Has tenido mascotas antes? Cuéntanos tu experiencia</label>
+                                <p:inputTextarea value="#{adoptanteBean.experienciaPrevia}" rows="2"
+                                                 styleClass="w-full border rounded-lg p-3 text-sm shadow-sm outline-none"/>
+                            </div>
+
+                            <div class="flex flex-col gap-1.5">
+                                <label class="text-sm font-semibold text-gray-700">¿Por qué quieres adoptar a esta mascota?</label>
+                                <p:inputTextarea value="#{adoptanteBean.motivoAdopcion}" required="true" requiredMessage="Cuéntanos tu motivo de adopción"
+                                                 rows="2" styleClass="w-full border rounded-lg p-3 text-sm shadow-sm outline-none"/>
+                            </div>
+                        </div>
+
+                        <p:commandButton value="Confirmar Solicitud de Adopción" action="#{adoptanteBean.confirmarSolicitud()}"
+                                         update=":formGrid:gridMascotas :mensajes formSolicitud"
+                                         oncomplete="if (!args.validationFailed) PF('wvFormulario').hide()"
+                                         styleClass="w-full bg-[#fea619] text-[#684000] font-bold py-3.5 rounded-xl hover:bg-[#ffb95f] transition-all cursor-pointer shadow-md mt-4 text-base"/>
+                    </h:panelGroup>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+    </main>
+</h:body>
+</html>

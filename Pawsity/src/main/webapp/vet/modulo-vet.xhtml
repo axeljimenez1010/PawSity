@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🐾 PawSity | Módulo Clínico Veterinario</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00685f",
+                        "secondary-container": "#fea619",
+                        "background": "#f5faf8"
+                    }
+                }
+            }
+        }
+    </script>
+</h:head>
+
+<h:body styleClass="bg-background min-h-screen font-['Inter'] p-6 selection:bg-[#00685f] selection:text-white">
+    <p:growl id="mensajes" showDetail="true" life="4000"/>
+
+    <main class="max-w-7xl mx-auto space-y-6">
+        <header class="flex justify-between items-center bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+            <div>
+                <h1 class="text-2xl font-bold text-[#00685f] flex items-center gap-2">
+                    <span class="material-symbols-outlined text-3xl">local_hospital</span>
+                    PawSity Central - Módulo Clínico Veterinario
+                </h1>
+                <p class="text-sm text-gray-500">
+                    Gestión de Expedientes Médicos | Veterinario: <span class="font-bold text-gray-700">Dr. #{loginBean.usuarioLogueado.nombres}</span>
+                </p>
+            </div>
+            <h:form>
+                <p:commandButton value="Cerrar Sesión" action="#{loginBean.logout()}"
+                                 styleClass="bg-red-50 text-red-600 px-4 py-2 rounded-lg font-medium border border-red-200 hover:bg-red-100 hover:border-red-300 transition-all cursor-pointer shadow-sm"/>
+            </h:form>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+            <h:form id="formPacientes" styleClass="lg:col-span-4 bg-white rounded-xl shadow-sm border border-gray-200 p-5 h-fit">
+                <div class="border-b border-gray-100 pb-3 mb-4 flex justify-between items-center">
+                    <h2 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#00685f]">pets</span>
+                        Pacientes en el Refugio
+                    </h2>
+                    <span class="bg-[#00685f]/10 text-[#00685f] text-xs font-bold px-2.5 py-1 rounded-full">#{vetBean.pacientes.size()} total</span>
+                </div>
+
+                <h:panelGroup rendered="#{empty vetBean.pacientes}" layout="block" styleClass="text-center py-10 text-gray-400 text-sm border border-dashed rounded-lg">
+                    <span class="material-symbols-outlined text-4xl block mb-1 text-gray-300">pets</span>
+                    No hay pacientes registrados en el sistema.
+                </h:panelGroup>
+
+                <div class="divide-y divide-gray-100 max-h-[600px] overflow-y-auto pr-1">
+                    <ui:repeat value="#{vetBean.pacientes}" var="paciente">
+                        <div class="flex justify-between items-center py-3.5 px-3 rounded-lg transition-colors #{vetBean.pacienteActivo.nombre == paciente.nombre ? 'bg-[#00685f]/10 border-l-4 border-[#00685f] font-semibold' : 'hover:bg-gray-50'}">
+                            <div class="flex items-center gap-3">
+                                <span class="w-2.5 h-2.5 rounded-full #{paciente.estado == 'DISPONIBLE' ? 'bg-green-500 shadow-2xs' : 'bg-yellow-500'}" title="Estado: #{paciente.estado}"></span>
+                                <div>
+                                    <span class="font-bold text-gray-800 block text-base leading-tight">#{paciente.nombre}</span>
+                                    <span class="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full font-medium mt-1 inline-block">#{paciente.especie} • #{paciente.edad} años</span>
+                                </div>
+                            </div>
+                            <p:commandButton value="#{vetBean.pacienteActivo.nombre == paciente.nombre ? 'Viendo' : 'Examinar'}"
+                                             action="#{vetBean.seleccionar(paciente)}"
+                                             update=":formExpediente :formPacientes"
+                                             styleClass="text-xs font-semibold px-3 py-1.5 rounded-lg transition-all cursor-pointer #{vetBean.pacienteActivo.nombre == paciente.nombre ? 'bg-[#00685f] text-white shadow-2xs' : 'text-[#00685f] bg-transparent border border-[#00685f] hover:bg-[#00685f] hover:text-white'}"/>
+                        </div>
+                    </ui:repeat>
+                </div>
+            </h:form>
+
+            <h:form id="formExpediente" styleClass="lg:col-span-8 flex flex-col gap-6">
+
+                <h:panelGroup rendered="#{empty vetBean.pacienteActivo}" layout="block" styleClass="bg-white rounded-xl shadow-sm border border-gray-200 p-16 text-center text-gray-400 flex flex-col items-center justify-center min-h-[450px]">
+                    <span class="material-symbols-outlined text-7xl text-gray-300 mb-3 animate-pulse">clinical_notes</span>
+                    <p class="text-xl font-bold text-gray-600">Ningún paciente seleccionado</p>
+                    <p class="text-sm max-w-md mt-1 text-gray-500">Selecciona una mascota de la lista izquierda para abrir su expediente clínico y registrar consultas o vacunas en tiempo real.</p>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not empty vetBean.pacienteActivo}" layout="block" styleClass="space-y-6">
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-gradient-to-r from-white via-white to-[#f0f7f5]">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-[#00685f]/10 text-[#00685f] flex items-center justify-center border border-[#00685f]/20 font-bold text-2xl">
+                                #{vetBean.pacienteActivo.nombre.charAt(0)}
+                            </div>
+                            <div>
+                                <span class="text-[11px] font-bold text-[#00685f] uppercase tracking-wider block">Expediente Clínico Activo</span>
+                                <h1 class="text-3xl font-extrabold text-gray-800 mt-0.5">#{vetBean.pacienteActivo.nombre}</h1>
+                                <p class="text-xs text-gray-500 mt-1 flex items-center gap-2">
+                                    <span>⚥ Sexo: <strong>#{vetBean.pacienteActivo.sexo}</strong></span> •
+                                    <span>🎨 Color: <strong>#{vetBean.pacienteActivo.color}</strong></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-[#fea619]/20 text-[#855300] border border-[#fea619]/40 font-bold px-4 py-1.5 rounded-full text-sm shadow-2xs">
+                                #{vetBean.pacienteActivo.especie}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-3 flex items-center gap-2 border-b border-gray-100 pb-2">
+                                    <span class="material-symbols-outlined text-[#0058be]">stethoscope</span>
+                                    Registrar Nueva Consulta
+                                </h3>
+                                <p:inputTextarea value="#{vetBean.diagnostico}" rows="3"
+                                                 styleClass="w-full border rounded-lg p-3 text-sm mb-4 outline-none focus:border-[#0058be] focus:ring-1 focus:ring-[#0058be] transition-all"
+                                                 placeholder="Escribe el diagnóstico clínico, síntomas y tratamiento prescrito..."/>
+                            </div>
+                            <p:commandButton value="Guardar Diagnóstico" action="#{vetBean.registrarConsulta()}"
+                                             update="formExpediente :mensajes"
+                                             styleClass="w-full bg-[#0058be] text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 active:scale-[0.99] transition-all cursor-pointer shadow-2xs"/>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-gray-800 mb-3 flex items-center gap-2 border-b border-gray-100 pb-2">
+                                    <span class="material-symbols-outlined text-[#00685f]">vaccines</span>
+                                    Aplicar Vacuna / Desparasitación
+                                </h3>
+                                <p:inputText value="#{vetBean.nombreVacuna}"
+                                             styleClass="w-full border rounded-lg p-3 text-sm mb-4 outline-none focus:border-[#00685f] focus:ring-1 focus:ring-[#00685f] transition-all"
+                                             placeholder="Ej. Triple Felina / Antirrábica / Sextuple"/>
+                            </div>
+                            <p:commandButton value="Registrar Vacuna" action="#{vetBean.registrarVacuna()}"
+                                             update="formExpediente :mensajes"
+                                             styleClass="w-full bg-[#00685f] text-white py-2.5 rounded-lg font-semibold hover:bg-[#005049] active:scale-[0.99] transition-all cursor-pointer shadow-2xs"/>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                        <div>
+                            <h4 class="font-bold text-gray-600 uppercase text-xs tracking-wider mb-4 border-b border-gray-100 pb-2 flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-base text-[#0058be]">history</span>
+                                Historial de Consultas Médicas
+                            </h4>
+
+                            <h:panelGroup rendered="#{empty vetBean.pacienteActivo.historialMedico.consultasMedicas}" layout="block" styleClass="text-xs text-gray-400 italic py-4 text-center bg-gray-50 rounded-lg border border-dashed">
+                                No hay consultas médicas registradas para este paciente.
+                            </h:panelGroup>
+
+                            <div class="space-y-3.5 max-h-[320px] overflow-y-auto pr-2">
+                                <ui:repeat value="#{vetBean.pacienteActivo.historialMedico.consultasMedicas}" var="c">
+                                    <div class="border-l-4 border-[#0058be] bg-blue-50/40 p-3.5 rounded-r-lg shadow-2xs">
+                                        <div class="flex justify-between items-center mb-1">
+                                            <span class="text-xs font-bold text-[#0058be]">📅 #{c.fechaDiagnostico}</span>
+                                            <span class="text-[11px] text-gray-500 font-medium">Dr(a). #{c.veterinarioEncargado.nombres}</span>
+                                        </div>
+                                        <p class="text-sm font-medium text-gray-800 mt-1.5 leading-relaxed">#{c.diagnostico}</p>
+                                    </div>
+                                </ui:repeat>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-gray-600 uppercase text-xs tracking-wider mb-4 border-b border-gray-100 pb-2 flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-base text-[#00685f]">verified</span>
+                                Registro de Vacunas y Refuerzos
+                            </h4>
+
+                            <h:panelGroup rendered="#{empty vetBean.pacienteActivo.historialMedico.vacunas}" layout="block" styleClass="text-xs text-gray-400 italic py-4 text-center bg-gray-50 rounded-lg border border-dashed">
+                                No hay vacunas aplicadas en el carnet de este paciente.
+                            </h:panelGroup>
+
+                            <div class="space-y-2.5 max-h-[320px] overflow-y-auto pr-2">
+                                <ui:repeat value="#{vetBean.pacienteActivo.historialMedico.vacunas}" var="v">
+                                    <div class="bg-green-50/60 border border-green-200/80 p-3 rounded-lg flex items-center gap-3 shadow-2xs">
+                                        <span class="w-7 h-7 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm shrink-0">✓</span>
+                                        <div class="flex-grow">
+                                            <p class="text-sm font-bold text-gray-800">#{v.nombre}</p>
+                                            <p class="text-xs text-gray-500 mt-0.5">Aplicada: #{v.fechaAplicacion} | <strong class="text-green-700 font-medium">Refuerzo: #{v.fechaProximaAplicacion}</strong></p>
+                                        </div>
+                                    </div>
+                                </ui:repeat>
+                            </div>
+                        </div>
+
+                    </div>
+                </h:panelGroup>
+            </h:form>
+        </div>
+    </main>
+</h:body>
+</html>

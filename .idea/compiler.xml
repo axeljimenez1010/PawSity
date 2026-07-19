@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Pawsity" />
+        <module name="Pawsity (1)" />
       </profile>
     </annotationProcessing>
   </component>

@@ -42,8 +42,30 @@ public class Mascota {
 
     private static String generarImagenPorDefecto(String especie, String nombre) {
         String categoria = mapearCategoria(especie);
-        int lock = Math.abs((nombre == null ? "mascota" : nombre).hashCode() % 1000);
-        return "https://loremflickr.com/480/360/" + categoria + "?lock=" + lock;
+        // Usamos el hashcode del nombre para seleccionar consistentemente una de las 3 fotos
+        int lock = Math.abs((nombre == null ? "mascota" : nombre).hashCode() % 3);
+
+        switch (categoria) {
+            case "dog":
+                String[] perros = {
+                        "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=600&auto=format&fit=crop", // Cachorro canela (Oliver)
+                        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600&auto=format&fit=crop", // Perro feliz (Luna)
+                        "https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=600&auto=format&fit=crop"  // Golden retriever
+                };
+                return perros[lock];
+
+            case "cat":
+                String[] gatos = {
+                        "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600&auto=format&fit=crop", // Gato elegante (Max)
+                        "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=600&auto=format&fit=crop", // Gato curioso
+                        "https://images.unsplash.com/photo-1495360010541-f48722b34f7d?q=80&w=600&auto=format&fit=crop"  // Gato durmiendo
+                };
+                return gatos[lock];
+
+            default:
+                // Imagen neutra y bonita de refugio para conejos, aves, reptiles, etc.
+                return "https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=600&auto=format&fit=crop";
+        }
     }
 
     private static String mapearCategoria(String especie) {
@@ -51,10 +73,6 @@ public class Mascota {
         String e = especie.trim().toLowerCase();
         if (e.startsWith("can")) return "dog";
         if (e.startsWith("fel") || e.startsWith("gat")) return "cat";
-        if (e.startsWith("ave") || e.startsWith("bird")) return "bird";
-        if (e.startsWith("cone") || e.startsWith("rabbit")) return "rabbit";
-        if (e.startsWith("roed") || e.startsWith("hamster")) return "hamster";
-        if (e.startsWith("rept") || e.startsWith("lizard")) return "lizard";
         return "pet";
     }
 
@@ -66,6 +84,7 @@ public class Mascota {
         return ChronoUnit.DAYS.between(fechaIngreso, LocalDate.now());
     }
 
+    // --- Getters y Setters ---
 
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }

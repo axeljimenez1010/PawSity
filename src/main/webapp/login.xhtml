@@ -1,44 +1,196 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      lang="es">
+
 <h:head>
-    <!-- ¡Conserva aquí los links de fuentes y el tailwind-config del HTML de Stitch! -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PawSity Central - Login</title>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration de Stich -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dee4e1",
+                        "outline-variant": "#bcc9c6",
+                        "surface-dim": "#d6dbd9",
+                        "surface-container-low": "#f0f5f2",
+                        "on-tertiary-container": "#fefcff",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#edf2f0",
+                        "on-surface": "#171d1c",
+                        "on-primary-container": "#f4fffc",
+                        "surface": "#f5faf8",
+                        "inverse-primary": "#6bd8cb",
+                        "error-container": "#ffdad6",
+                        "on-background": "#171d1c",
+                        "surface-container-highest": "#dee4e1",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "tertiary": "#0058be",
+                        "surface-tint": "#006a61",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "secondary-fixed": "#ffddb8",
+                        "on-secondary-container": "#684000",
+                        "primary-fixed": "#89f5e7",
+                        "on-primary-fixed-variant": "#005049",
+                        "tertiary-fixed": "#d8e2ff",
+                        "surface-container-high": "#e4e9e7",
+                        "primary": "#00685f",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-surface-variant": "#3d4947",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2170e4",
+                        "secondary": "#855300",
+                        "on-tertiary-fixed-variant": "#004395",
+                        "surface-bright": "#f5faf8",
+                        "on-tertiary-fixed": "#001a42",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-primary-fixed": "#00201d",
+                        "secondary-container": "#fea619",
+                        "background": "#f5faf8",
+                        "error": "#ba1a1a",
+                        "primary-container": "#008378",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#adc6ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eaefed",
+                        "inverse-surface": "#2c3130",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#6d7a77"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack_lg": "32px",
+                        "gutter": "24px",
+                        "margin_mobile": "16px",
+                        "base_unit": "8px",
+                        "stack_sm": "8px",
+                        "stack_md": "16px",
+                        "margin_desktop": "48px",
+                        "container_max_width": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Blindaje: Eliminamos estilos invasivos de PrimeFaces y respetamos tipografía */
+        body .ui-inputfield {
+            box-shadow: none !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+    </style>
 </h:head>
-<h:body styleClass="bg-surface-container-low min-h-screen flex items-center justify-center p-4">
-    <!-- Componente obligatorio para recibir las alertas en lugar de println -->
+
+<h:body styleClass="bg-surface-container-low min-h-screen flex items-center justify-center p-margin_mobile md:p-margin_desktop antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- Componente de notificaciones flotantes PrimeFaces -->
     <p:growl id="mensajes" showDetail="true" life="4000"/>
 
-    <main class="w-full max-w-[420px] bg-white rounded-xl shadow-lg p-8 flex flex-col border border-outline-variant/30">
-        <header class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-[#00685f]">🐾 PawSity Central</h1>
-            <p class="text-gray-600">Gestión Integral de Refugio</p>
+    <!-- Login Container -->
+    <main class="w-full max-w-[420px] bg-surface-container-lowest rounded-xl shadow-lg p-stack_lg flex flex-col border border-outline-variant/30">
+        <!-- Header Section -->
+        <header class="text-center mb-stack_lg flex flex-col gap-stack_sm items-center">
+            <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">🐾 PawSity Central</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant">Gestión Integral de Refugio</p>
         </header>
 
-        <!-- REEMPLAZO DE FORMULARIO ESTÁTICO POR JSF -->
-        <h:form id="loginForm" styleClass="flex flex-col gap-6">
-            <div class="flex flex-col gap-2">
-                <label class="text-sm font-medium">Correo Electrónico</label>
-                <p:inputText value="#{loginBean.correo}" required="true"
-                             requiredMessage="El correo es obligatorio"
-                             styleClass="w-full p-3 border rounded-lg outline-none focus:border-[#00685f]"
-                             placeholder="admin@pawsity.ec"/>
+        <!-- Welcome Message -->
+        <div class="text-center mb-stack_lg">
+            <p class="font-body-md text-body-md text-on-surface">Bienvenido de nuevo. Por favor, ingresa tus credenciales para continuar.</p>
+        </div>
+
+        <!-- Form Section -->
+        <h:form id="formLogin" styleClass="flex flex-col gap-gutter">
+
+            <!-- Email Input Group -->
+            <div class="flex flex-col gap-base_unit">
+                <label class="font-label-md text-label-md text-on-surface" for="email">Correo Electrónico</label>
+                <div class="relative group flex items-center">
+                    <span class="material-symbols-outlined absolute left-3 z-10 text-outline-variant group-focus-within:text-primary transition-colors pointer-events-none">mail</span>
+                    <!-- Padding blindado para que el texto NO se monte sobre el ícono -->
+                    <p:inputText id="email" value="#{loginBean.correo}" required="true"
+                                 requiredMessage="Ingresa tu correo electrónico"
+                                 placeholder="usuario@refugio.org"
+                                 style="padding-left: 2.75rem !important;"
+                                 styleClass="w-full pr-4 py-3 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline-variant focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"/>
+                </div>
             </div>
 
-            <div class="flex flex-col gap-2">
-                <label class="text-sm font-medium">Contraseña</label>
-                <p:password value="#{loginBean.contrasena}" required="true"
-                            requiredMessage="La contraseña es obligatoria"
-                            styleClass="w-full p-3 border rounded-lg outline-none focus:border-[#00685f]"
-                            feedback="false" placeholder="••••••••"/>
+            <!-- Password Input Group -->
+            <div class="flex flex-col gap-base_unit">
+                <div class="flex justify-between items-center">
+                    <label class="font-label-md text-label-md text-on-surface" for="password">Contraseña</label>
+                    <a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors" href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div class="relative group flex items-center">
+                    <span class="material-symbols-outlined absolute left-3 z-10 text-outline-variant group-focus-within:text-primary transition-colors pointer-events-none">lock</span>
+                    <!-- Padding blindado para que el texto NO se monte sobre el candado -->
+                    <p:password id="password" value="#{loginBean.contrasena}" required="true"
+                                requiredMessage="Ingresa tu contraseña"
+                                placeholder="••••••••" feedback="false"
+                                style="padding-left: 2.75rem !important;"
+                                styleClass="w-full pr-4 py-3 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline-variant focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm"/>
+                </div>
             </div>
 
-            <!-- Botón conectado al método login() -->
-            <p:commandButton value="Iniciar Sesión" action="#{loginBean.login()}"
-                             update="loginForm :mensajes"
-                             styleClass="w-full py-3 bg-[#00685f] text-white font-medium rounded-lg hover:bg-[#008378] transition-all cursor-pointer"/>
+            <!-- Botón Estilo Stich + Lógica de Panel (ajax="false") + Llamado exacto a login() -->
+            <p:commandButton value="Iniciar Sesión"
+                             action="#{loginBean.login()}"
+                             ajax="false"
+                             style="background-color: #00685f !important; border-color: #00685f !important;"
+                             styleClass="w-full mt-stack_sm text-white py-3 px-6 rounded-lg font-label-md text-label-md flex justify-center items-center gap-2 hover:opacity-90 active:scale-[0.98] transition-all cursor-pointer shadow-md"/>
         </h:form>
+
+        <!-- Footer Context -->
+        <footer class="mt-stack_lg pt-stack_md border-t border-outline-variant/50 text-center">
+            <p class="font-label-sm text-label-sm text-on-surface-variant flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-[16px]">info</span>
+                Acceso exclusivo para Adoptantes, Veterinarios y Administradores
+            </p>
+        </footer>
     </main>
 </h:body>
 </html>

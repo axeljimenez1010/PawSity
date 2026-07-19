@@ -25,6 +25,13 @@
             }
         }
     </script>
+    <style>
+        /* Reseteo para inputs de PrimeFaces */
+        body .ui-inputfield {
+            box-shadow: none !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+    </style>
 </h:head>
 
 <h:body styleClass="bg-background min-h-screen font-['Inter'] p-6">
@@ -153,8 +160,6 @@
             <h:form id="formHistorial">
                 <h:panelGroup id="contenidoHistorial">
                     <h:panelGroup rendered="#{not empty adoptanteBean.mascotaHistorial}" layout="block" styleClass="space-y-5 p-1">
-
-                        <!-- Ficha superior mejorada con imagen más grande -->
                         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-gray-50/80 p-5 rounded-xl border border-gray-200 shadow-sm">
                             <img src="#{adoptanteBean.mascotaHistorial.imagenUrl.startsWith('http') ? adoptanteBean.mascotaHistorial.imagenUrl : request.contextPath.concat('/').concat(adoptanteBean.mascotaHistorial.imagenUrl)}" alt="#{adoptanteBean.mascotaHistorial.nombre}"
                                  class="w-72 h-72 sm:w-96 sm:h-96 rounded-xl object-cover shadow-md border border-gray-200/50 shrink-0"/>
@@ -162,28 +167,12 @@
                             <div class="flex-1 w-full text-center sm:text-left mt-2 sm:mt-0">
                                 <p class="font-extrabold text-4xl text-gray-800">#{adoptanteBean.mascotaHistorial.nombre}</p>
 
-                                <!-- Grid de datos -->
                                 <div class="grid grid-cols-2 gap-x-3 gap-y-3 mt-5 text-sm text-gray-600">
-                                    <p class="flex items-center gap-2">
-                                        <span class="text-xl">🐾</span>
-                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.especie}</span>
-                                    </p>
-                                    <p class="flex items-center gap-2">
-                                        <span class="text-xl">⏳</span>
-                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.edad} años</span>
-                                    </p>
-                                    <p class="flex items-center gap-2">
-                                        <span class="text-xl">⚥</span>
-                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.sexo}</span>
-                                    </p>
-                                    <p class="flex items-center gap-2">
-                                        <span class="text-xl">📏</span>
-                                        <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.tamano}</span>
-                                    </p>
-                                    <p class="col-span-2 flex items-center gap-2 mt-2">
-                                        <span class="text-xl">🎨</span>
-                                        <span class="text-gray-500">Color:</span> <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.color}</span>
-                                    </p>
+                                    <p class="flex items-center gap-2"><span class="text-xl">🐾</span><span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.especie}</span></p>
+                                    <p class="flex items-center gap-2"><span class="text-xl">⏳</span><span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.edad} años</span></p>
+                                    <p class="flex items-center gap-2"><span class="text-xl">⚥</span><span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.sexo}</span></p>
+                                    <p class="flex items-center gap-2"><span class="text-xl">📏</span><span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.tamano}</span></p>
+                                    <p class="col-span-2 flex items-center gap-2 mt-2"><span class="text-xl">🎨</span><span class="text-gray-500">Color:</span> <span class="font-semibold text-gray-800 text-base">#{adoptanteBean.mascotaHistorial.color}</span></p>
                                 </div>
 
                                 <div class="mt-6 pt-4 border-t border-gray-200 text-sm bg-white p-3 rounded-lg inline-block border shadow-sm w-full">
@@ -192,7 +181,6 @@
                             </div>
                         </div>
 
-                        <!-- Lista de vacunas -->
                         <div class="mt-4">
                             <h4 class="text-sm font-bold text-gray-500 uppercase mb-3 tracking-wide">Registro de Vacunas y Desparasitación</h4>
                             <h:panelGroup rendered="#{empty adoptanteBean.mascotaHistorial.historialMedico.vacunas}" layout="block"
@@ -217,13 +205,21 @@
             </h:form>
         </p:dialog>
 
-        <!-- Diálogo: formulario de adopción -->
-        <p:dialog header="Formulario de Adopción" widgetVar="wvFormulario" id="dlgFormulario" modal="true" responsive="true" width="850" styleClass="rounded-xl" appendTo="@(body)">
+        <!-- Diálogo: formulario de adopción con scroll activo -->
+        <p:dialog header="Formulario de Adopción"
+                  widgetVar="wvFormulario"
+                  id="dlgFormulario"
+                  modal="true"
+                  responsive="true"
+                  width="850"
+                  style="max-height: 90vh;"
+                  styleClass="rounded-xl overflow-y-auto"
+                  appendTo="@(body)">
             <h:form id="formSolicitud">
                 <h:panelGroup id="contenidoSolicitud">
                     <h:panelGroup rendered="#{not empty adoptanteBean.mascotaSeleccionada}" layout="block" styleClass="space-y-5 p-1">
 
-                        <!-- Ficha superior mejorada (Formulario) -->
+                        <!-- Ficha superior -->
                         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-gray-50/80 p-5 rounded-xl border border-gray-200 shadow-sm">
                             <img src="#{adoptanteBean.mascotaSeleccionada.imagenUrl.startsWith('http') ? adoptanteBean.mascotaSeleccionada.imagenUrl : request.contextPath.concat('/').concat(adoptanteBean.mascotaSeleccionada.imagenUrl)}" alt="#{adoptanteBean.mascotaSeleccionada.nombre}"
                                  class="w-72 h-72 sm:w-96 sm:h-96 rounded-xl object-cover shadow-md border border-gray-200/50 shrink-0"/>
@@ -271,10 +267,20 @@
                             </div>
                         </div>
 
-                        <p:commandButton value="Confirmar Solicitud de Adopción" action="#{adoptanteBean.confirmarSolicitud()}"
-                                         update=":formGrid:gridMascotas :mensajes formSolicitud"
-                                         oncomplete="if (!args.validationFailed) PF('wvFormulario').hide()"
-                                         styleClass="w-full bg-[#fea619] text-[#684000] font-bold py-3.5 rounded-xl hover:bg-[#ffb95f] transition-all cursor-pointer shadow-md mt-4 text-base"/>
+                        <!-- BARRA DE ACCIÓN CON BOTÓN MORADO-VERDE Y SCROLL COMPATIBLE -->
+                        <div class="flex items-center justify-end gap-3 mt-6 pt-4 border-t border-gray-100">
+                            <p:commandButton value="Cancelar"
+                                             onclick="PF('wvFormulario').hide(); return false;"
+                                             styleClass="bg-gray-100 text-gray-600 px-5 py-3 rounded-xl font-medium text-sm hover:bg-gray-200 transition-all border-none cursor-pointer shadow-xs"/>
+
+                            <p:commandButton value="Confirmar Solicitud de Adopción 🐾"
+                                             action="#{adoptanteBean.confirmarSolicitud()}"
+                                             process="@form"
+                                             update=":formGrid:gridMascotas :mensajes formSolicitud"
+                                             oncomplete="if (!args.validationFailed) PF('wvFormulario').hide()"
+                                             style="background-color: #00685f !important; border-color: #6b21a8 !important; color: #f3e8ff !important;"
+                                             styleClass="px-6 py-3 rounded-xl font-extrabold text-sm shadow-lg hover:shadow-purple-600/30 active:scale-[0.98] transition-all cursor-pointer border-2"/>
+                        </div>
                     </h:panelGroup>
                 </h:panelGroup>
             </h:form>

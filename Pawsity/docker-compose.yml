@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: pawsity-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: pawsity
+      POSTGRES_USER: pawsity
+      POSTGRES_PASSWORD: pawsity123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pawsity_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pawsity -d pawsity"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Interfaz visual opcional para explorar la base de datos desde el navegador.
+  # Si no la quieres, borra este servicio completo (db funciona solo, sin depender de esto).
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pawsity-pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pawsity.ec
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+
+volumes:
+  pawsity_pgdata:

@@ -7,4 +7,19 @@
     <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443"/>
 
     <webApplication id="Pawsity" location="Pawsity.war" contextRoot="/Pawsity"/>
+
+    //Configuración para cargar el driver de PostgreSQL
+    <library id="PostgresLib">
+        <fileset dir="${shared.resource.dir}" includes="postgresql-*.jar"/>
+    </library>
+
+    // Configuración de la conexión a la base de datos
+    <dataSource id="pawsityDS" jndiName="jdbc/pawsityDS">
+        <jdbcDriver libraryRef="PostgresLib"/>
+        <properties.postgresql serverName="localhost"
+                               portNumber="5432"
+                               databaseName="pawsity"
+                               user="pawsity"
+                               password="pawsity123"/>
+    </dataSource>
 </server>

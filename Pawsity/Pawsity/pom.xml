@@ -35,13 +35,6 @@
             <version>15.0.0</version>
             <classifier>jakarta</classifier>
         </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.7.2</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -62,17 +55,6 @@
                 <groupId>io.openliberty.tools</groupId>
                 <artifactId>liberty-maven-plugin</artifactId>
                 <version>${liberty-plugin.version}</version>
-                <configuration>
-                    <copyDependencies>
-                        <dependencyGroup>
-                            <location>shared/resources</location>
-                            <dependency>
-                                <groupId>org.postgresql</groupId>
-                                <artifactId>postgresql</artifactId>
-                            </dependency>
-                        </dependencyGroup>
-                    </copyDependencies>
-                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -6,14 +6,28 @@ import ec.edu.unl.pawsity.dominio.mascota.ConsultaMedica;
 import ec.edu.unl.pawsity.dominio.mascota.HistorialMedico;
 import ec.edu.unl.pawsity.dominio.mascota.Mascota;
 import ec.edu.unl.pawsity.dominio.mascota.Vacuna;
+import jakarta.persistence.*; // ⭐ IMPORTANTE: Importaciones de Jakarta EE
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
+@Entity
+@Table(name = "veterinarios")
+
+@PrimaryKeyJoinColumn(name = "id_usuario")
 public class Veterinario extends Usuario {
+
+    @Column(name = "especialidad", length = 100)
     private String especialidad;
+
+    @Column(name = "numero_licencia", unique = true, length = 50)
     private String numeroLicencia;
+
+
+    protected Veterinario() {
+        super();
+    }
 
     public Veterinario(String correo, String contrasena, String nombres, String apellidos, String especialidad, String numeroLicencia) {
         super(correo, contrasena, nombres, apellidos);
@@ -97,5 +111,23 @@ public class Veterinario extends Usuario {
                 }
             }
         } while (opcion != 2);
+    }
+
+
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public String getNumeroLicencia() {
+        return numeroLicencia;
+    }
+
+    public void setNumeroLicencia(String numeroLicencia) {
+        this.numeroLicencia = numeroLicencia;
     }
 }

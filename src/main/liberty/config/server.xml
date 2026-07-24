@@ -8,13 +8,13 @@
 
     <webApplication id="Pawsity" location="Pawsity.war" contextRoot="/Pawsity"/>
 
-    //Configuración para cargar el driver de PostgreSQL
+    <!-- Configuración para cargar el driver de PostgreSQL -->
     <library id="PostgresLib">
         <fileset dir="${shared.resource.dir}" includes="postgresql-*.jar"/>
     </library>
 
-    // Configuración de la conexión a la base de datos
-    <dataSource id="pawsityDS" jndiName="jdbc/pawsityDS">
+    <!-- Configuración de la conexión a la base de datos (jndiName corregido a jdbc/pawsityDB) -->
+    <dataSource id="pawsityDS" jndiName="jdbc/pawsityDB">
         <jdbcDriver libraryRef="PostgresLib"/>
         <properties.postgresql serverName="localhost"
                                portNumber="5432"

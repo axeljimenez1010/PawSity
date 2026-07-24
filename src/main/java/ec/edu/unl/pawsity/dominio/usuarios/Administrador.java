@@ -5,12 +5,25 @@ import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
 import ec.edu.unl.pawsity.dominio.mascota.EstadoMascota;
 import ec.edu.unl.pawsity.dominio.mascota.Mascota;
 import ec.edu.unl.pawsity.excepciones.CapacidadRefugioExcedidaException;
+import jakarta.persistence.*; // ⭐ IMPORTANTE: Importaciones de Jakarta EE
 
 import java.util.List;
 import java.util.Scanner;
 
+@Entity
+@Table(name = "administradores")
+
+@PrimaryKeyJoinColumn(name = "id_usuario")
 public class Administrador extends Usuario {
+
+
+    @Column(name = "puesto", length = 80)
     private String puesto;
+
+
+    protected Administrador() {
+        super();
+    }
 
     public Administrador(String correo, String contrasena, String nombres, String apellidos, String puesto) {
         super(correo, contrasena, nombres, apellidos);
@@ -18,7 +31,7 @@ public class Administrador extends Usuario {
     }
 
     public void gestionarSolicitud(SolicitudDeAdopcion solicitud, boolean estadoAprobacion) {
-        if(estadoAprobacion) {
+        if (estadoAprobacion) {
             solicitud.aprobar();
         } else {
             solicitud.rechazar();
@@ -42,14 +55,20 @@ public class Administrador extends Usuario {
             System.out.println("4. Cerrar sesión");
             System.out.print("Seleccione una opción: ");
 
-            try { opcion = Integer.parseInt(sc.nextLine()); }
-            catch (NumberFormatException e) { continue; }
+            try {
+                opcion = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                continue;
+            }
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Nombre de la mascota: "); String nombre = sc.nextLine();
-                    System.out.print("Especie: "); String especie = sc.nextLine();
-                    System.out.print("Edad estimada: "); double edad = Double.parseDouble(sc.nextLine());
+                    System.out.print("Nombre de la mascota: ");
+                    String nombre = sc.nextLine();
+                    System.out.print("Especie: ");
+                    String especie = sc.nextLine();
+                    System.out.print("Edad estimada: ");
+                    double edad = Double.parseDouble(sc.nextLine());
                     Mascota nueva = new Mascota(nombre, especie, edad, "Mediano", "Desconocido", "Mestizo", EstadoMascota.DISPONIBLE);
                     try {
                         this.actualizarCatalogo(refugio, nueva);
@@ -78,5 +97,13 @@ public class Administrador extends Usuario {
                     break;
             }
         } while (opcion != 4);
+    }
+
+    public String getPuesto() {
+        return puesto;
+    }
+
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
     }
 }

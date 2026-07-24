@@ -4,15 +4,30 @@ import ec.edu.unl.pawsity.dominio.gestionrefugio.Refugio;
 import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
 import ec.edu.unl.pawsity.dominio.mascota.EstadoMascota;
 import ec.edu.unl.pawsity.dominio.mascota.Mascota;
+import jakarta.persistence.*; // ⭐ IMPORTANTE: Importaciones del estándar Jakarta EE
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+@Entity
+@Table(name = "adoptantes")
+
+@PrimaryKeyJoinColumn(name = "id_usuario")
 public class Adoptante extends Usuario {
+
+    @Column(name = "telefono", length = 20)
     private String telefono;
+
+    @Column(name = "direccion", length = 150)
     private String direccion;
+
+    @Column(name = "ocupacion", length = 80)
     private String ocupacion;
+
+    protected Adoptante() {
+        super();
+    }
 
     public Adoptante(String correo, String contrasena, String nombres, String apellidos, String telefono, String direccion, String ocupacion) {
         super(correo, contrasena, nombres, apellidos);
@@ -53,16 +68,16 @@ public class Adoptante extends Usuario {
             if (opcion == 1 || opcion == 2) {
                 List<Mascota> catalogo = new ArrayList<>();
 
-                if(opcion == 1) {
-                    for(Mascota m : refugio.buscarMascota()) {
-                        if(m.getEstado() == EstadoMascota.DISPONIBLE) catalogo.add(m);
+                if (opcion == 1) {
+                    for (Mascota m : refugio.buscarMascota()) {
+                        if (m.getEstado() == EstadoMascota.DISPONIBLE) catalogo.add(m);
                     }
                 } else {
                     System.out.print("Ingrese la especie que desea buscar (Ej. Canino, Felino): ");
                     catalogo = this.buscarMascota(sc.nextLine(), refugio);
                 }
 
-                if(catalogo.isEmpty()) {
+                if (catalogo.isEmpty()) {
                     System.out.println("Lo sentimos, no hay mascotas con esas características disponibles en este momento.");
                     continue;
                 }
@@ -83,16 +98,29 @@ public class Adoptante extends Usuario {
         } while (opcion != 3);
     }
 
-    // Getters obligatorios para que JSF lea los datos del adoptante en las tarjetas del panel admin
+
+
     public String getTelefono() {
         return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getDireccion() {
         return direccion;
     }
 
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public String getOcupacion() {
         return ocupacion;
+    }
+
+    public void setOcupacion(String ocupacion) {
+        this.ocupacion = ocupacion;
     }
 }

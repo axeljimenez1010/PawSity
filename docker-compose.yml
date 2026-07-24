@@ -1,4 +1,7 @@
 services:
+  # ----------------------------------------
+  # SERVICIO 1: BASE DE DATOS POSTGRESQL
+  # ----------------------------------------
   db:
     image: postgres:16-alpine
     container_name: pawsity-db
@@ -17,19 +20,18 @@ services:
       timeout: 5s
       retries: 5
 
-  # Interfaz visual opcional para explorar la base de datos desde el navegador.
-  # Si no la quieres, borra este servicio completo (db funciona solo, sin depender de esto).
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: pawsity-pgadmin
+  # ----------------------------------------
+  # SERVICIO 2: ADMINER (Gestor Web de BD)
+  # ----------------------------------------
+  adminer:
+    image: adminer:latest
+    container_name: pawsity-adminer
     restart: unless-stopped
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@pawsity.ec
-      PGADMIN_DEFAULT_PASSWORD: admin123
     ports:
-      - "8081:80"
+      - "8080:8080"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
 volumes:
   pawsity_pgdata:

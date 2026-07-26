@@ -19,7 +19,7 @@ public class LoginBean implements Serializable {
     private String correo;
     private String contrasena;
 
-    // Inyección del repositorio JPA para consultar PostgreSQL
+
     @Inject
     private UsuarioRepository usuarioRepository;
 
@@ -30,14 +30,14 @@ public class LoginBean implements Serializable {
     public String login() {
         System.out.println("DEBUG: Intentando autenticar correo: " + correo);
 
-        // Autenticación real contra la base de datos usando contraseñas con hash SHA-256
+        // Autenticación real contra la base de datos usando contraseñas
         Usuario usuarioAutenticado = usuarioRepository.autenticar(correo, contrasena);
 
         if (usuarioAutenticado != null) {
             System.out.println("DEBUG: Usuario autenticado correctamente.");
             System.out.println("DEBUG: Nombre recuperado del usuario: '" + usuarioAutenticado.getNombres() + "'");
 
-            // Guardamos el usuario activo en el alcance de sesión (SessionScoped)
+            // Guardamos el usuario activo en el alcance de sesión
             usuarioSession.iniciar(usuarioAutenticado);
 
             // Redirección inteligente basada en el rol polimórfico del usuario
@@ -50,7 +50,7 @@ public class LoginBean implements Serializable {
             }
         }
 
-        // Alerta visual flotante (Growl) uniforme con el estándar del sistema
+        // Alerta visual flotante  uniforme con el estándar del sistema
         FacesUtil.addError("Acceso Denegado", "Correo o contraseña incorrectos.");
         return null;
     }
@@ -61,16 +61,11 @@ public class LoginBean implements Serializable {
         return "/login?faces-redirect=true";
     }
 
-    /**
-     * Método de compatibilidad retroactiva:
-     * Si alguna vista .xhtml existente llama a #{loginBean.usuarioLogueado},
-     * lo redirige de forma transparente al gestor de sesión actual.
-     */
+
     public Usuario getUsuarioLogueado() {
         return usuarioSession.getUsuarioActual();
     }
 
-    // --- GETTERS Y SETTERS ---
     public String getCorreo() { return correo; }
     public void setCorreo(String correo) { this.correo = correo; }
 

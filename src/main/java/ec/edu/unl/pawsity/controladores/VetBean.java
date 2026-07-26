@@ -32,18 +32,15 @@ public class VetBean implements Serializable {
             return;
         }
 
-        // --- MEJORA 1: Cargamos únicamente los pacientes que siguen residiendo en el refugio ---
+        // Cargamos únicamente las mascotas que siguen residiendo en el refugio
         cargarPacientes();
 
         if (this.pacientes != null && !this.pacientes.isEmpty()) {
-            this.pacienteActivo = this.pacientes.get(0); // Seleccionar el primer paciente por defecto
+            this.pacienteActivo = this.pacientes.get(0);
         }
     }
 
-    /**
-     * Método auxiliar para consultar en PostgreSQL evadiendo la caché
-     * y excluyendo a las mascotas que ya fueron adoptadas.
-     */
+
     public void cargarPacientes() {
         this.pacientes = mascotaRepository.buscarActivasParaVeterinario();
     }
@@ -52,9 +49,7 @@ public class VetBean implements Serializable {
         this.pacienteActivo = m;
     }
 
-    /**
-     * Registra una nueva consulta médica / diagnóstico y lo persiste en base de datos.
-     */
+
     public void registrarConsulta() {
         if (pacienteActivo == null || diagnostico == null || diagnostico.trim().isEmpty()) {
             FacesUtil.addWarn("Atención", "Debe seleccionar un paciente y redactar un diagnóstico.");
@@ -86,9 +81,7 @@ public class VetBean implements Serializable {
         }
     }
 
-    /**
-     * Aplica y registra una vacuna en el expediente clínico del animal activo.
-     */
+
     public void registrarVacuna() {
         if (pacienteActivo == null || nombreVacuna == null || nombreVacuna.trim().isEmpty()) {
             FacesUtil.addWarn("Atención", "Debe seleccionar un paciente e ingresar el nombre de la vacuna.");
@@ -121,7 +114,7 @@ public class VetBean implements Serializable {
         }
     }
 
-    // --- MEJORA 2: GETTER OPTIMIZADO PARA EVITAR COLAPSO DE BD EN PRIMEFACES ---
+    // GETTER OPTIMIZADO PARA EVITAR COLAPSO DE BD EN PRIMEFACES
     public List<Mascota> getPacientes() {
         return this.pacientes;
     }

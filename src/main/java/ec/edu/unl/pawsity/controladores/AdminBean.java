@@ -28,18 +28,18 @@ import java.util.UUID;
 @ViewScoped
 public class AdminBean implements Serializable {
 
-    // --- INYECCIÓN DE DEPENDENCIAS (JPA & Seguridad) ---
+    // --- INYECCIÓN DE DEPENDENCIAS ---
     @Inject private MascotaRepository mascotaRepository;
     @Inject private SolicitudRepository solicitudRepository;
     @Inject private UsuarioSession usuarioSession;
 
-    // --- VARIABLES DE VISTA (Tablas y Listados en PrimeFaces) ---
+    // --- VARIABLES DE VISTA ---
     private List<Mascota> censoMascotas;
     private List<SolicitudDeAdopcion> solicitudesPendientes;
     private List<SolicitudDeAdopcion> solicitudes; // Sincronizado para compatibilidad con XHTML
     private List<String> especiesDisponibles;
 
-    // --- VARIABLES DE FORMULARIO (Registrar Nueva Mascota) ---
+    // --- VARIABLES DE FORMULARIO  ---
     private String nombre;
     private String especie;
     private double edad;
@@ -62,19 +62,13 @@ public class AdminBean implements Serializable {
         }
     }
 
-    /**
-     * Consulta directamente a PostgreSQL para alimentar las tablas del panel.
-     */
     public void cargarDatos() {
         this.censoMascotas = mascotaRepository.listarTodos();
         this.solicitudesPendientes = solicitudRepository.buscarPendientes();
-        this.solicitudes = this.solicitudesPendientes; // Sincronizamos para evitar PropertyNotFoundException en el XHTML
+        this.solicitudes = this.solicitudesPendientes;
     }
 
-    /**
-     * Crea, procesa imágenes y persiste una nueva mascota en la base de datos.
-     * AGREGADA @Transactional PARA QUE LOS ADOPTANTES LA VEAN DE INMEDIATO EN EL CATÁLOGO.
-     */
+
     @Transactional
     public void registrarMascota() {
         // Blindaje de seguridad en el backend
@@ -100,7 +94,7 @@ public class AdminBean implements Serializable {
                     EstadoMascota.DISPONIBLE
             );
 
-            // 3. Procesamiento inteligente de imagen (Prioriza archivo subido, luego URL externa)
+            // 3. Procesamiento inteligente de imagen
             if (fotoSubida != null && fotoSubida.getSize() > 0) {
                 try {
                     String nombreArchivo = UUID.randomUUID().toString() + "_" + fotoSubida.getSubmittedFileName();
@@ -116,11 +110,9 @@ public class AdminBean implements Serializable {
                         Files.copy(input, archivoDestino.toPath(), StandardCopyOption.REPLACE_EXISTING);
                     }
 
-                    // --- SOLUCIÓN DE RUTAS ABSOLUTAS ---
-                    // Obtenemos la raíz de la aplicación (/Pawsity) para que la imagen cargue desde cualquier vista
+                    // Obtenemos la raíz de la aplicación para que la imagen cargue desde cualquier vista
                     String contextPath = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
                     nueva.setImagenUrl(contextPath + "/resources/imagenes/" + nombreArchivo);
-                    // -----------------------------------
 
                 } catch (Exception e) {
                     FacesUtil.addError("Error de Archivo", "No se pudo guardar la imagen en el servidor: " + e.getMessage());
@@ -129,7 +121,6 @@ public class AdminBean implements Serializable {
             } else if (imagenUrl != null && !imagenUrl.isBlank()) {
                 nueva.setImagenUrl(imagenUrl.trim());
             } else {
-                // Si el admin no pone ninguna foto, podemos asignar una por defecto usando el contexto
                 String contextPath = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
                 nueva.setImagenUrl("https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600&auto=format&fit=crop");
             }
@@ -149,10 +140,6 @@ public class AdminBean implements Serializable {
         }
     }
 
-    /**
-     * Aprueba o rechaza una adopción sincronizando ambas tablas en una misma transacción.
-     * AGREGADA @Transactional PARA ASEGURAR CAMBIOS EN LA MASCOTA Y EN LA SOLICITUD.
-     */
     @Transactional
     public void gestionar(SolicitudDeAdopcion sol, boolean aprobar) {
         if (usuarioSession == null || !usuarioSession.isAdmin()) {
@@ -167,10 +154,10 @@ public class AdminBean implements Serializable {
 
         try {
             if (aprobar) {
-                sol.aprobar(); // Cambia solicitud a APROBADO y mascota a ADOPTADO
+                sol.aprobar();
                 FacesUtil.addInfo("Solicitud Aprobada", "La adopción de " + sol.getMascota().getNombre() + " ha sido oficializada.");
             } else {
-                sol.rechazar(); // Cambia solicitud a RECHAZADA y mascota a DISPONIBLE
+                sol.rechazar();
                 FacesUtil.addWarn("Solicitud Rechazada", "La mascota " + sol.getMascota().getNombre() + " vuelve al catálogo.");
             }
 
@@ -199,7 +186,6 @@ public class AdminBean implements Serializable {
         this.fotoSubida = null;
     }
 
-    // --- GETTERS Y SETTERS COMPLETOS PARA PRIMEFACES ---
     public List<Mascota> getCensoMascotas() { return censoMascotas; }
     public void setCensoMascotas(List<Mascota> censoMascotas) { this.censoMascotas = censoMascotas; }
 

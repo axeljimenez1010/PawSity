@@ -1,6 +1,7 @@
 # Archivos compilados
 target/
 *.class
+pawsity_pgdata/
 
 # Configuraciones de IntelliJ IDEA
 .idea/

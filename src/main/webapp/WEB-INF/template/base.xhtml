@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:ui="jakarta.faces.facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title><ui:insert name="title">PawSity</ui:insert></title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
+        .main-content { padding: 20px; min-height: calc(100vh - 130px); max-width: 1200px; margin: 0 auto; }
+    </style>
+</h:head>
+
+<h:body>
+    <!-- Alertas globales flotantes (Growl) de PrimeFaces -->
+    <p:growl id="growlGlobal" showDetail="true" life="4000"/>
+
+    <!-- Inclusión de la barra superior -->
+    <ui:include src="/WEB-INF/template/fragments/topbar.xhtml"/>
+
+    <!-- Contenedor dinámico donde se cargará cada página -->
+    <div class="main-content">
+        <ui:insert name="content">
+            <!-- Contenido por defecto si una vista no inyecta nada -->
+        </ui:insert>
+    </div>
+
+    <!-- Inclusión del pie de página -->
+    <ui:include src="/WEB-INF/template/fragments/footer.xhtml"/>
+</h:body>
+</html>

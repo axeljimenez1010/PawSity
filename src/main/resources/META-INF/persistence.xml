@@ -4,26 +4,35 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
 
+    <!-- REGRESAMOS A RESOURCE_LOCAL PARA QUE TU EntityManagerProducer NO MALLE -->
     <persistence-unit name="PawsityPU" transaction-type="RESOURCE_LOCAL">
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
 
         <properties>
-            <!-- Conexión directa JDBC usando el driver empaquetado en el WAR -->
+            <!-- Conexión JDBC a PostgreSQL -->
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/pawsity"/>
             <property name="jakarta.persistence.jdbc.user" value="pawsity"/>
             <property name="jakarta.persistence.jdbc.password" value="pawsity123"/>
 
-            <!-- Plataforma nativa de PostgreSQL -->
+            <!-- Plataforma nativa -->
             <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.PostgreSQLPlatform"/>
 
-            <!-- Generación automática de tablas al arrancar -->
-            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
-            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
-            <property name="eclipselink.weaving" value="false"/>
+            <!-- 1. CANDADO DEFINITIVO: 'none' le prohíbe al servidor tocar la estructura o borrar datos -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
 
-            <!-- Logs SQL -->
+            <!-- (Opcional) Si en el futuro agregas nuevas variables en Java y quieres que se creen las columnas automáticamente sin borrar datos, descomenta esta línea: -->
+            <!-- <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/> -->
+
+            <!-- 2. SCRIPT INICIAL COMENTADO: Evita errores de clave duplicada al reiniciar -->
+            <!-- <property name="jakarta.persistence.sql-load-script-source" value="db/initial-data.sql"/> -->
+
+            <!-- DESACTIVACIÓN DE CACHÉ: Obliga a leer siempre de PostgreSQL y no de la memoria RAM -->
+            <property name="eclipselink.cache.shared.default" value="false"/>
+            <property name="eclipselink.query-results-cache" value="false"/>
+
+            <!-- Optimizaciones de EclipseLink -->
+            <property name="eclipselink.weaving" value="false"/>
             <property name="eclipselink.logging.level.sql" value="FINE"/>
             <property name="eclipselink.logging.parameters" value="true"/>
         </properties>

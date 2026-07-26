@@ -5,29 +5,41 @@ import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
 import ec.edu.unl.pawsity.dominio.mascota.EstadoMascota;
 import ec.edu.unl.pawsity.dominio.mascota.Mascota;
 import ec.edu.unl.pawsity.excepciones.CapacidadRefugioExcedidaException;
-import jakarta.persistence.*; // ⭐ IMPORTANTE: Importaciones de Jakarta EE
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
+import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 @Entity
 @Table(name = "administradores")
-
 @PrimaryKeyJoinColumn(name = "id_usuario")
-public class Administrador extends Usuario {
+@NamedQueries({
+        @NamedQuery(name = "Administrador.findByPuesto", query = "SELECT a FROM Administrador a WHERE LOWER(a.puesto) = LOWER(:puesto)")
+})
+public class Administrador extends Usuario implements Serializable {
 
-
-    @Column(name = "puesto", length = 80)
+    @NotNull
+    @NotEmpty
+    @Column(name = "puesto", nullable = false, length = 80)
     private String puesto;
 
-
-    protected Administrador() {
+    public Administrador() {
         super();
     }
 
+    public Administrador(Long id, @NotNull @NotEmpty String correo, @NotNull @NotEmpty String contrasena,
+                         @NotNull @NotEmpty String nombres, @NotNull @NotEmpty String apellidos,
+                         @NotNull @NotEmpty String puesto) {
+        super(id, correo, contrasena, nombres, apellidos);
+        this.puesto = Objects.requireNonNull(puesto, "El puesto es requerido");
+    }
+
     public Administrador(String correo, String contrasena, String nombres, String apellidos, String puesto) {
-        super(correo, contrasena, nombres, apellidos);
-        this.puesto = puesto;
+        this(0L, correo, contrasena, nombres, apellidos, puesto);
     }
 
     public void gestionarSolicitud(SolicitudDeAdopcion solicitud, boolean estadoAprobacion) {
@@ -105,5 +117,30 @@ public class Administrador extends Usuario {
 
     public void setPuesto(String puesto) {
         this.puesto = puesto;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Administrador that = (Administrador) o;
+        return Objects.equals(getPuesto(), that.getPuesto());
+    }
+
+    @Override
+    public String toString() {
+        return "Administrador{" +
+                "id=" + getId() +
+                ", correoElectronico='" + getCorreoElectronico() + '\'' +
+                ", nombres='" + getNombres() + '\'' +
+                ", apellidos='" + getApellidos() + '\'' +
+                ", puesto='" + puesto + '\'' +
+                '}';
     }
 }

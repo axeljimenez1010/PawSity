@@ -44,7 +44,7 @@
 
     <main class="max-w-6xl mx-auto space-y-8">
 
-        <!-- 1. HEADER PRINCIPAL MEJORADO CON BADGE Y ESTADO "EN LÍNEA" -->
+        <!-- 1. HEADER PRINCIPAL MEJORADO -->
         <header class="flex justify-between items-center bg-white p-5 px-6 rounded-2xl shadow-xs border border-gray-200/80">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-xl bg-[#00685f]/10 flex items-center justify-center text-[#00685f] shadow-inner shrink-0">
@@ -64,16 +64,14 @@
                 </div>
             </div>
             <h:form>
-                <!-- Botón Azul Clásico JSF con sombra interactiva al hover -->
                 <p:commandButton value="Cerrar Sesión" action="#{loginBean.logout()}"
                                  style="background-color: #0d6efd !important; border-color: #0d6efd !important;"
                                  styleClass="text-white px-4 py-2 rounded-xl font-medium shadow-sm hover:shadow-md hover:shadow-blue-500/20 active:scale-[0.98] transition-all cursor-pointer text-sm"/>
             </h:form>
         </header>
 
-        <!-- 2. SECCIÓN REGISTRO CON CABECERA TINTADA Y PROFUNDIDAD -->
+        <!-- 2. SECCIÓN REGISTRO -->
         <section class="bg-white rounded-2xl shadow-sm border border-gray-200/80 overflow-hidden">
-            <!-- Cabecera tintada en gris suave -->
             <div class="bg-slate-50/70 px-6 py-4 border-b border-gray-100 flex items-center justify-between">
                 <div>
                     <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
@@ -131,16 +129,23 @@
                                  placeholder="Ej. Blanco y Canela"/>
                 </div>
 
-                <!-- 3. INPUT DE FOTO CON ESTILO "DROPZONE" MODERNIZADO -->
-                <div class="flex flex-col gap-1.5 md:col-span-3 mt-1">
-                    <label class="text-[11px] font-bold text-gray-600 uppercase tracking-wider">Fotografía de la Mascota</label>
-                    <div class="border-2 border-dashed border-slate-200 hover:border-slate-300 bg-slate-50/50 p-3.5 rounded-xl transition-all flex items-center">
+                <!-- INPUT DOBLE: URL WEB O ARCHIVO LOCAL -->
+                <div class="flex flex-col gap-1.5 md:col-span-2 mt-1">
+                    <label class="text-[11px] font-bold text-gray-600 uppercase tracking-wider">URL de Fotografía (Enlace Web)</label>
+                    <p:inputText value="#{adminBean.imagenUrl}" required="false"
+                                 styleClass="bg-gray-50/60 focus:bg-white border border-gray-200 focus:border-[#00685f] rounded-xl p-2.5 text-sm w-full outline-none focus:ring-2 focus:ring-[#00685f]/15 transition-all"
+                                 placeholder="https://images.unsplash.com/photo-..."/>
+                </div>
+
+                <div class="flex flex-col gap-1.5 md:col-span-1 mt-1">
+                    <label class="text-[11px] font-bold text-gray-600 uppercase tracking-wider">O Subir Archivo</label>
+                    <div class="border border-slate-200 bg-slate-50/50 p-2 rounded-xl transition-all flex items-center">
                         <h:inputFile value="#{adminBean.fotoSubida}" required="false"
-                                     styleClass="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-white file:text-gray-700 file:shadow-xs hover:file:bg-gray-50 cursor-pointer outline-none"/>
+                                     styleClass="w-full text-xs text-gray-500 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-white file:text-gray-700 cursor-pointer outline-none"/>
                     </div>
                 </div>
 
-                <!-- 4. BARRA DE ACCIÓN PARA EL BOTÓN AZUL JSF -->
+                <!-- BARRA DE ACCIÓN -->
                 <div class="md:col-span-3 flex justify-end mt-2 pt-4 border-t border-gray-100">
                     <p:commandButton value="+ Ingresar al Catálogo" action="#{adminBean.registrarMascota()}"
                                      ajax="false"
@@ -150,9 +155,67 @@
             </h:form>
         </section>
 
-        <!-- 3. SECCIÓN SOLICITUDES CON CABECERA TINTADA -->
+        <!-- 3. NUEVA SECCIÓN: CENSO GENERAL DE MASCOTAS -->
         <section class="bg-white rounded-2xl shadow-sm border border-gray-200/80 overflow-hidden">
-            <!-- Cabecera tintada -->
+            <div class="bg-slate-50/70 px-6 py-4 border-b border-gray-100 flex justify-between items-center">
+                <div>
+                    <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-[#00685f] text-[20px]">list_alt</span>
+                        Censo General de Mascotas (#{adminBean.censoMascotas.size()})
+                    </h2>
+                    <p class="text-xs text-gray-500 mt-0.5">Listado completo de animales registrados en el refugio y su estado de adopción actual.</p>
+                </div>
+            </div>
+
+            <h:form id="formCenso" styleClass="p-6 overflow-x-auto">
+                <h:panelGroup rendered="#{empty adminBean.censoMascotas}" layout="block" styleClass="text-center py-10 text-gray-400 border-2 border-dashed rounded-xl bg-gray-50/60">
+                    <span class="material-symbols-outlined text-4xl block mb-1 text-gray-300">pets</span>
+                    <p class="font-semibold text-gray-600 text-sm">No hay mascotas registradas en el censo</p>
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not empty adminBean.censoMascotas}" layout="block">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                        <tr class="border-b border-gray-200 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                            <th class="pb-3 pl-2">Mascota</th>
+                            <th class="pb-3">Especie &amp; Sexo</th>
+                            <th class="pb-3">Tamaño &amp; Color</th>
+                            <th class="pb-3">Estado Actual</th>
+                        </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-sm">
+                        <ui:repeat value="#{adminBean.censoMascotas}" var="m">
+                            <tr class="hover:bg-gray-50/80 transition-colors">
+                                <td class="py-3 pl-2 flex items-center gap-3">
+                                    <img src="#{m.imagenUrl}" alt="#{m.nombre}" class="w-10 h-10 rounded-xl object-cover border border-gray-200 shrink-0 shadow-2xs"/>
+                                    <div>
+                                        <p class="font-bold text-gray-800 leading-tight">#{m.nombre}</p>
+                                        <p class="text-xs text-gray-400">#{m.edad} años</p>
+                                    </div>
+                                </td>
+                                <td class="py-3 font-medium text-gray-600">
+                                    #{m.especie} &#183; <span class="text-gray-400 font-normal">#{m.sexo}</span>
+                                </td>
+                                <td class="py-3 text-gray-600">
+                                    #{m.tamano} &#183; <span class="text-gray-400 font-normal">#{m.color}</span>
+                                </td>
+                                <td class="py-3">
+                                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold
+                                                     #{m.estado == 'DISPONIBLE' ? 'bg-green-100 text-green-800 border border-green-200' :
+                                                       (m.estado == 'EN_PROCESO' ? 'bg-yellow-100 text-yellow-800 border border-yellow-200' : 'bg-purple-100 text-purple-800 border border-purple-200')}">
+                                            #{m.estado}
+                                        </span>
+                                </td>
+                            </tr>
+                        </ui:repeat>
+                        </tbody>
+                    </table>
+                </h:panelGroup>
+            </h:form>
+        </section>
+
+        <!-- 4. SECCIÓN SOLICITUDES CON CABECERA TINTADA -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-200/80 overflow-hidden">
             <div class="bg-slate-50/70 px-6 py-4 border-b border-gray-100 flex justify-between items-center">
                 <div>
                     <h2 class="text-base font-bold text-gray-800 flex items-center gap-2">
@@ -207,12 +270,13 @@
                                 </div>
                             </div>
 
+                            <!-- BOTONES CON ACTUALIZACIÓN AJAX SINCRONIZADA -->
                             <div class="flex gap-3 border-t border-gray-200/80 pt-3.5 pl-2">
                                 <p:commandButton value="✓ Aprobar" action="#{adminBean.gestionar(sol, true)}"
-                                                 update="formSolicitudes :mensajes"
+                                                 update="formSolicitudes :formCenso :mensajes"
                                                  styleClass="flex-1 bg-[#16a34a] text-white py-2 rounded-xl text-sm font-semibold hover:bg-green-700 active:scale-[0.98] transition-all cursor-pointer shadow-2xs"/>
                                 <p:commandButton value="✕ Rechazar" action="#{adminBean.gestionar(sol, false)}"
-                                                 update="formSolicitudes :mensajes"
+                                                 update="formSolicitudes :formCenso :mensajes"
                                                  styleClass="flex-1 bg-red-600 text-white py-2 rounded-xl text-sm font-semibold hover:bg-red-700 active:scale-[0.98] transition-all cursor-pointer shadow-2xs"/>
                             </div>
                         </article>

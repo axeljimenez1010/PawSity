@@ -1,14 +1,19 @@
 package ec.edu.unl.pawsity.controladores;
 
+import ec.edu.unl.pawsity.dominio.gestionrefugio.EstadoSolicitud;
 import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
-import ec.edu.unl.pawsity.dominio.mascota.*;
+import ec.edu.unl.pawsity.dominio.mascota.EstadoMascota;
+import ec.edu.unl.pawsity.dominio.mascota.Mascota;
 import ec.edu.unl.pawsity.dominio.usuarios.Adoptante;
-import ec.edu.unl.pawsity.servicios.RefugioService;
-import ec.edu.unl.pawsity.util.MensajesUtil;
+import ec.edu.unl.pawsity.repositorios.MascotaRepository;
+import ec.edu.unl.pawsity.repositorios.SolicitudRepository;
+import ec.edu.unl.pawsity.util.FacesUtil;
+
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import jakarta.transaction.Transactional; // <-- IMPORTACIÓN NECESARIA PARA JPA
 import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
@@ -17,65 +22,69 @@ import java.util.stream.Collectors;
 @Named("adoptanteBean")
 @ViewScoped
 public class AdoptanteBean implements Serializable {
+
+    @Inject private MascotaRepository mascotaRepository;
+    @Inject private SolicitudRepository solicitudRepository;
+    @Inject private UsuarioSession usuarioSession;
+
     private List<Mascota> catalogoCompleto;
     private List<Mascota> catalogoFiltrado;
 
-    // Filtros disponibles para el adoptante
     private String filtroEspecie = "todos";
     private String filtroTamano = "todos";
     private String filtroSexo = "todos";
     private String filtroColor = "";
 
-    // Mascota sobre la que se abrió el diálogo de "Antecedentes médicos"
     private Mascota mascotaHistorial;
-
-    // Mascota sobre la que se abrió el diálogo de "Formulario de adopción"
     private Mascota mascotaSeleccionada;
+
     private String tipoVivienda;
     private boolean tieneOtrasMascotas;
     private String experienciaPrevia;
     private String motivoAdopcion;
 
-    @Inject private RefugioService refugioService;
-    @Inject private LoginBean loginBean;
-
     @PostConstruct
-    public void init() { cargarCatalogo(); }
+    public void init() {
+        cargarCatalogo();
+    }
 
     public void cargarCatalogo() {
-        // Se ordena de la mascota que más tiempo lleva esperando (fechaIngreso más antigua)
-        // a la más reciente. El orden se conserva luego al filtrar, y la vista usa esa
-        // posición para darle mayor tamaño de imagen a quien más tiempo lleva en el refugio.
-        this.catalogoCompleto = refugioService.getRefugio().buscarMascota().stream()
-                .filter(m -> m.getEstado() == EstadoMascota.DISPONIBLE)
-                .sorted(Comparator.comparing(Mascota::getFechaIngreso))
-                .collect(Collectors.toList());
-        filtrar();
+        try {
+            List<Mascota> disponibles = mascotaRepository.buscarDisponibles();
+
+            this.catalogoCompleto = disponibles.stream()
+                    .sorted(Comparator.comparing(Mascota::getFechaIngreso, Comparator.nullsLast(Comparator.naturalOrder())))
+                    .collect(Collectors.toList());
+
+            filtrar();
+        } catch (Exception e) {
+            FacesUtil.addError("Error de Carga", "No se pudo recuperar el catálogo de la base de datos.");
+        }
     }
 
     public void filtrar() {
+        if (catalogoCompleto == null) return;
+
         catalogoFiltrado = catalogoCompleto.stream()
                 .filter(m -> filtroEspecie == null || "todos".equalsIgnoreCase(filtroEspecie) || m.getEspecie().equalsIgnoreCase(filtroEspecie))
                 .filter(m -> filtroTamano == null || "todos".equalsIgnoreCase(filtroTamano) || m.getTamano().equalsIgnoreCase(filtroTamano))
                 .filter(m -> filtroSexo == null || "todos".equalsIgnoreCase(filtroSexo) || m.getSexo().equalsIgnoreCase(filtroSexo))
-                .filter(m -> filtroColor == null || filtroColor.isBlank() || m.getColor().toLowerCase().contains(filtroColor.toLowerCase()))
+                .filter(m -> filtroColor == null || filtroColor.isBlank() || m.getColor().toLowerCase().contains(filtroColor.trim().toLowerCase()))
                 .collect(Collectors.toList());
     }
 
     public void resetFiltros() {
-        filtroEspecie = "todos";
-        filtroTamano = "todos";
-        filtroSexo = "todos";
-        filtroColor = "";
+        this.filtroEspecie = "todos";
+        this.filtroTamano = "todos";
+        this.filtroSexo = "todos";
+        this.filtroColor = "";
         filtrar();
     }
 
-    // --- Diálogo de antecedentes médicos (vacunas y desparasitación) ---
     public void verHistorial(Mascota m) {
         this.mascotaHistorial = m;
     }
 
-    // --- Diálogo del formulario de adopción ---
     public void abrirFormulario(Mascota m) {
         this.mascotaSeleccionada = m;
         this.tipoVivienda = null;
@@ -84,29 +93,49 @@ public class AdoptanteBean implements Serializable {
         this.motivoAdopcion = "";
     }
 
+    @Transactional
     public void confirmarSolicitud() {
-        if (mascotaSeleccionada == null) return;
+        if (mascotaSeleccionada == null) {
+            FacesUtil.addWarn("Atención", "No se ha seleccionado ninguna mascota.");
+            return;
+        }
 
         if (mascotaSeleccionada.getEstado() != EstadoMascota.DISPONIBLE) {
-            MensajesUtil.mostrarAdvertencia("No disponible", "Esta mascota ya está en proceso de adopción.");
+            FacesUtil.addWarn("No disponible", "Esta mascota ya está en proceso de adopción por otra persona.");
             cargarCatalogo();
             return;
         }
-        if (!(loginBean.getUsuarioLogueado() instanceof Adoptante adoptante)) {
-            MensajesUtil.mostrarError("Sesión inválida", "Debe iniciar sesión como adoptante.");
+
+        if (usuarioSession == null || !usuarioSession.isAdoptante()) {
+            FacesUtil.addError("Sesión inválida", "Debe iniciar sesión como un adoptante registrado para realizar este trámite.");
             return;
         }
 
-        mascotaSeleccionada.setEstado(EstadoMascota.EN_PROCESO);
-        SolicitudDeAdopcion nueva = new SolicitudDeAdopcion(adoptante, mascotaSeleccionada);
-        nueva.registrarFormulario(tipoVivienda, tieneOtrasMascotas, experienciaPrevia, motivoAdopcion);
-        refugioService.getSistemaDeSolicitudes().add(nueva);
+        try {
+            Adoptante adoptanteActual = (Adoptante) usuarioSession.getUsuarioActual();
 
-        MensajesUtil.mostrarExito("¡Solicitud Enviada!", "Has solicitado adoptar a " + mascotaSeleccionada.getNombre() + ".");
-        cargarCatalogo();
+            mascotaSeleccionada.setEstado(EstadoMascota.EN_PROCESO);
+            mascotaRepository.actualizar(mascotaSeleccionada);
+
+            SolicitudDeAdopcion nuevaSolicitud = new SolicitudDeAdopcion(adoptanteActual, mascotaSeleccionada);
+            nuevaSolicitud.registrarFormulario(tipoVivienda, tieneOtrasMascotas, experienciaPrevia, motivoAdopcion);
+
+            nuevaSolicitud.setEstado(EstadoSolicitud.PENDIENTE);
+
+            solicitudRepository.guardar(nuevaSolicitud);
+
+            FacesUtil.addInfo("¡Solicitud Enviada!", "Has solicitado adoptar a " + mascotaSeleccionada.getNombre() + ". La administración revisará tu formulario en breve.");
+
+            cargarCatalogo();
+
+        } catch (Exception e) {
+            FacesUtil.addError("Error de Procesamiento", "Ocurrió un error al enviar tu solicitud: " + e.getMessage());
+        }
     }
 
+
     public List<Mascota> getCatalogoFiltrado() { return catalogoFiltrado; }
+    public void setCatalogoFiltrado(List<Mascota> catalogoFiltrado) { this.catalogoFiltrado = catalogoFiltrado; }
 
     public String getFiltroEspecie() { return filtroEspecie; }
     public void setFiltroEspecie(String filtroEspecie) { this.filtroEspecie = filtroEspecie; }
@@ -118,7 +147,9 @@ public class AdoptanteBean implements Serializable {
     public void setFiltroColor(String filtroColor) { this.filtroColor = filtroColor; }
 
     public Mascota getMascotaHistorial() { return mascotaHistorial; }
+    public void setMascotaHistorial(Mascota mascotaHistorial) { this.mascotaHistorial = mascotaHistorial; }
     public Mascota getMascotaSeleccionada() { return mascotaSeleccionada; }
+    public void setMascotaSeleccionada(Mascota mascotaSeleccionada) { this.mascotaSeleccionada = mascotaSeleccionada; }
 
     public String getTipoVivienda() { return tipoVivienda; }
     public void setTipoVivienda(String tipoVivienda) { this.tipoVivienda = tipoVivienda; }

@@ -1,18 +1,19 @@
 package ec.edu.unl.pawsity.controladores;
 
 import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
-import ec.edu.unl.pawsity.dominio.mascota.*;
-import ec.edu.unl.pawsity.dominio.usuarios.Administrador;
-import ec.edu.unl.pawsity.excepciones.CapacidadRefugioExcedidaException;
-import ec.edu.unl.pawsity.servicios.RefugioService;
-import ec.edu.unl.pawsity.util.MensajesUtil;
+import ec.edu.unl.pawsity.dominio.mascota.EstadoMascota;
+import ec.edu.unl.pawsity.dominio.mascota.Mascota;
+import ec.edu.unl.pawsity.repositorios.MascotaRepository;
+import ec.edu.unl.pawsity.repositorios.SolicitudRepository;
+import ec.edu.unl.pawsity.util.FacesUtil;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
-import jakarta.servlet.http.Part; // Importante para recibir el archivo subido
+import jakarta.servlet.http.Part;
+import jakarta.transaction.Transactional;
 
 import java.io.File;
 import java.io.InputStream;
@@ -26,6 +27,19 @@ import java.util.UUID;
 @Named("adminBean")
 @ViewScoped
 public class AdminBean implements Serializable {
+
+    // --- INYECCIÓN DE DEPENDENCIAS (JPA & Seguridad) ---
+    @Inject private MascotaRepository mascotaRepository;
+    @Inject private SolicitudRepository solicitudRepository;
+    @Inject private UsuarioSession usuarioSession;
+
+    // --- VARIABLES DE VISTA (Tablas y Listados en PrimeFaces) ---
+    private List<Mascota> censoMascotas;
+    private List<SolicitudDeAdopcion> solicitudesPendientes;
+    private List<SolicitudDeAdopcion> solicitudes; // Sincronizado para compatibilidad con XHTML
+    private List<String> especiesDisponibles;
+
+    // --- VARIABLES DE FORMULARIO (Registrar Nueva Mascota) ---
     private String nombre;
     private String especie;
     private double edad;
@@ -33,90 +47,171 @@ public class AdminBean implements Serializable {
     private String color;
     private String sexo;
     private String imagenUrl;
-
-    // 1. Nuevo atributo para manejar la foto subida desde la PC
     private Part fotoSubida;
-
-    // 2. Lista para almacenar las especies disponibles
-    private List<String> especiesDisponibles;
-
-    @Inject private RefugioService refugioService;
-    @Inject private LoginBean loginBean;
 
     @PostConstruct
     public void init() {
-        // Inicializamos las opciones del menú desplegable
+        // 1. Carga inicial de opciones para el menú desplegable (Dropdown)
         especiesDisponibles = Arrays.asList("Canino", "Felino", "Ave", "Conejo", "Roedor", "Reptil", "Otro");
+
+        // 2. Validación de seguridad en capa de vista y carga transaccional
+        if (usuarioSession != null && usuarioSession.isAdmin()) {
+            cargarDatos();
+        } else {
+            FacesUtil.addError("Acceso Restringido", "No tienes permisos de administrador para visualizar este panel.");
+        }
     }
 
+    /**
+     * Consulta directamente a PostgreSQL para alimentar las tablas del panel.
+     */
+    public void cargarDatos() {
+        this.censoMascotas = mascotaRepository.listarTodos();
+        this.solicitudesPendientes = solicitudRepository.buscarPendientes();
+        this.solicitudes = this.solicitudesPendientes; // Sincronizamos para evitar PropertyNotFoundException en el XHTML
+    }
+
+    /**
+     * Crea, procesa imágenes y persiste una nueva mascota en la base de datos.
+     * AGREGADA @Transactional PARA QUE LOS ADOPTANTES LA VEAN DE INMEDIATO EN EL CATÁLOGO.
+     */
+    @Transactional
     public void registrarMascota() {
-        if (!(loginBean.getUsuarioLogueado() instanceof Administrador admin)) {
-            MensajesUtil.mostrarError("Sesión inválida", "Debe iniciar sesión como administrador.");
+        // Blindaje de seguridad en el backend
+        if (usuarioSession == null || !usuarioSession.isAdmin()) {
+            FacesUtil.addError("Sesión inválida", "Debe iniciar sesión como administrador.");
             return;
         }
-        try {
-            Mascota nueva = new Mascota(nombre, especie, edad, tamano, sexo, color, EstadoMascota.DISPONIBLE);
 
-            // 3. Lógica para procesar y guardar la imagen subida
+        if (nombre == null || nombre.trim().isEmpty() || especie == null || especie.trim().isEmpty()) {
+            FacesUtil.addWarn("Campos Incompletos", "El nombre y la especie son obligatorios para el registro.");
+            return;
+        }
+
+        try {
+            // Instanciamos el modelo listo para JPA asegurando que nazca DISPONIBLE
+            Mascota nueva = new Mascota(
+                    nombre.trim(),
+                    especie.trim(),
+                    edad,
+                    tamano != null && !tamano.isBlank() ? tamano : "Mediano",
+                    sexo != null && !sexo.isBlank() ? sexo : "Desconocido",
+                    color != null && !color.isBlank() ? color : "Mestizo",
+                    EstadoMascota.DISPONIBLE
+            );
+
+            // 3. Procesamiento inteligente de imagen (Prioriza archivo subido, luego URL externa)
             if (fotoSubida != null && fotoSubida.getSize() > 0) {
                 try {
-                    // Generar un nombre único (UUID) para evitar sobreescribir imágenes con el mismo nombre
                     String nombreArchivo = UUID.randomUUID().toString() + "_" + fotoSubida.getSubmittedFileName();
-
-                    // Obtener la ruta real de tu proyecto web para guardar la imagen
                     String rutaDirectorio = FacesContext.getCurrentInstance().getExternalContext().getRealPath("/resources/imagenes/");
                     File directorio = new File(rutaDirectorio);
 
-                    // Si la carpeta "imagenes" no existe, la creamos
                     if (!directorio.exists()) {
                         directorio.mkdirs();
                     }
 
-                    // Copiar el archivo subido a la carpeta destino
                     File archivoDestino = new File(directorio, nombreArchivo);
                     try (InputStream input = fotoSubida.getInputStream()) {
                         Files.copy(input, archivoDestino.toPath(), StandardCopyOption.REPLACE_EXISTING);
                     }
 
-                    // Establecer la ruta relativa para que el frontend pueda cargarla
-                    nueva.setImagenUrl("resources/imagenes/" + nombreArchivo);
+                    // --- SOLUCIÓN DE RUTAS ABSOLUTAS ---
+                    // Obtenemos la raíz de la aplicación (/Pawsity) para que la imagen cargue desde cualquier vista
+                    String contextPath = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
+                    nueva.setImagenUrl(contextPath + "/resources/imagenes/" + nombreArchivo);
+                    // -----------------------------------
 
                 } catch (Exception e) {
-                    MensajesUtil.mostrarError("Error", "No se pudo guardar la imagen en el servidor.");
+                    FacesUtil.addError("Error de Archivo", "No se pudo guardar la imagen en el servidor: " + e.getMessage());
                     return;
                 }
             } else if (imagenUrl != null && !imagenUrl.isBlank()) {
-                // Mantiene tu opción original de insertar una URL de internet si no suben archivo
                 nueva.setImagenUrl(imagenUrl.trim());
+            } else {
+                // Si el admin no pone ninguna foto, podemos asignar una por defecto usando el contexto
+                String contextPath = FacesContext.getCurrentInstance().getExternalContext().getRequestContextPath();
+                nueva.setImagenUrl("https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600&auto=format&fit=crop");
             }
 
-            admin.actualizarCatalogo(refugioService.getRefugio(), nueva);
-            MensajesUtil.mostrarExito("¡Registro Exitoso!", nombre + " ha sido ingresado al catálogo.");
+            // Guardado transaccional en PostgreSQL vía JPA
+            mascotaRepository.guardar(nueva);
+            FacesUtil.addInfo("¡Registro Exitoso!", nombre + " ha sido ingresado al catálogo del refugio.");
+
+            // Limpieza de memoria y recarga visual de la tabla
             limpiar();
-        } catch (CapacidadRefugioExcedidaException e) {
-            MensajesUtil.mostrarError("Límite Excedido", e.getMessage());
+            cargarDatos();
+
+        } catch (Exception e) {
+            FacesContext.getCurrentInstance().validationFailed();
+            FacesUtil.addError("Error de Guardado", "Ocurrió un problema en la base de datos: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
+    /**
+     * Aprueba o rechaza una adopción sincronizando ambas tablas en una misma transacción.
+     * AGREGADA @Transactional PARA ASEGURAR CAMBIOS EN LA MASCOTA Y EN LA SOLICITUD.
+     */
+    @Transactional
     public void gestionar(SolicitudDeAdopcion sol, boolean aprobar) {
-        if (!(loginBean.getUsuarioLogueado() instanceof Administrador admin)) {
-            MensajesUtil.mostrarError("Sesión inválida", "Debe iniciar sesión como administrador.");
+        if (usuarioSession == null || !usuarioSession.isAdmin()) {
+            FacesUtil.addError("Sesión inválida", "Debe iniciar sesión como administrador.");
             return;
         }
-        admin.gestionarSolicitud(sol, aprobar);
-        refugioService.getSistemaDeSolicitudes().remove(sol);
-        if (aprobar) MensajesUtil.mostrarExito("Solicitud Aprobada", "La mascota ha sido adoptada.");
-        else MensajesUtil.mostrarAdvertencia("Solicitud Rechazada", "La mascota vuelve a estar disponible.");
+
+        if (sol == null) {
+            FacesUtil.addWarn("Atención", "No se ha seleccionado ninguna solicitud válida.");
+            return;
+        }
+
+        try {
+            if (aprobar) {
+                sol.aprobar(); // Cambia solicitud a APROBADO y mascota a ADOPTADO
+                FacesUtil.addInfo("Solicitud Aprobada", "La adopción de " + sol.getMascota().getNombre() + " ha sido oficializada.");
+            } else {
+                sol.rechazar(); // Cambia solicitud a RECHAZADA y mascota a DISPONIBLE
+                FacesUtil.addWarn("Solicitud Rechazada", "La mascota " + sol.getMascota().getNombre() + " vuelve al catálogo.");
+            }
+
+            // Sincronización JPA en base de datos
+            solicitudRepository.actualizar(sol);
+            mascotaRepository.actualizar(sol.getMascota());
+
+            // Recarga las listas para la pantalla
+            cargarDatos();
+
+        } catch (Exception e) {
+            FacesContext.getCurrentInstance().validationFailed();
+            FacesUtil.addError("Error Transaccional", "No se pudo completar el trámite: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private void limpiar() {
-        nombre=""; especie=""; edad=0; tamano=""; color=""; sexo=""; imagenUrl="";
-        fotoSubida = null; // Limpiar la foto del caché
+        this.nombre = null;
+        this.especie = null;
+        this.edad = 0;
+        this.tamano = null;
+        this.color = null;
+        this.sexo = null;
+        this.imagenUrl = null;
+        this.fotoSubida = null;
     }
 
-    public List<SolicitudDeAdopcion> getSolicitudes() { return refugioService.getSistemaDeSolicitudes(); }
+    // --- GETTERS Y SETTERS COMPLETOS PARA PRIMEFACES ---
+    public List<Mascota> getCensoMascotas() { return censoMascotas; }
+    public void setCensoMascotas(List<Mascota> censoMascotas) { this.censoMascotas = censoMascotas; }
 
-    // --- GETTERS Y SETTERS ---
+    public List<SolicitudDeAdopcion> getSolicitudesPendientes() { return solicitudesPendientes; }
+    public void setSolicitudesPendientes(List<SolicitudDeAdopcion> solicitudesPendientes) { this.solicitudesPendientes = solicitudesPendientes; }
+
+    public List<SolicitudDeAdopcion> getSolicitudes() { return solicitudes; }
+    public void setSolicitudes(List<SolicitudDeAdopcion> solicitudes) { this.solicitudes = solicitudes; }
+
+    public List<String> getEspeciesDisponibles() { return especiesDisponibles; }
+    public void setEspeciesDisponibles(List<String> especiesDisponibles) { this.especiesDisponibles = especiesDisponibles; }
+
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
     public String getEspecie() { return especie; }
@@ -131,10 +226,6 @@ public class AdminBean implements Serializable {
     public void setSexo(String sexo) { this.sexo = sexo; }
     public String getImagenUrl() { return imagenUrl; }
     public void setImagenUrl(String imagenUrl) { this.imagenUrl = imagenUrl; }
-
-    // Getters y Setters de los nuevos atributos
     public Part getFotoSubida() { return fotoSubida; }
     public void setFotoSubida(Part fotoSubida) { this.fotoSubida = fotoSubida; }
-    public List<String> getEspeciesDisponibles() { return especiesDisponibles; }
-    public void setEspeciesDisponibles(List<String> especiesDisponibles) { this.especiesDisponibles = especiesDisponibles; }
 }

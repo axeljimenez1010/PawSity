@@ -116,7 +116,7 @@
 
                         <!-- Imagen estática de fondo -->
                         <div class="absolute inset-0 z-0 block">
-                            <img src="#{mascota.imagenUrl.startsWith('http') ? mascota.imagenUrl : request.contextPath.concat('/').concat(mascota.imagenUrl)}" alt="#{mascota.nombre}"
+                            <img src="#{mascota.imagenUrl}" alt="#{mascota.nombre}"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                             <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
                         </div>
@@ -161,7 +161,7 @@
                 <h:panelGroup id="contenidoHistorial">
                     <h:panelGroup rendered="#{not empty adoptanteBean.mascotaHistorial}" layout="block" styleClass="space-y-5 p-1">
                         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-gray-50/80 p-5 rounded-xl border border-gray-200 shadow-sm">
-                            <img src="#{adoptanteBean.mascotaHistorial.imagenUrl.startsWith('http') ? adoptanteBean.mascotaHistorial.imagenUrl : request.contextPath.concat('/').concat(adoptanteBean.mascotaHistorial.imagenUrl)}" alt="#{adoptanteBean.mascotaHistorial.nombre}"
+                            <img src="#{adoptanteBean.mascotaHistorial.imagenUrl}" alt="#{adoptanteBean.mascotaHistorial.nombre}"
                                  class="w-72 h-72 sm:w-96 sm:h-96 rounded-xl object-cover shadow-md border border-gray-200/50 shrink-0"/>
 
                             <div class="flex-1 w-full text-center sm:text-left mt-2 sm:mt-0">
@@ -221,7 +221,7 @@
 
                         <!-- Ficha superior -->
                         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-gray-50/80 p-5 rounded-xl border border-gray-200 shadow-sm">
-                            <img src="#{adoptanteBean.mascotaSeleccionada.imagenUrl.startsWith('http') ? adoptanteBean.mascotaSeleccionada.imagenUrl : request.contextPath.concat('/').concat(adoptanteBean.mascotaSeleccionada.imagenUrl)}" alt="#{adoptanteBean.mascotaSeleccionada.nombre}"
+                            <img src="#{adoptanteBean.mascotaSeleccionada.imagenUrl}" alt="#{adoptanteBean.mascotaSeleccionada.nombre}"
                                  class="w-72 h-72 sm:w-96 sm:h-96 rounded-xl object-cover shadow-md border border-gray-200/50 shrink-0"/>
 
                             <div class="flex-1 w-full text-center sm:text-left mt-2 sm:mt-0">

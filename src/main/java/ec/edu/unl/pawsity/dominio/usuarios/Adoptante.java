@@ -4,45 +4,72 @@ import ec.edu.unl.pawsity.dominio.gestionrefugio.Refugio;
 import ec.edu.unl.pawsity.dominio.gestionrefugio.SolicitudDeAdopcion;
 import ec.edu.unl.pawsity.dominio.mascota.EstadoMascota;
 import ec.edu.unl.pawsity.dominio.mascota.Mascota;
-import jakarta.persistence.*; // ⭐ IMPORTANTE: Importaciones del estándar Jakarta EE
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 @Entity
 @Table(name = "adoptantes")
-
 @PrimaryKeyJoinColumn(name = "id_usuario")
-public class Adoptante extends Usuario {
+@NamedQueries({
+        @NamedQuery(name = "Adoptante.findByTelefono", query = "SELECT a FROM Adoptante a WHERE a.telefono = :telefono"),
+        @NamedQuery(name = "Adoptante.findByOcupacion", query = "SELECT a FROM Adoptante a WHERE LOWER(a.ocupacion) = LOWER(:ocupacion)")
+})
+public class Adoptante extends Usuario implements Serializable {
 
-    @Column(name = "telefono", length = 20)
+    @NotNull
+    @NotEmpty
+    @Column(name = "telefono", nullable = false, length = 20)
     private String telefono;
 
-    @Column(name = "direccion", length = 150)
+    @NotNull
+    @NotEmpty
+    @Column(name = "direccion", nullable = false, length = 150)
     private String direccion;
 
-    @Column(name = "ocupacion", length = 80)
+    @NotNull
+    @NotEmpty
+    @Column(name = "ocupacion", nullable = false, length = 80)
     private String ocupacion;
 
-    protected Adoptante() {
+    public Adoptante() {
         super();
     }
 
-    public Adoptante(String correo, String contrasena, String nombres, String apellidos, String telefono, String direccion, String ocupacion) {
-        super(correo, contrasena, nombres, apellidos);
-        this.telefono = telefono;
-        this.direccion = direccion;
-        this.ocupacion = ocupacion;
+    public Adoptante(Long id, @NotNull @NotEmpty String correo, @NotNull @NotEmpty String contrasena,
+                     @NotNull @NotEmpty String nombres, @NotNull @NotEmpty String apellidos,
+                     @NotNull @NotEmpty String telefono, @NotNull @NotEmpty String direccion,
+                     @NotNull @NotEmpty String ocupacion) {
+        super(id, correo, contrasena, nombres, apellidos);
+        this.telefono = Objects.requireNonNull(telefono, "El teléfono es requerido");
+        this.direccion = Objects.requireNonNull(direccion, "La dirección es requerida");
+        this.ocupacion = Objects.requireNonNull(ocupacion, "La ocupación es requerida");
+    }
+
+    public Adoptante(String correo, String contrasena, String nombres, String apellidos,
+                     String telefono, String direccion, String ocupacion) {
+        this(0L, correo, contrasena, nombres, apellidos, telefono, direccion, ocupacion);
     }
 
     public void enviarSolicitud(Mascota mascotaDeseada, List<SolicitudDeAdopcion> bandejaGlobal) {
+        Objects.requireNonNull(mascotaDeseada, "La mascota deseada es requerida");
+        Objects.requireNonNull(bandejaGlobal, "La bandeja global de solicitudes es requerida");
+
         System.out.println("Su solicitud para adoptar a " + mascotaDeseada.getNombre() + " ha sido enviada con éxito.");
         mascotaDeseada.setEstado(EstadoMascota.EN_PROCESO);
         bandejaGlobal.add(new SolicitudDeAdopcion(this, mascotaDeseada));
     }
 
     public List<Mascota> buscarMascota(String especie, Refugio refugio) {
+        Objects.requireNonNull(especie, "La especie para buscar es requerida");
+        Objects.requireNonNull(refugio, "El refugio es requerido");
+
         List<Mascota> resultados = new ArrayList<>();
         for (Mascota m : refugio.buscarMascota()) {
             if (m.getEspecie().equalsIgnoreCase(especie) && m.getEstado() == EstadoMascota.DISPONIBLE) {
@@ -62,8 +89,11 @@ public class Adoptante extends Usuario {
             System.out.println("3. Cerrar sesión");
             System.out.print("Seleccione una opción: ");
 
-            try { opcion = Integer.parseInt(sc.nextLine()); }
-            catch (NumberFormatException e) { continue; }
+            try {
+                opcion = Integer.parseInt(sc.nextLine());
+            } catch (NumberFormatException e) {
+                continue;
+            }
 
             if (opcion == 1 || opcion == 2) {
                 List<Mascota> catalogo = new ArrayList<>();
@@ -88,17 +118,19 @@ public class Adoptante extends Usuario {
                 }
 
                 System.out.print("\nIngrese el número de la mascota que desea adoptar (o presione 0 para cancelar): ");
-                int seleccion = Integer.parseInt(sc.nextLine());
-                if (seleccion > 0 && seleccion <= catalogo.size()) {
-                    Mascota elegida = catalogo.get(seleccion - 1);
-                    this.enviarSolicitud(elegida, solicitudes);
-                    System.out.println("La solicitud se encuentra en revisión por parte de la administración.");
+                try {
+                    int seleccion = Integer.parseInt(sc.nextLine());
+                    if (seleccion > 0 && seleccion <= catalogo.size()) {
+                        Mascota elegida = catalogo.get(seleccion - 1);
+                        this.enviarSolicitud(elegida, solicitudes);
+                        System.out.println("La solicitud se encuentra en revisión por parte de la administración.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Entrada no válida. Operación cancelada.");
                 }
             }
         } while (opcion != 3);
     }
-
-
 
     public String getTelefono() {
         return telefono;
@@ -122,5 +154,34 @@ public class Adoptante extends Usuario {
 
     public void setOcupacion(String ocupacion) {
         this.ocupacion = ocupacion;
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Adoptante adoptante = (Adoptante) o;
+        return Objects.equals(getTelefono(), adoptante.getTelefono()) &&
+                Objects.equals(getDireccion(), adoptante.getDireccion()) &&
+                Objects.equals(getOcupacion(), adoptante.getOcupacion());
+    }
+
+    @Override
+    public String toString() {
+        return "Adoptante{" +
+                "id=" + getId() +
+                ", correoElectronico='" + getCorreoElectronico() + '\'' +
+                ", nombres='" + getNombres() + '\'' +
+                ", apellidos='" + getApellidos() + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", ocupacion='" + ocupacion + '\'' +
+                '}';
     }
 }

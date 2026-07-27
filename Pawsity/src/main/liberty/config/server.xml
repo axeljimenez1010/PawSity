@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <server description="Pawsity Server">
+    <!-- 1. Tecnologías activas: Carga el perfil web de Jakarta EE 10 -->
     <featureManager>
         <feature>webProfile-10.0</feature>
     </featureManager>
 
+    <!-- 2. Configuración de red: Escucha en todas las interfaces (*) en el puerto HTTP 9080 y HTTPS 9443 -->
     <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443"/>
 
+    <!-- 3. Aplicación web: Despliega el archivo 'Pawsity.war' accesible desde la URL '/Pawsity' -->
     <webApplication id="Pawsity" location="Pawsity.war" contextRoot="/Pawsity"/>
 
-    <!-- Configuración para cargar el driver de PostgreSQL -->
+    <!-- 4. Driver JDBC: Carga el archivo JAR de PostgreSQL ubicado en la carpeta de recursos compartidos -->
     <library id="PostgresLib">
         <fileset dir="${shared.resource.dir}" includes="postgresql-*.jar"/>
     </library>
 
-    <!-- Configuración de la conexión a la base de datos (jndiName corregido a jdbc/pawsityDB) -->
+    <!-- 5. Conexión a Base de Datos: Vincula la fuente de datos al nombre JNDI 'jdbc/pawsityDB' -->
     <dataSource id="pawsityDS" jndiName="jdbc/pawsityDB">
+        <!-- Utiliza la librería con el driver de PostgreSQL definida arriba -->
         <jdbcDriver libraryRef="PostgresLib"/>
+
+        <!-- Parámetros de acceso al servidor PostgreSQL local -->
         <properties.postgresql serverName="localhost"
                                portNumber="5432"
                                databaseName="pawsity"
